@@ -1,11 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 /* Need to add:
- * - Ground Check to prevent infinte jumping
  * - Double jump counter
  * - Wall climbing
  */
@@ -17,7 +17,7 @@ public class NewBehaviourScript : MonoBehaviour
     [SerializeField] private float speed = 5;
     [SerializeField] private float jumpSpeed = 5;
     [SerializeField] private LayerMask groundMask;
-    private int jumps = 0;
+    private bool doubleJump;
     Rigidbody2D rb;
     BoxCollider2D boxColl2D;
 
@@ -30,24 +30,30 @@ public class NewBehaviourScript : MonoBehaviour
     {
         //Grabs horizontal input and moves accordingly, does not change Y axis movement
         rb.velocity = new Vector2(Input.GetAxis("Horizontal") * speed, rb.velocity.y);
-        //If on the ground, reset number of jumps
-        if(isGrounded() == true)
+        
+        //Jumping Logic
+        //If grounded and not pressing jump, set double jump to false
+        if(isGrounded() && !Input.GetButton("Jump"))
         {
-            jumps = 2;
-            
+            doubleJump = false;
         }
-        //if space is pressed, and the player has atleast one jump, go up
-        if (Input.GetKeyDown(KeyCode.Space))
+        if(Input.GetButtonDown("Jump"))
         {
-            Debug.Log(jumps);
-            if (jumps > 0)
+            //If jump pressed, is grounded or double jump is true, make player jump and switch double jump boolean 
+            if(isGrounded() || doubleJump)
             {
                 rb.velocity = new Vector2(rb.velocity.x, jumpSpeed);
-                jumps = jumps - 1;
-               
+                doubleJump = !doubleJump;
             }
         }
+
+        //If jump released early, jump shorter distance
+        if (Input.GetButtonUp("Jump") && rb.velocity.y > 0f)
+        {
+            rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
+        }
     }
+        
     private bool isGrounded()
     {
         float extraSize = 0.2f;
