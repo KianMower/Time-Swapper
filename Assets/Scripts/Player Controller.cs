@@ -17,6 +17,7 @@ public class NewBehaviourScript : MonoBehaviour
     [SerializeField] private float speed = 5;
     [SerializeField] private float jumpSpeed = 5;
     [SerializeField] private LayerMask groundMask;
+    private int jumps = 0;
     Rigidbody2D rb;
     BoxCollider2D boxColl2D;
 
@@ -29,12 +30,21 @@ public class NewBehaviourScript : MonoBehaviour
     {
         //Grabs horizontal input and moves accordingly, does not change Y axis movement
         rb.velocity = new Vector2(Input.GetAxis("Horizontal") * speed, rb.velocity.y);
-        //if space is pressed, increase Y axis speed (go up)
-        if(Input.GetKeyDown(KeyCode.Space)) 
+        //If on the ground, reset number of jumps
+        if(isGrounded() == true)
         {
-            if (isGrounded() == true)
+            jumps = 2;
+            
+        }
+        //if space is pressed, and the player has atleast one jump, go up
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Debug.Log(jumps);
+            if (jumps > 0)
             {
                 rb.velocity = new Vector2(rb.velocity.x, jumpSpeed);
+                jumps = jumps - 1;
+               
             }
         }
     }
@@ -42,8 +52,9 @@ public class NewBehaviourScript : MonoBehaviour
     {
         float extraSize = 0.2f;
         RaycastHit2D boxCheck = Physics2D.BoxCast(boxColl2D.bounds.center, boxColl2D.bounds.size, 0f, Vector2.down, extraSize, groundMask);
-        Debug.Log(boxCheck.collider);
+        //Debug.Log(boxCheck.collider);
         return boxCheck.collider != null;
+        
     }
 
 }
