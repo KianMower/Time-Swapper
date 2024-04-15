@@ -12,14 +12,25 @@ using UnityEngine.InputSystem;
 
 public class NewBehaviourScript : MonoBehaviour
 {
+    float horizontalInput;
     //Initalise speed values and rigid body component 
     //Serialize field just makes values appear to editor
+    [Header("Moving Speeds")]
     [SerializeField] private float speed = 5;
     [SerializeField] private float jumpSpeed = 5;
+    [SerializeField] private float wallJumpSpeed = 5;
+    [Header("Jumping Values")]
+    [SerializeField] private float wallJumpCD = 0.2f;
     [SerializeField] private LayerMask groundMask;
+    [SerializeField] private LayerMask wallMask;
+    [SerializeField] private float coyoteTime;
+
+    private float currentWallJumpCD;
+    private float coyoteTimeTimer;
     private bool doubleJump;
     Rigidbody2D rb;
     BoxCollider2D boxColl2D;
+    
 
     private void Start()
     {
@@ -28,29 +39,66 @@ public class NewBehaviourScript : MonoBehaviour
     }
     private void Update()
     {
-        //Grabs horizontal input and moves accordingly, does not change Y axis movement
-        rb.velocity = new Vector2(Input.GetAxis("Horizontal") * speed, rb.velocity.y);
-        
-        //Jumping Logic
-        //If grounded and not pressing jump, set double jump to false
-        if(isGrounded() && !Input.GetButton("Jump"))
+        //Flip the player by inverting X scale
+        horizontalInput = Input.GetAxis("Horizontal");
+        if(horizontalInput > 0.01f )
         {
-            doubleJump = false;
+            transform.localScale = Vector3.one;
         }
-        if(Input.GetButtonDown("Jump"))
+        else if(horizontalInput < -0.01f)
         {
-            //If jump pressed, is grounded or double jump is true, make player jump and switch double jump boolean 
-            if(isGrounded() || doubleJump)
-            {
-                rb.velocity = new Vector2(rb.velocity.x, jumpSpeed);
-                doubleJump = !doubleJump;
-            }
+            transform.localScale = new Vector3(-1, 1, 1);
         }
 
-        //If jump released early, jump shorter distance
-        if (Input.GetButtonUp("Jump") && rb.velocity.y > 0f)
+        //Grabs horizontal input and moves accordingly, does not change Y axis movement
+        rb.velocity = new Vector2(Input.GetAxis("Horizontal") * speed, rb.velocity.y);
+    
+        //If is grounded, reset coyote time timer
+        if(isGrounded())
         {
-            rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
+            coyoteTimeTimer = coyoteTime;
+            //doubleJump = true;
+        }
+        //If not grounded, tick down coyote time timer
+        else
+        {
+            coyoteTimeTimer -= Time.deltaTime;
+        }
+
+        //Jumping Logic
+        //If grounded and not pressing jump, set double jump to false
+        if (isOnWall() == false)
+        {
+            if (coyoteTimeTimer > 0 && !Input.GetButton("Jump"))
+            {
+                doubleJump = false;
+            }
+            if (Input.GetButtonDown("Jump"))
+            {
+                //If jump pressed, is grounded or double jump is true, make player jump and switch double jump boolean 
+                if (coyoteTimeTimer > 0 || doubleJump)
+                {
+                    rb.velocity = new Vector2(rb.velocity.x, jumpSpeed);
+                    doubleJump = !doubleJump;
+                }
+            }
+
+        }
+        //Wall Jump Logic
+        else
+        {
+            if(currentWallJumpCD == 0)
+            {
+                if (Input.GetButtonDown("Jump"))
+                {
+                    rb.velocity = new Vector2(rb.velocity.x, wallJumpSpeed);
+                    currentWallJumpCD = wallJumpCD;
+                }
+            }
+            else
+            {
+                currentWallJumpCD -= Time.deltaTime;
+            }
         }
     }
         
@@ -60,7 +108,13 @@ public class NewBehaviourScript : MonoBehaviour
         RaycastHit2D boxCheck = Physics2D.BoxCast(boxColl2D.bounds.center, boxColl2D.bounds.size, 0f, Vector2.down, extraSize, groundMask);
         //Debug.Log(boxCheck.collider);
         return boxCheck.collider != null;
-        
+    }
+
+    //Checks the player is on a wall by doing a box cast in front of the player. If it hits an object with the tag 'wall', we must be walled so return true
+    private bool isOnWall()
+    {
+        RaycastHit2D boxCheckWall = Physics2D.BoxCast(boxColl2D.bounds.center, boxColl2D.bounds.size, 0f, new Vector2(transform.localScale.x, 0), 0.2f, wallMask);
+        return boxCheckWall.collider != null;
     }
 
 }
