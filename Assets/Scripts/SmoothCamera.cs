@@ -14,22 +14,21 @@ public class SmoothCamera : MonoBehaviour
 
     //Used to change camera offset later
     public float movingCameraXOffset;
-    private Vector3 oldPlayerPosition;
-    private Vector3 deltaPlayerPosition;
-    
-    void Start()
-    {
-        oldPlayerPosition = playerPos.position;
-    }
-
-    void FixedUpdate()
-    {
-        Vector3 moveTo = playerPos.position + cameraOffset;
-        transform.position = Vector3.SmoothDamp(transform.position, moveTo, ref velocity, damping);
-    }
-
+  
     void Update()
     {
-        
+        //Checks which way the player is facing and adds offset to camera position
+        //Reuslts in player being able to see slightly more in the direction they are moving
+        if (playerPos.localScale.x > 0f) //Right
+        {
+            cameraOffset.x = movingCameraXOffset;
+        }
+        else if (playerPos.localScale.x < 0f) //Left
+        {
+            cameraOffset.x = -movingCameraXOffset;
+        }
+
+        Vector3 moveTo = playerPos.position + cameraOffset;
+        transform.position = Vector3.SmoothDamp(transform.position, moveTo, ref velocity, damping);
     }
 }

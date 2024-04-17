@@ -508,7 +508,6 @@ Transform:
   - {fileID: 1244183117}
   - {fileID: 768452119}
   - {fileID: 756231758}
-  - {fileID: 394769241}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &183999542
@@ -539,7 +538,7 @@ MonoBehaviour:
   dashCooldown: 1.5
   wallSlidingSpeed: 2
   wallJumpDuration: 0.4
-  wallJumpingPower: {x: 4, y: 8}
+  wallJumpingPower: {x: 2, y: 8}
 --- !u!61 &183999543
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -799,7 +798,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 183999538}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &394769242
 MonoBehaviour:
@@ -808,7 +807,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 394769238}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 826709db82653324eae6d5f9ce08c212, type: 3}
   m_Name: 
@@ -816,7 +815,7 @@ MonoBehaviour:
   playerPos: {fileID: 183999538}
   cameraOffset: {x: 0, y: 0, z: -15}
   damping: 0.2
-  movingCameraXOffset: 0
+  movingCameraXOffset: 1
 --- !u!1 &756231757
 GameObject:
   m_ObjectHideFlags: 0
@@ -2115,6 +2114,7 @@ SpriteRenderer:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 394769241}
   - {fileID: 183999538}
   - {fileID: 1177156360}
   - {fileID: 79880311}
