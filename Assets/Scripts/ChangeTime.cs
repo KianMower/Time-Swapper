@@ -16,7 +16,7 @@ public class ChangeTime : MonoBehaviour
             present.SetActive(false);
         }
 
-        if (Input.GetKeyDown(KeyCode.Mouse2))
+        if (Input.GetKeyDown(KeyCode.Mouse1))
         {
             future.SetActive(false);
             present.SetActive(true);
