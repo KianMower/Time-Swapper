@@ -8,6 +8,7 @@ public class HealthController : MonoBehaviour
     public float maxHealth;
     public float health;
     private float healthBarSize;
+    public float microchipsCollected;
     [SerializeField] Scrollbar healthBar;
 
     private void OnTriggerEnter2D(Collider2D other)
