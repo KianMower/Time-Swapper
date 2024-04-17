@@ -507,6 +507,7 @@ Transform:
   m_Children:
   - {fileID: 1244183117}
   - {fileID: 768452119}
+  - {fileID: 756231758}
   - {fileID: 394769241}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -527,6 +528,18 @@ MonoBehaviour:
   ground:
     serializedVersion: 2
     m_Bits: 64
+  wallCheck: {fileID: 756231758}
+  wall:
+    serializedVersion: 2
+    m_Bits: 128
+  speed: 8
+  jumpingSpeed: 16
+  dashSpeed: 24
+  dashTime: 0.2
+  dashCooldown: 1.5
+  wallSlidingSpeed: 2
+  wallJumpDuration: 0.4
+  wallJumpingPower: {x: 4, y: 8}
 --- !u!61 &183999543
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -804,6 +817,37 @@ MonoBehaviour:
   cameraOffset: {x: 0, y: 0, z: -15}
   damping: 0.2
   movingCameraXOffset: 0
+--- !u!1 &756231757
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 756231758}
+  m_Layer: 0
+  m_Name: Wall Check
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &756231758
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 756231757}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.499, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 183999538}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &768452118
 GameObject:
   m_ObjectHideFlags: 0
