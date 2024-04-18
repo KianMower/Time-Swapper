@@ -4,12 +4,9 @@ using UnityEngine;
 
 public class FuturePresentSwitcher : MonoBehaviour
 {
-    Rigidbody2D rb;
     bool inFuture = false;
-    void Start()
-    {
-        rb = GetComponent<Rigidbody2D>();
-    }
+    [SerializeField] GameObject present;
+    [SerializeField] GameObject future;
 
     // Update is called once per frame
     void Update()
@@ -17,16 +14,16 @@ public class FuturePresentSwitcher : MonoBehaviour
         //Teleport to present (left click)
         if(Input.GetMouseButtonDown(0) && (inFuture))
         {
-            Debug.Log("present");
-            rb.position = new Vector2(rb.position.x, rb.position.y - 30);
-            inFuture = false;
+            future.SetActive(false);
+            present.SetActive(true);
+            inFuture = !inFuture;
         }
         //Teleport to future (right click)
         if(Input.GetMouseButtonDown(1) && (!inFuture))
         {
-            Debug.Log("future");
-            rb.position = new Vector2(rb.position.x, rb.position.y + 30);
-            inFuture = true;
+            future.SetActive(true);
+            present.SetActive(false);
+            inFuture = !inFuture;
         }
     }
 }
