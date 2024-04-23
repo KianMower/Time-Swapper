@@ -20,6 +20,11 @@ public class TemporarySceneNavigator : MonoBehaviour
         SceneManager.LoadScene("Dan's Scene Level 2");
     }
 
+    public void BeginLevel3()
+    {
+        SceneManager.LoadScene("Dan's Scene Level 3");
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.tag == "Player")
