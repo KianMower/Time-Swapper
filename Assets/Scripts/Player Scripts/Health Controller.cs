@@ -11,12 +11,14 @@ public class HealthController : MonoBehaviour
     public float microchipsCollected;
     [SerializeField] Scrollbar healthBar;
 
-    private void OnTriggerEnter2D(Collider2D other)
+   
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (other.gameObject.CompareTag("Enemy")) 
+        if (collision.gameObject.name == "Bullet(Clone)")
         {
-            health -= 1;
-            Debug.Log("Collided with enemy");
+            Debug.Log("OW");
+            health -= 25;
         }
     }
 
