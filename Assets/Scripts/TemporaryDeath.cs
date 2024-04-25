@@ -18,7 +18,12 @@ public class TemporaryDeath : MonoBehaviour
     {
         if(playerHealth.health <= 0)
         {
-            SceneManager.LoadScene("TemporaryMenu");
+            death();
         }
+    }
+
+    public void death()
+    {
+        SceneManager.LoadScene("TemporaryMenu");
     }
 }
