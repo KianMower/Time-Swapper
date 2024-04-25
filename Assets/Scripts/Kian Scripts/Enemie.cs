@@ -18,6 +18,7 @@ public class Enemie : MonoBehaviour
     public GameObject moveTo;
     public GameObject moveTo2;
     public GameObject player;
+    [SerializeField] LayerMask playerMask;
 
     private void Awake()
     {
@@ -29,6 +30,7 @@ public class Enemie : MonoBehaviour
     {
         var moving = speed * Time.deltaTime;
 
+        //true, left point
         if (toNextPoint)
         {
             transform.position = Vector3.MoveTowards(transform.position, target1.position, moving);
@@ -36,13 +38,15 @@ public class Enemie : MonoBehaviour
 
             Debug.DrawRay(transform.position, transform.TransformDirection(-Vector2.right) * 5f, Color.red);
 
-            RaycastHit2D hit = Physics2D.Raycast(bulletFirePoint.transform.position, bulletFirePoint.transform.TransformDirection(-Vector2.right), 5f);
+            RaycastHit2D hit = Physics2D.Raycast(bulletFirePoint.transform.position, bulletFirePoint.transform.TransformDirection(-Vector2.right), 5f, playerMask);
 
             if (hit)
             {
                 speed = 0;
+                Debug.Log("found something");
                 if (canFire && hit.collider.name == "Player")
                 {
+                    Debug.Log("found player");
                     StartCoroutine(fire());
                 }
             }
@@ -56,7 +60,7 @@ public class Enemie : MonoBehaviour
                 toNextPoint = false;
             }
         }
-
+        //false right right
         if (!toNextPoint)
         {
             transform.position = Vector3.MoveTowards(transform.position, target2.position, moving);
@@ -64,7 +68,7 @@ public class Enemie : MonoBehaviour
 
             Debug.DrawRay(transform.position, transform.TransformDirection(Vector2.right) * 5f, Color.red);
 
-            RaycastHit2D hit = Physics2D.Raycast(-bulletFirePoint.transform.position, -bulletFirePoint.transform.TransformDirection(Vector2.right), 5f);
+            RaycastHit2D hit = Physics2D.Raycast(bulletFirePoint.transform.position, bulletFirePoint.transform.TransformDirection(Vector2.right), 5f, playerMask);
 
             if (hit)
             {
@@ -89,6 +93,7 @@ public class Enemie : MonoBehaviour
 
     IEnumerator fire()
     {
+        //this works
         if (toNextPoint)
         {
             GameObject cloneBullet = Instantiate(bullet, bulletFirePoint.transform.position, transform.rotation);
@@ -102,7 +107,7 @@ public class Enemie : MonoBehaviour
 
             canFire = true;
         }
-
+        //fuck this one
         if (!toNextPoint)
         {
             GameObject cloneBullet = Instantiate(bullet, bulletFirePoint.transform.position, transform.rotation);
