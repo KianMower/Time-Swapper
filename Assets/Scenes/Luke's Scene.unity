@@ -508,7 +508,11 @@ Transform:
   m_Children:
   - {fileID: 1244183117}
   - {fileID: 768452119}
+<<<<<<< HEAD
   - {fileID: 756231758}
+=======
+  - {fileID: 394769241}
+>>>>>>> parent of ab3e086 (Finished Movement)
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &183999542
@@ -528,6 +532,7 @@ MonoBehaviour:
   ground:
     serializedVersion: 2
     m_Bits: 64
+<<<<<<< HEAD
   wallCheck: {fileID: 756231758}
   wall:
     serializedVersion: 2
@@ -540,6 +545,8 @@ MonoBehaviour:
   wallSlidingSpeed: 2
   wallJumpDuration: 0.4
   wallJumpingPower: {x: 2, y: 8}
+=======
+>>>>>>> parent of ab3e086 (Finished Movement)
 --- !u!61 &183999543
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -834,6 +841,7 @@ MonoBehaviour:
   playerPos: {fileID: 183999538}
   cameraOffset: {x: 0, y: 0, z: -15}
   damping: 0.2
+<<<<<<< HEAD
   movingCameraXOffset: 1
 --- !u!1 &612954122
 GameObject:
@@ -1028,6 +1036,9 @@ Transform:
   m_Children: []
   m_Father: {fileID: 183999538}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+=======
+  movingCameraXOffset: 0
+>>>>>>> parent of ab3e086 (Finished Movement)
 --- !u!1 &768452118
 GameObject:
   m_ObjectHideFlags: 0

@@ -4,14 +4,14 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class Pause : MonoBehaviour
+public class Pause2 : MonoBehaviour
 {
     public ChangeTime changeTime;
 
     public GameObject pauseMenu;
 
     public static bool gameIsPaused;
-    
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
