@@ -63,7 +63,7 @@ public class doorScript : MonoBehaviour
         {
             timer -= Time.deltaTime;
             float result = (timer / openTime);
-            Debug.Log(result);
+            //Debug.Log(result);
             topHalf.transform.position = new Vector3(topHalfInitPos.x, topHalfInitPos.y + (openHeight * result), topHalfInitPos.z);
             bottomHalf.transform.position = new Vector3(bottomHalfInitPos.x, bottomHalfInitPos.y - (openHeight * result), bottomHalfInitPos.z);
         }
