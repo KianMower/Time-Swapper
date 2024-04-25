@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 4981932190979381795}
   - component: {fileID: 3879611121490087302}
   - component: {fileID: 6154283352640522582}
-  - component: {fileID: 3875561360883435460}
-  - component: {fileID: 4184216734241622878}
-  - component: {fileID: 1736322770697706876}
+  - component: {fileID: 311719904189707208}
+  - component: {fileID: 8940430693202085461}
+  - component: {fileID: 5684515205257164683}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -164,7 +164,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 2}
   m_EdgeRadius: 0
---- !u!114 &3875561360883435460
+--- !u!114 &311719904189707208
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -190,10 +190,10 @@ MonoBehaviour:
   dashSpeed: 24
   dashTime: 0.2
   dashCooldown: 1.5
-  wallSlidingSpeed: 2
+  wallSlidingSpeed: 4
   wallJumpDuration: 0.4
-  wallJumpingPower: {x: 2, y: 8}
---- !u!114 &4184216734241622878
+  wallJumpingPower: {x: 8, y: 16}
+--- !u!114 &8940430693202085461
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -207,7 +207,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   present: {fileID: 0}
   future: {fileID: 0}
---- !u!114 &1736322770697706876
+--- !u!114 &5684515205257164683
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -219,9 +219,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6aac27dff36797047a9fb660f03e8ca1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 3
-  health: 3
-  microchipsCollected: 1
+  maxHealth: 10
+  health: 10
+  microchipsCollected: 0
   healthBar: {fileID: 0}
 --- !u!1 &1698019286130119799
 GameObject:
