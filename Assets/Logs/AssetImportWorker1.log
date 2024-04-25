@@ -1,0 +1,1366 @@
+Using pre-set license
+Built from '2022.3/staging' branch; Version is '2022.3.10f1 (ff3792e53c62) revision 16725906'; Using compiler version '192829333'; Build Type 'Release'
+OS: 'Windows 10  (10.0.19045) 64bit Enterprise' Language: 'en' Physical Memory: 65244 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2022.3.10f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker1
+-projectPath
+C:/Users/Administrator/Documents/GitHub/TimeSwapper/Assets
+-logFile
+Logs/AssetImportWorker1.log
+-srvPort
+57995
+Successfully changed project path to: C:/Users/Administrator/Documents/GitHub/TimeSwapper/Assets
+C:/Users/Administrator/Documents/GitHub/TimeSwapper/Assets
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-allocator-temp-initial-block-size-main=262144"
+    "memorysetup-allocator-temp-initial-block-size-worker=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Player connection [10188] Host "[IP] 10.128.4.185 [Port] 0 [Flags] 2 [Guid] 3402735573 [EditorId] 3402735573 [Version] 1048832 [Id] WindowsEditor(7,GD7LLW553) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+
+Player connection [10188] Host "[IP] 10.128.4.185 [Port] 0 [Flags] 2 [Guid] 3402735573 [EditorId] 3402735573 [Version] 1048832 [Id] WindowsEditor(7,GD7LLW553) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+
+[Physics::Module] Initialized MultithreadedJobDispatcher with 23 workers.
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2022.3.10f1 (ff3792e53c62)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2022.3.10f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/Administrator/Documents/GitHub/TimeSwapper/Assets/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce RTX 2080 SUPER (ID=0x1e81)
+    Vendor:   NVIDIA
+    VRAM:     8001 MB
+    Driver:   31.0.15.3619
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2022.3.10f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2022.3.10f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2022.3.10f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56792
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.10f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.007353 seconds.
+- Loaded All Assemblies, in  0.336 seconds
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.283 seconds
+Domain Reload Profiling: 618ms
+	BeginReloadAssembly (96ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (0ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (1ms)
+	RebuildCommonClasses (33ms)
+	RebuildNativeTypeToScriptingClass (10ms)
+	initialDomainReloadingComplete (58ms)
+	LoadAllAssembliesAndSetupDomain (136ms)
+		LoadAssemblies (94ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (135ms)
+			TypeCache.Refresh (133ms)
+				TypeCache.ScanAssembly (119ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (0ms)
+	FinalizeReload (284ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (199ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (13ms)
+			SetLoadedEditorAssemblies (7ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (2ms)
+			ProcessInitializeOnLoadAttributes (132ms)
+			ProcessInitializeOnLoadMethodAttributes (45ms)
+			AfterProcessingInitializeOnLoad (0ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (0ms)
+========================================================================
+Worker process is ready to serve import requests
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.217 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.325 seconds
+Domain Reload Profiling: 541ms
+	BeginReloadAssembly (146ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (5ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (34ms)
+	RebuildCommonClasses (33ms)
+	RebuildNativeTypeToScriptingClass (10ms)
+	initialDomainReloadingComplete (21ms)
+	LoadAllAssembliesAndSetupDomain (6ms)
+		LoadAssemblies (74ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (4ms)
+			TypeCache.Refresh (3ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (0ms)
+	FinalizeReload (325ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (187ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (6ms)
+			SetLoadedEditorAssemblies (5ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (25ms)
+			ProcessInitializeOnLoadAttributes (128ms)
+			ProcessInitializeOnLoadMethodAttributes (18ms)
+			AfterProcessingInitializeOnLoad (6ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (6ms)
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.06 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 3 unused Assets / (39.8 KB). Loaded Objects now: 477.
+Memory consumption went from 45.7 MB to 45.7 MB.
+Total: 5.726500 ms (FindLiveObjects: 0.058000 ms CreateObjectMapping: 0.004200 ms MarkObjects: 5.531800 ms  DeleteObjects: 0.130300 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 1118877.143079 seconds.
+  path: Assets/Tileset/Action Pack - CITY
+  artifactKey: Guid(31d9f28ebf38f004e9c74690e46e9997) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Action Pack - CITY using Guid(31d9f28ebf38f004e9c74690e46e9997) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6631232dd4287d0a53992df8518f3996') in 0.005220 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 1.259773 seconds.
+  path: Assets/Tileset/Action Pack - CITY/Assets/Assets_City_0.asset
+  artifactKey: Guid(4ca9939e2d8f2594e9b658989ca2826e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Action Pack - CITY/Assets/Assets_City_0.asset using Guid(4ca9939e2d8f2594e9b658989ca2826e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a0a60ac11f7676137361720bdd2d1171') in 0.107485 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Tileset/Action Pack - CITY/Assets/Assets_City_6.asset
+  artifactKey: Guid(6776b5590bce5504ab9e088648a08f8a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Action Pack - CITY/Assets/Assets_City_6.asset using Guid(6776b5590bce5504ab9e088648a08f8a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '17d56855dc4f7e3e0d48fa584c278a1f') in 0.008974 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Tileset/Action Pack - CITY/Assets/Assets_City_96.asset
+  artifactKey: Guid(ee2e44e6a823e3641b11ac3f1c5eddd2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Action Pack - CITY/Assets/Assets_City_96.asset using Guid(ee2e44e6a823e3641b11ac3f1c5eddd2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '80ebf6701b60053e0cbc048b6983f783') in 0.008904 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Tileset/Action Pack - CITY/Assets/Assets_City_68.asset
+  artifactKey: Guid(8f9a5cfa9e529e940b52d7dc49f2e02b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Action Pack - CITY/Assets/Assets_City_68.asset using Guid(8f9a5cfa9e529e940b52d7dc49f2e02b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cba53237ab56f5660a0db8af0c978a3f') in 0.008670 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Tileset/Action Pack - CITY/Assets/Assets_City_62.asset
+  artifactKey: Guid(7587bac74d0662e48a6531ffe0f2430a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Action Pack - CITY/Assets/Assets_City_62.asset using Guid(7587bac74d0662e48a6531ffe0f2430a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '56d0082742919dfb94b2b00d162565b5') in 0.008445 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Tileset/Action Pack - CITY/Assets/Assets_City_29.asset
+  artifactKey: Guid(45fcfd7b933d5dd449b4db4410e6e5b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Action Pack - CITY/Assets/Assets_City_29.asset using Guid(45fcfd7b933d5dd449b4db4410e6e5b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ccb03bcdcfa54df4eb1bb1e6132e77fa') in 0.008419 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Tileset/Action Pack - CITY/Assets/Assets_City_125.asset
+  artifactKey: Guid(62adaafa32275d24382e4ec50de1295c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Action Pack - CITY/Assets/Assets_City_125.asset using Guid(62adaafa32275d24382e4ec50de1295c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '07c004bc00e1299576938d29d2f8ce17') in 0.011690 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Tileset/Action Pack - CITY/Assets/Assets_City_137.asset
+  artifactKey: Guid(e7ee6b00d8b970d49a96ad1a0f1de76c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Action Pack - CITY/Assets/Assets_City_137.asset using Guid(e7ee6b00d8b970d49a96ad1a0f1de76c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b1d7b3488c627e13c11201b53259e4f4') in 0.009915 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000041 seconds.
+  path: Assets/Tileset/Action Pack - CITY/Assets/Assets_City_69.asset
+  artifactKey: Guid(3bff4ae930888614bbc1f25b02c66de9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Action Pack - CITY/Assets/Assets_City_69.asset using Guid(3bff4ae930888614bbc1f25b02c66de9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fe8c30d54b03066e3f1ecec1c9b505e1') in 0.017854 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Tileset/Action Pack - CITY/Assets/Assets_City_156.asset
+  artifactKey: Guid(966aed5e7415a414089a4fca244c5984) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Action Pack - CITY/Assets/Assets_City_156.asset using Guid(966aed5e7415a414089a4fca244c5984) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0ce82ce5542e9c0050125da86aad89a3') in 0.018536 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Tileset/Action Pack - CITY/Assets/Assets_City_163.asset
+  artifactKey: Guid(99cb1e4de493611479ee287de0aa7d37) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Action Pack - CITY/Assets/Assets_City_163.asset using Guid(99cb1e4de493611479ee287de0aa7d37) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4a9f24c18eaa6cc1f6a0ec10a9ee0986') in 0.015307 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Tileset/Action Pack - CITY/Assets/Assets_City_153.asset
+  artifactKey: Guid(8ef4eed43b6c4b643b02af0506ac172b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Action Pack - CITY/Assets/Assets_City_153.asset using Guid(8ef4eed43b6c4b643b02af0506ac172b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a37d42ad1d0bef1e68571e0543dd0fbb') in 0.016411 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/Tileset/Action Pack - CITY/Assets/Assets_City_111.asset
+  artifactKey: Guid(f7db4d1fdb3aac546b124c64da592b37) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Action Pack - CITY/Assets/Assets_City_111.asset using Guid(f7db4d1fdb3aac546b124c64da592b37) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6b82facbd9320f258b9885f5036669f0') in 0.017676 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Tileset/Action Pack - CITY/Assets/Assets_City_89.asset
+  artifactKey: Guid(b036460376b6aa3449da015b82b7c69b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Action Pack - CITY/Assets/Assets_City_89.asset using Guid(b036460376b6aa3449da015b82b7c69b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '608b57cf221ecb66d243fe3ec62c95a0') in 0.017869 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Tileset/Action Pack - CITY/Assets/Assets_City_98.asset
+  artifactKey: Guid(c3c2326a99a0f864c88c098326daa289) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Action Pack - CITY/Assets/Assets_City_98.asset using Guid(c3c2326a99a0f864c88c098326daa289) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9077eac7c4a3cfac6613266af50dbca9') in 0.009482 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Tileset/Action Pack - CITY/Assets/Assets_City_3.asset
+  artifactKey: Guid(e2797726387b7de40ae8d82a3f3f87f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Action Pack - CITY/Assets/Assets_City_3.asset using Guid(e2797726387b7de40ae8d82a3f3f87f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a28c707b43bdacf4560ec37236cf725b') in 0.009811 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Tileset/Action Pack - CITY/Assets/Assets_City_30.asset
+  artifactKey: Guid(cece76104bb2e03458e0cdf8f51d4c0f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Action Pack - CITY/Assets/Assets_City_30.asset using Guid(cece76104bb2e03458e0cdf8f51d4c0f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '65e104f27c068d20a32990a1adb1cf6d') in 0.008455 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Tileset/Action Pack - CITY/Assets/Assets_City_23.asset
+  artifactKey: Guid(7e3c220b3c4d5fc489d3fa686acbdbb3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Action Pack - CITY/Assets/Assets_City_23.asset using Guid(7e3c220b3c4d5fc489d3fa686acbdbb3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5675817365a9a7072045ac6946fe4241') in 0.007608 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Tileset/Action Pack - CITY/Assets/Assets_City_168.asset
+  artifactKey: Guid(3969f035b9d24094492250caf3069c9d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Action Pack - CITY/Assets/Assets_City_168.asset using Guid(3969f035b9d24094492250caf3069c9d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8052907429e1d425b3810fc917136905') in 0.007953 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Tileset/Action Pack - CITY/Assets/Assets_City_97.asset
+  artifactKey: Guid(bcb9069fa39776e46bdc3a86926fbdda) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Action Pack - CITY/Assets/Assets_City_97.asset using Guid(bcb9069fa39776e46bdc3a86926fbdda) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd5bb37f5f84158281a717d47249a5745') in 0.007852 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Tileset/Action Pack - CITY/Assets/Assets_City_40.asset
+  artifactKey: Guid(7278d92bc9c5fee40896157cc475110f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Action Pack - CITY/Assets/Assets_City_40.asset using Guid(7278d92bc9c5fee40896157cc475110f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f50b66e180ebe2eebcd9bd3681567789') in 0.009167 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Tileset/Action Pack - CITY/Assets/Assets_City_93.asset
+  artifactKey: Guid(633e6fe4d27963e4ea0d5f0297a85d95) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Action Pack - CITY/Assets/Assets_City_93.asset using Guid(633e6fe4d27963e4ea0d5f0297a85d95) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '971cfed6497eeca74ca0bc500b3b2368') in 0.009537 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Tileset/Action Pack - CITY/Assets/Assets_City_20.asset
+  artifactKey: Guid(5a16383835433fb45b07fadd1a5181f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Action Pack - CITY/Assets/Assets_City_20.asset using Guid(5a16383835433fb45b07fadd1a5181f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '47540a9a321f6331f3f3e1c17a8439d7') in 0.009406 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Tileset/Action Pack - CITY/Assets/Assets_City_76.asset
+  artifactKey: Guid(b0836ef16083c9549ab540fa1259558e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Action Pack - CITY/Assets/Assets_City_76.asset using Guid(b0836ef16083c9549ab540fa1259558e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '19580c962e7ec5ab41d5cee07287c163') in 0.008746 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Tileset/Action Pack - CITY/Assets/Assets_City_41.asset
+  artifactKey: Guid(ead2dcc7ced378949a39bf5b933ff0d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Action Pack - CITY/Assets/Assets_City_41.asset using Guid(ead2dcc7ced378949a39bf5b933ff0d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bb2f9eb1acbb835dce9ca4c5d9e5c46a') in 0.008939 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Tileset/Action Pack - CITY/Assets/Assets_City_55.asset
+  artifactKey: Guid(fb199bc36d1df4647af419347c7c7bc2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Action Pack - CITY/Assets/Assets_City_55.asset using Guid(fb199bc36d1df4647af419347c7c7bc2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd07f990ba5539f1b58485c9a6c0b5a5b') in 0.008979 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Tileset/Action Pack - CITY/Assets/Assets_City_39.asset
+  artifactKey: Guid(514be742f05580f4fbbb082583be5162) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Action Pack - CITY/Assets/Assets_City_39.asset using Guid(514be742f05580f4fbbb082583be5162) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '57a4978c50f7acf1efe5bf8658c8992c') in 0.008030 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Tileset/Action Pack - CITY/Assets/Assets_City_54.asset
+  artifactKey: Guid(50fd480f227f9ac4ebdb3b545c3a0030) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Action Pack - CITY/Assets/Assets_City_54.asset using Guid(50fd480f227f9ac4ebdb3b545c3a0030) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2604ececc57a4c72ff2c0f303cf4b04f') in 0.008489 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Tileset/Action Pack - CITY/Assets/Assets_City_70.asset
+  artifactKey: Guid(5b9b2f543a2207a4e8e72761998611ff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Action Pack - CITY/Assets/Assets_City_70.asset using Guid(5b9b2f543a2207a4e8e72761998611ff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0725202e5765ca08b5fc9e3937950260') in 0.008785 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Tileset/Action Pack - CITY/Assets/Assets_City_78.asset
+  artifactKey: Guid(dc1a60704d0ab8c48b80f52998b951ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Action Pack - CITY/Assets/Assets_City_78.asset using Guid(dc1a60704d0ab8c48b80f52998b951ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '23709540e5aedb00a2311139198a55c6') in 0.010410 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Tileset/Action Pack - CITY/Assets/Assets_City_178.asset
+  artifactKey: Guid(89a948632ab09d24792425c127fd531d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Action Pack - CITY/Assets/Assets_City_178.asset using Guid(89a948632ab09d24792425c127fd531d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cceaf4bc93871f766cb861ea736f74fc') in 0.009518 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Tileset/Action Pack - CITY/Assets/Assets_City_45.asset
+  artifactKey: Guid(e96100a82ff75cb4a8af9a0bcc31f52c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Action Pack - CITY/Assets/Assets_City_45.asset using Guid(e96100a82ff75cb4a8af9a0bcc31f52c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'deef215245c3972147b65700cfb0a616') in 0.008862 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Tileset/Action Pack - CITY/Assets/Assets_City_32.asset
+  artifactKey: Guid(456a0dbe572e21d47b2f77e93161581e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Action Pack - CITY/Assets/Assets_City_32.asset using Guid(456a0dbe572e21d47b2f77e93161581e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b4f62b9c930754c3e6dfa9289abd5ca0') in 0.009415 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Tileset/Action Pack - CITY/Assets/Assets_City_59.asset
+  artifactKey: Guid(a8b8ddf899486ac49a51f391462d2650) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Action Pack - CITY/Assets/Assets_City_59.asset using Guid(a8b8ddf899486ac49a51f391462d2650) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3fc055d2bfa8dd73c0d3b47eda16f7ed') in 0.009820 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Tileset/Action Pack - CITY/Assets/Assets_City_37.asset
+  artifactKey: Guid(f02d37e67e045fd43a8755cd708cd0af) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Action Pack - CITY/Assets/Assets_City_37.asset using Guid(f02d37e67e045fd43a8755cd708cd0af) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2cbb552e8e671af771f726226c3660fa') in 0.010568 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Tileset/Action Pack - CITY/Assets/Assets_City_88.asset
+  artifactKey: Guid(eb30dbdf0fc89934dadc863988638ec8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Action Pack - CITY/Assets/Assets_City_88.asset using Guid(eb30dbdf0fc89934dadc863988638ec8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e81f7c4db4fe007913f5a559e952f597') in 0.008672 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Tileset/Action Pack - CITY/Assets/Assets_City_128.asset
+  artifactKey: Guid(7a13a0f0c9c13d74885a9e6f1f6db6d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Action Pack - CITY/Assets/Assets_City_128.asset using Guid(7a13a0f0c9c13d74885a9e6f1f6db6d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aa026f074b8779f441a38775b9b13445') in 0.009746 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Tileset/Action Pack - CITY/Assets/Assets_City_87.asset
+  artifactKey: Guid(0e60425d103f93c4580e5bdac8fa3414) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Action Pack - CITY/Assets/Assets_City_87.asset using Guid(0e60425d103f93c4580e5bdac8fa3414) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '45fa7db5c7b6fc6c546edb63f8f26a6c') in 0.007742 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Tileset/Action Pack - CITY/Assets/Assets_City_42.asset
+  artifactKey: Guid(3b748d3e43391704e886925aa3accd00) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Action Pack - CITY/Assets/Assets_City_42.asset using Guid(3b748d3e43391704e886925aa3accd00) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2193f8f59e1e13605bf87aae98825362') in 0.008877 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Tileset/Action Pack - CITY/Assets/Assets_City_118.asset
+  artifactKey: Guid(57e9db3cf7cac444189348274b78423f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Action Pack - CITY/Assets/Assets_City_118.asset using Guid(57e9db3cf7cac444189348274b78423f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'afdedb69a0c2d9f3217567f2ea28596c') in 0.012773 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Tileset/Action Pack - CITY/Assets/Assets_City_119.asset
+  artifactKey: Guid(94323583952be2d49bba9401c0bda287) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Action Pack - CITY/Assets/Assets_City_119.asset using Guid(94323583952be2d49bba9401c0bda287) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a97a5f301d7c7dbedcf2f45600e0c8bb') in 0.009842 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Tileset/Action Pack - CITY/Assets/Assets_City_152.asset
+  artifactKey: Guid(928631644d7de094092f0d778b95b40c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Action Pack - CITY/Assets/Assets_City_152.asset using Guid(928631644d7de094092f0d778b95b40c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '417fc443d7e40308c68ceb76ec85a383') in 0.009461 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Tileset/Action Pack - CITY/Assets/Assets_City_50.asset
+  artifactKey: Guid(9538953aa158a8b49a5f4a317c818c9c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Action Pack - CITY/Assets/Assets_City_50.asset using Guid(9538953aa158a8b49a5f4a317c818c9c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '960fca66cbdb1b940381a5cd897858b1') in 0.009092 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Tileset/Action Pack - CITY/Assets/Assets_City_123.asset
+  artifactKey: Guid(d2239112a3114444da1846d815e522a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Action Pack - CITY/Assets/Assets_City_123.asset using Guid(d2239112a3114444da1846d815e522a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3265930112a8f47c3605b23a19045985') in 0.009490 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Tileset/Action Pack - CITY/Assets/Assets_City_75.asset
+  artifactKey: Guid(0c15e4d2fefb0a948bdea5235c012344) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Action Pack - CITY/Assets/Assets_City_75.asset using Guid(0c15e4d2fefb0a948bdea5235c012344) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '66899a39364934d74ee3c9d17870c05c') in 0.009776 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Tileset/Action Pack - CITY/Assets/Assets_City_36.asset
+  artifactKey: Guid(e60164a9eed29624da179e26a7038235) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Action Pack - CITY/Assets/Assets_City_36.asset using Guid(e60164a9eed29624da179e26a7038235) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b484ff6daa22376255219f948c2854d4') in 0.009527 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Tileset/Action Pack - CITY/Assets/Assets_City_44.asset
+  artifactKey: Guid(8d8109ad0125466478db435dc77f9ca8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Action Pack - CITY/Assets/Assets_City_44.asset using Guid(8d8109ad0125466478db435dc77f9ca8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1c4db02f4c821f37b71ddb9aa87bb8f8') in 0.004055 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Tileset/Action Pack - CITY/Assets/Assets_City_134.asset
+  artifactKey: Guid(fd35fa1acacc25142a9edc5d37f0d925) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Action Pack - CITY/Assets/Assets_City_134.asset using Guid(fd35fa1acacc25142a9edc5d37f0d925) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c27c8855b3de11fbe11c1cfa4ba0fe32') in 0.008848 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Tileset/Action Pack - CITY/Assets/Assets_City_164.asset
+  artifactKey: Guid(fa886781e83067a479a90c5100bb6526) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Action Pack - CITY/Assets/Assets_City_164.asset using Guid(fa886781e83067a479a90c5100bb6526) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '89eb313d6b7cc413e2f4aa9e8eb9fadf') in 0.008745 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Tileset/Action Pack - CITY/Assets/Assets_City_2.asset
+  artifactKey: Guid(3f6c642154de1ff408a416a3b7a25b8a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Action Pack - CITY/Assets/Assets_City_2.asset using Guid(3f6c642154de1ff408a416a3b7a25b8a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6f0afd6543646c979817b5106b332f0a') in 0.008251 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Tileset/Action Pack - CITY/Assets/Assets_City_155.asset
+  artifactKey: Guid(f3d1b4ddc4fcfee45901b43a4cecaa14) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Action Pack - CITY/Assets/Assets_City_155.asset using Guid(f3d1b4ddc4fcfee45901b43a4cecaa14) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '84f66a6cc200cc5addd43847ae94c9fe') in 0.007631 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Tileset/Action Pack - CITY/Assets/Assets_City_150.asset
+  artifactKey: Guid(93b8173a15c1acd4aaa9c19e856b4632) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Action Pack - CITY/Assets/Assets_City_150.asset using Guid(93b8173a15c1acd4aaa9c19e856b4632) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ac485025056d1edf065280fbb17d3448') in 0.007708 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Tileset/Action Pack - CITY/Assets/Assets_City_22.asset
+  artifactKey: Guid(6a25c5a74a77f514b8444aff398fbafe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Action Pack - CITY/Assets/Assets_City_22.asset using Guid(6a25c5a74a77f514b8444aff398fbafe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1c0ee3786a7ad5b302e3c4a8a6abd782') in 0.009304 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Tileset/Action Pack - CITY/Assets/Assets_City_130.asset
+  artifactKey: Guid(e04ff9f8bb8c72e488fc49ad663526b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Action Pack - CITY/Assets/Assets_City_130.asset using Guid(e04ff9f8bb8c72e488fc49ad663526b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e96d9dae0fc4e9a5d51dda5071185ca7') in 0.009266 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Tileset/Action Pack - CITY/Assets/Assets_City_162.asset
+  artifactKey: Guid(977ea8ee52173d44f9ec964c996a495e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Action Pack - CITY/Assets/Assets_City_162.asset using Guid(977ea8ee52173d44f9ec964c996a495e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3af3497bef60005b2e149e51dd4fbe81') in 0.010051 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Tileset/Action Pack - CITY/Assets/Assets_City_112.asset
+  artifactKey: Guid(d3949a5055252b54f8d2489f8e08f7aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Action Pack - CITY/Assets/Assets_City_112.asset using Guid(d3949a5055252b54f8d2489f8e08f7aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd2e9eafd091c803d6dbcf1275bc625fa') in 0.005943 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Tileset/Action Pack - CITY/Assets/Assets_City_9.asset
+  artifactKey: Guid(03fe4f9225ffaf94e9a785449e4bfa79) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Action Pack - CITY/Assets/Assets_City_9.asset using Guid(03fe4f9225ffaf94e9a785449e4bfa79) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b6b4da577208cc8d45b237630b65248d') in 0.009320 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Tileset/Action Pack - CITY/Assets/Assets_City_139.asset
+  artifactKey: Guid(4f1e0d995ce95084c80e608ad4b42377) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Action Pack - CITY/Assets/Assets_City_139.asset using Guid(4f1e0d995ce95084c80e608ad4b42377) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0ce3db75f7d99bc33e2ef3f96e5333c8') in 0.009693 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Tileset/Action Pack - CITY/Assets/Assets_City_117.asset
+  artifactKey: Guid(dd428861dfb5e204faeeaf35e3833166) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Action Pack - CITY/Assets/Assets_City_117.asset using Guid(dd428861dfb5e204faeeaf35e3833166) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2807941ab35a49734369fce2aa0edf10') in 0.008418 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Tileset/Action Pack - CITY/Assets/Assets_City_157.asset
+  artifactKey: Guid(2251055c546c1de46a7d10c16b4f5f51) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Action Pack - CITY/Assets/Assets_City_157.asset using Guid(2251055c546c1de46a7d10c16b4f5f51) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cba91d1aaa300e0ff055cae53ba5e9a3') in 0.004124 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000012 seconds.
+  path: Assets/Tileset/Action Pack - CITY/Assets/Assets_City_19.asset
+  artifactKey: Guid(897cd7f6a80184a419bb28a27012f0bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Action Pack - CITY/Assets/Assets_City_19.asset using Guid(897cd7f6a80184a419bb28a27012f0bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '851aa29d11072225a6ab035741e8f3b3') in 0.008174 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Tileset/Action Pack - CITY/Assets/Assets_City_77.asset
+  artifactKey: Guid(caab6a78ffa91994181909680069ec44) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Action Pack - CITY/Assets/Assets_City_77.asset using Guid(caab6a78ffa91994181909680069ec44) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1a95e214702bb2cfc100cdfbc3f18fbc') in 0.012643 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Tileset/Action Pack - CITY/Assets/Assets_City_144.asset
+  artifactKey: Guid(d3fb302816495e24b8c87c1fd84364c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Action Pack - CITY/Assets/Assets_City_144.asset using Guid(d3fb302816495e24b8c87c1fd84364c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a45e3d9d1d85a6e44568f506598bfa6b') in 0.011690 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Tileset/Action Pack - CITY/Assets/Assets_City_122.asset
+  artifactKey: Guid(fea89f7b6f1bed540a71712c021c539e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Action Pack - CITY/Assets/Assets_City_122.asset using Guid(fea89f7b6f1bed540a71712c021c539e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '772b1303b66d58ef462abe73291e1a7a') in 0.010391 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Tileset/Action Pack - CITY/Assets/Assets_City_103.asset
+  artifactKey: Guid(5cf8093d2d13a3046b583d61be3c9e26) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Action Pack - CITY/Assets/Assets_City_103.asset using Guid(5cf8093d2d13a3046b583d61be3c9e26) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ef7f9baed74aea3b287bc06b981b1213') in 0.012076 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Tileset/Action Pack - CITY/Assets/Assets_City_43.asset
+  artifactKey: Guid(98edcfe5f6550ea4ea46abdabd1bf67f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Action Pack - CITY/Assets/Assets_City_43.asset using Guid(98edcfe5f6550ea4ea46abdabd1bf67f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c36f6b079a00b8b1f940b163ee908643') in 0.008261 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Tileset/Action Pack - CITY/Assets/Assets_City_138.asset
+  artifactKey: Guid(f7cab50f4fad50b4aa3635ada249426e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Action Pack - CITY/Assets/Assets_City_138.asset using Guid(f7cab50f4fad50b4aa3635ada249426e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '94097235baccfdf89524ab61ac2f026f') in 0.008177 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Tileset/Action Pack - CITY/Assets/Assets_City_72.asset
+  artifactKey: Guid(bcc125ced6d93b5419a35b742b72e459) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Action Pack - CITY/Assets/Assets_City_72.asset using Guid(bcc125ced6d93b5419a35b742b72e459) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '188366b78b37cc101dc98c986ecff673') in 0.008819 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Tileset/Action Pack - CITY/Assets/Assets_City_113.asset
+  artifactKey: Guid(4f14e8dc30ad4894d9712680607468ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Action Pack - CITY/Assets/Assets_City_113.asset using Guid(4f14e8dc30ad4894d9712680607468ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fcdcc271f297403ce6cfed38478e9390') in 0.008550 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Tileset/Action Pack - CITY/Assets/Assets_City_14.asset
+  artifactKey: Guid(91cf3ae16e926d04e84a2ec1365f86f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Action Pack - CITY/Assets/Assets_City_14.asset using Guid(91cf3ae16e926d04e84a2ec1365f86f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0a9e435ccce6264f3b2068103f40d245') in 0.010774 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Tileset/Action Pack - CITY/Assets/Assets_City_86.asset
+  artifactKey: Guid(8e044a27d2d193e4a9bc0cc73cf0ae04) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Action Pack - CITY/Assets/Assets_City_86.asset using Guid(8e044a27d2d193e4a9bc0cc73cf0ae04) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9485639c138d5ce7b9f1ae532db1c5b2') in 0.010427 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Tileset/Action Pack - CITY/Assets/Assets_City_73.asset
+  artifactKey: Guid(e4e494e031624304b9cadd5ab919a12f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Action Pack - CITY/Assets/Assets_City_73.asset using Guid(e4e494e031624304b9cadd5ab919a12f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4fbb2ad85d9527570b4f49c16cb87d84') in 0.009335 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/Tileset/Action Pack - CITY/Assets/Assets_City_147.asset
+  artifactKey: Guid(fd79a8a4b68064d4198b7a382248cf12) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Action Pack - CITY/Assets/Assets_City_147.asset using Guid(fd79a8a4b68064d4198b7a382248cf12) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '982e38dfd148dd0443f493cd1f6a6bf6') in 0.011500 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Tileset/Action Pack - CITY/Assets/Assets_City_179.asset
+  artifactKey: Guid(8faf7e1f54bcb114cb1a329297bac9bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Action Pack - CITY/Assets/Assets_City_179.asset using Guid(8faf7e1f54bcb114cb1a329297bac9bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd943b856396d67da6bcb8651eb32769c') in 0.009767 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Tileset/Action Pack - CITY/Assets/Assets_City_21.asset
+  artifactKey: Guid(448f9548bd8fe3c4b93ce815714637bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Action Pack - CITY/Assets/Assets_City_21.asset using Guid(448f9548bd8fe3c4b93ce815714637bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1b97b23b60561c04a81f2f9227bc92cc') in 0.009010 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Tileset/Action Pack - CITY/Assets/Assets_City_80.asset
+  artifactKey: Guid(c7d1d654453fc2f4e9ebf9ea3c6a433a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Action Pack - CITY/Assets/Assets_City_80.asset using Guid(c7d1d654453fc2f4e9ebf9ea3c6a433a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '474ac493022265475829f5141bd074ad') in 0.010184 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Tileset/Action Pack - CITY/Assets/Assets_City_8.asset
+  artifactKey: Guid(d749fca9389542946ab1048a21f59c97) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Action Pack - CITY/Assets/Assets_City_8.asset using Guid(d749fca9389542946ab1048a21f59c97) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '74064de81f1119c2a2113a35c6eb4b66') in 0.008271 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Tileset/Action Pack - CITY/Assets/Assets_City_148.asset
+  artifactKey: Guid(a17fbc466b3d855408066675d4036b90) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Action Pack - CITY/Assets/Assets_City_148.asset using Guid(a17fbc466b3d855408066675d4036b90) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '368148d7ce62b6e35e8f6fd077a5b685') in 0.008067 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Tileset/Action Pack - CITY/Assets/Assets_City_31.asset
+  artifactKey: Guid(52fbffc0a68ac8e4ab8359545ea12a8c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Action Pack - CITY/Assets/Assets_City_31.asset using Guid(52fbffc0a68ac8e4ab8359545ea12a8c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6641d467f774d0267663bdb3d1c2e26f') in 0.008384 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Tileset/Action Pack - CITY/Assets/Assets_City_35.asset
+  artifactKey: Guid(8b95167d80866b7458372e8d8fb4a578) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Action Pack - CITY/Assets/Assets_City_35.asset using Guid(8b95167d80866b7458372e8d8fb4a578) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '737d9215d053732801b336bd9090180e') in 0.009485 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Tileset/Action Pack - CITY/Assets/Assets_City_12.asset
+  artifactKey: Guid(521c2b7725af6d44e87cb69d99bb4b82) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Action Pack - CITY/Assets/Assets_City_12.asset using Guid(521c2b7725af6d44e87cb69d99bb4b82) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7aaa8c89621efd7c72f7ba0c04942da3') in 0.008455 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Tileset/Action Pack - CITY/Assets/Assets_City_67.asset
+  artifactKey: Guid(60874baa3d2c7654abafea28b5ff2c5d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Action Pack - CITY/Assets/Assets_City_67.asset using Guid(60874baa3d2c7654abafea28b5ff2c5d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eec51cb7118a58b1c0b0602fd7643588') in 0.008176 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Tileset/Action Pack - CITY/Assets/Assets_City_33.asset
+  artifactKey: Guid(3f321d1d15b0f4445b00f22767a4ade3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Action Pack - CITY/Assets/Assets_City_33.asset using Guid(3f321d1d15b0f4445b00f22767a4ade3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'feda23ef70b12842f94be156b976dc89') in 0.009070 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Tileset/Action Pack - CITY/Assets/Assets_City_63.asset
+  artifactKey: Guid(1bf682431192c3a4bacf89c69b5c48b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Action Pack - CITY/Assets/Assets_City_63.asset using Guid(1bf682431192c3a4bacf89c69b5c48b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '417c14d3a0b784706f0cd035c393e0de') in 0.010542 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Tileset/Action Pack - CITY/Assets/Assets_City_106.asset
+  artifactKey: Guid(dc3f0597e8ad8a640ba1d06eedcfe45e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Action Pack - CITY/Assets/Assets_City_106.asset using Guid(dc3f0597e8ad8a640ba1d06eedcfe45e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e30ec30df85f7d52693da009619391ce') in 0.010245 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Tileset/Action Pack - CITY/Assets/Assets_City_183.asset
+  artifactKey: Guid(f44c22f01ed377e41bcbd3f78d1fd90b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Action Pack - CITY/Assets/Assets_City_183.asset using Guid(f44c22f01ed377e41bcbd3f78d1fd90b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dde8727835092ca8adfba4266b9cc707') in 0.008914 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Tileset/Action Pack - CITY/Assets/Assets_City_74.asset
+  artifactKey: Guid(3622fed66db2c6040911c17414ca7d6e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Action Pack - CITY/Assets/Assets_City_74.asset using Guid(3622fed66db2c6040911c17414ca7d6e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9c81da9b3459c39563150a3244ff4bd1') in 0.009843 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Tileset/Action Pack - CITY/Assets/Assets_City_25.asset
+  artifactKey: Guid(9829e22332864924ba9173f661a8dd9f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Action Pack - CITY/Assets/Assets_City_25.asset using Guid(9829e22332864924ba9173f661a8dd9f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c9115e20d8515bb3e7104f4253bd492d') in 0.008674 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Tileset/Action Pack - CITY/Assets/Assets_City_24.asset
+  artifactKey: Guid(eedb47b9a6cfc1740885227941bf8863) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Action Pack - CITY/Assets/Assets_City_24.asset using Guid(eedb47b9a6cfc1740885227941bf8863) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '205576d774491320afe81e1c3ef20aa8') in 0.007860 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Tileset/Action Pack - CITY/Assets/Assets_City_140.asset
+  artifactKey: Guid(4bbdf0daa56e92c42a871dbd1fdfdb05) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Action Pack - CITY/Assets/Assets_City_140.asset using Guid(4bbdf0daa56e92c42a871dbd1fdfdb05) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '650a0c63e566630e9a9543a558626ce8') in 0.011640 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Tileset/Action Pack - CITY/Assets/Assets_City_13.asset
+  artifactKey: Guid(2d563a1e31966e6448fc7de3a5bea516) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Action Pack - CITY/Assets/Assets_City_13.asset using Guid(2d563a1e31966e6448fc7de3a5bea516) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '14e187bc49d6d678d2d12f2d5afa599c') in 0.009903 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Tileset/Action Pack - CITY/Assets/Assets_City_160.asset
+  artifactKey: Guid(9eb2e803f0faf8046a6a41da9f250cfa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Action Pack - CITY/Assets/Assets_City_160.asset using Guid(9eb2e803f0faf8046a6a41da9f250cfa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bba85ba066fe26afb45727ed26c45388') in 0.011514 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Tileset/Action Pack - CITY/Assets/Assets_City_107.asset
+  artifactKey: Guid(9e795053cac410d4db9728e0bff1bd45) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Action Pack - CITY/Assets/Assets_City_107.asset using Guid(9e795053cac410d4db9728e0bff1bd45) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bd6170bb584394fb7c40379f623320e5') in 0.011644 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Tileset/Action Pack - CITY/Assets/Assets_City_172.asset
+  artifactKey: Guid(e8c3a6f7180377a4087b962c177b452d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Action Pack - CITY/Assets/Assets_City_172.asset using Guid(e8c3a6f7180377a4087b962c177b452d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9464b692db0e530bd3af7f52e573be70') in 0.008481 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Tileset/Action Pack - CITY/Assets/Assets_City_17.asset
+  artifactKey: Guid(9670ae8fda26cb140908bf069d874d6d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Action Pack - CITY/Assets/Assets_City_17.asset using Guid(9670ae8fda26cb140908bf069d874d6d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '101662b07854df12ce50cf14ec428bb1') in 0.008917 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Tileset/Action Pack - CITY/Assets/Assets_City_84.asset
+  artifactKey: Guid(0e96a4d64f17a3a428bf489d58d3898b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Action Pack - CITY/Assets/Assets_City_84.asset using Guid(0e96a4d64f17a3a428bf489d58d3898b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6fb73440d6c9f93ce77ec16744513f78') in 0.009959 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Tileset/Action Pack - CITY/Assets/Assets_City_1.asset
+  artifactKey: Guid(bc296bcce06eab44185fbc83dd6f3c48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Action Pack - CITY/Assets/Assets_City_1.asset using Guid(bc296bcce06eab44185fbc83dd6f3c48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9731075a73dd943a9ea545d79624c57f') in 0.008932 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Tileset/Action Pack - CITY/Assets/Assets_City_127.asset
+  artifactKey: Guid(1dd68259f67a581469e5117c5cb99d19) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Action Pack - CITY/Assets/Assets_City_127.asset using Guid(1dd68259f67a581469e5117c5cb99d19) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fc4ece7b64519364f7c11d44631e92c6') in 0.009449 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Tileset/Action Pack - CITY/Assets/Assets_City_48.asset
+  artifactKey: Guid(761a0fe692058b9418b9b72c89f2af10) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Action Pack - CITY/Assets/Assets_City_48.asset using Guid(761a0fe692058b9418b9b72c89f2af10) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '65735ce1cd6e3ba249d15063c04b76b1') in 0.009962 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Tileset/Action Pack - CITY/Assets/Assets_City_95.asset
+  artifactKey: Guid(117950a321d2f8e4bacd5af6d651f8de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Action Pack - CITY/Assets/Assets_City_95.asset using Guid(117950a321d2f8e4bacd5af6d651f8de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cf5a71e2475411cf3ca4274d87f0f325') in 0.004150 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Tileset/Action Pack - CITY/Assets/Assets_City_4.asset
+  artifactKey: Guid(eea78963d7ce03941bbc696f23003ecb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Action Pack - CITY/Assets/Assets_City_4.asset using Guid(eea78963d7ce03941bbc696f23003ecb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e616dcfb76ed88d0863945636891354d') in 0.008191 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Tileset/Action Pack - CITY/Assets/Assets_City_159.asset
+  artifactKey: Guid(94d0937c7aec99b479f1310c00d70e5e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Action Pack - CITY/Assets/Assets_City_159.asset using Guid(94d0937c7aec99b479f1310c00d70e5e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5d52d1bffb45b588037f163ad7b6c6f6') in 0.009636 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Tileset/Action Pack - CITY/Assets/Assets_City_66.asset
+  artifactKey: Guid(eb5af6d6eac67f64093c622e97529585) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Action Pack - CITY/Assets/Assets_City_66.asset using Guid(eb5af6d6eac67f64093c622e97529585) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dc1b350098ec8b2b33a347bc151f21de') in 0.009310 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Tileset/Action Pack - CITY/Assets/Assets_City_38.asset
+  artifactKey: Guid(e9e3bab8c1d12e8408a039655726f903) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Action Pack - CITY/Assets/Assets_City_38.asset using Guid(e9e3bab8c1d12e8408a039655726f903) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '24f05e88710951080bb91dac4d81b621') in 0.009220 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Tileset/Action Pack - CITY/Assets/Assets_City_56.asset
+  artifactKey: Guid(a39565d86c27aea42966ca25a7a05352) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Action Pack - CITY/Assets/Assets_City_56.asset using Guid(a39565d86c27aea42966ca25a7a05352) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6b434d810a256e0761762ede71ad78bf') in 0.008945 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 3.782234 seconds.
+  path: Assets/Tileset/Walls/Assets_City_3.asset
+  artifactKey: Guid(9a7fd7983499bc94d9280b4124efd5e6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Walls/Assets_City_3.asset using Guid(9a7fd7983499bc94d9280b4124efd5e6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '679129a6d2631705c2623951996a08c3') in 0.005660 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Tileset/Walls/Assets_City_12.asset
+  artifactKey: Guid(e80a25059f7f77747b3409e6bf1c3bf2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Walls/Assets_City_12.asset using Guid(e80a25059f7f77747b3409e6bf1c3bf2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd502d6c2081d16a502a68c2ab68e967a') in 0.005253 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Tileset/Walls/Assets_City_26.asset
+  artifactKey: Guid(0acece88c51cb2345b042554ba198600) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Walls/Assets_City_26.asset using Guid(0acece88c51cb2345b042554ba198600) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '504bb19a5d47ee703d7bf4c7bc26ca4c') in 0.004863 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Tileset/Walls/Assets_City_33.asset
+  artifactKey: Guid(883bf23945dd7d84b8ea72d09bc1205d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Walls/Assets_City_33.asset using Guid(883bf23945dd7d84b8ea72d09bc1205d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '211129a3ffc34e80a9c5422e2ea055ac') in 0.004905 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Tileset/Walls/Assets_City_38.asset
+  artifactKey: Guid(5e7fceacda4e06f449497007f707cb36) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Walls/Assets_City_38.asset using Guid(5e7fceacda4e06f449497007f707cb36) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9af2aaf777de15f6e6d69bea22d2e497') in 0.004694 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Tileset/Walls/Assets_City_43.asset
+  artifactKey: Guid(c62d6376b39a906419779fe922165774) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Walls/Assets_City_43.asset using Guid(c62d6376b39a906419779fe922165774) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8a44766270203a080999ce265b579a70') in 0.005247 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Tileset/Walls/Assets_City_49.asset
+  artifactKey: Guid(c6c1ff4e8dfc1694ebbaa0f18f682d3e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Walls/Assets_City_49.asset using Guid(c6c1ff4e8dfc1694ebbaa0f18f682d3e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ce122f472c96ad08f4435d93d7962d74') in 0.005486 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Tileset/Walls/Assets_City_63.asset
+  artifactKey: Guid(058d4c04dcfba454391d0d369738f775) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Walls/Assets_City_63.asset using Guid(058d4c04dcfba454391d0d369738f775) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cae2c3e7ff4957416342f131f74b2c18') in 0.005174 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Tileset/Walls/Assets_City_58.asset
+  artifactKey: Guid(1f39ad9c55947c54b96de5df5574225c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Walls/Assets_City_58.asset using Guid(1f39ad9c55947c54b96de5df5574225c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b1f1048a21cf511329ee1bbc51e18df7') in 0.004893 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Tileset/Walls/Assets_City_74.asset
+  artifactKey: Guid(e6f27c5bda2d2a342ab868afcb5972a1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Walls/Assets_City_74.asset using Guid(e6f27c5bda2d2a342ab868afcb5972a1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '83e55581a08164bb2b2fb7583fd2b8c7') in 0.004788 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Tileset/Walls/Assets_City_81.asset
+  artifactKey: Guid(82dfac1e950ddfb42b4e51aff5522dd5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Walls/Assets_City_81.asset using Guid(82dfac1e950ddfb42b4e51aff5522dd5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fe5d1eb65c4777e3aeaf9d4cd118c289') in 0.004681 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000012 seconds.
+  path: Assets/Tileset/Walls/Assets_City_84.asset
+  artifactKey: Guid(76a85d25ded715c45af6f387c53c3755) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Walls/Assets_City_84.asset using Guid(76a85d25ded715c45af6f387c53c3755) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3770638463e915761f5e07601809af44') in 0.004726 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Tileset/Walls/Assets_City_90.asset
+  artifactKey: Guid(76b1262d266b7934fa41d3fb74da7a97) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Walls/Assets_City_90.asset using Guid(76b1262d266b7934fa41d3fb74da7a97) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd7111a1460d5785ee1a7600e282f8695') in 0.004572 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Tileset/Walls/Assets_City_94.asset
+  artifactKey: Guid(5316ef04593ea9546bc73f69b679753f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Walls/Assets_City_94.asset using Guid(5316ef04593ea9546bc73f69b679753f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f612a00c48ce0c911fa9426e8796eed6') in 0.005333 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Tileset/Walls/Assets_City_102.asset
+  artifactKey: Guid(c72b0c59d6a7d3b4a880a218a3a5ba98) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Walls/Assets_City_102.asset using Guid(c72b0c59d6a7d3b4a880a218a3a5ba98) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c54429c936abe4eb749a026864d13261') in 0.005562 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Tileset/Walls/Assets_City_105.asset
+  artifactKey: Guid(1a832abf70612cf4299c768f5cb417d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Walls/Assets_City_105.asset using Guid(1a832abf70612cf4299c768f5cb417d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1144acf84ef9d161f1ae70c67e78e7ba') in 0.007169 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Tileset/Walls/Assets_City_117.asset
+  artifactKey: Guid(1e628621a353c85418c28f24ed1a06cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Walls/Assets_City_117.asset using Guid(1e628621a353c85418c28f24ed1a06cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dd3756c732ebd5e56fbe98a2afdbe56c') in 0.005034 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Tileset/Walls/Assets_City_123.asset
+  artifactKey: Guid(6db1ce0a3b342a343b87410685fb6bb3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Walls/Assets_City_123.asset using Guid(6db1ce0a3b342a343b87410685fb6bb3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '45177f2ffd73d3f8e06e24cf08eb1b34') in 0.004921 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Tileset/Walls/Assets_City_115.asset
+  artifactKey: Guid(36e44e5bced2e454dabf8408596fd053) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Walls/Assets_City_115.asset using Guid(36e44e5bced2e454dabf8408596fd053) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f84e27154034dbe1b1ff8f19a0e4e1d8') in 0.005963 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Tileset/Walls/Assets_City_134.asset
+  artifactKey: Guid(087f1e47f690666419745109f0f3bf2a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Walls/Assets_City_134.asset using Guid(087f1e47f690666419745109f0f3bf2a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f53988649c2cc768aebb4ca544761f5d') in 0.008235 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Tileset/Walls/Assets_City_57.asset
+  artifactKey: Guid(bb8357a7a99c8944abb47bed6cf94a93) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Walls/Assets_City_57.asset using Guid(bb8357a7a99c8944abb47bed6cf94a93) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '61a29126bfd5909b59022ab42e852f6b') in 0.005773 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Tileset/Walls/Assets_City_147.asset
+  artifactKey: Guid(d527f7d966a70924eb321e2d4bfa1d21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Walls/Assets_City_147.asset using Guid(d527f7d966a70924eb321e2d4bfa1d21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3a90382255598a465057c2057342353d') in 0.005192 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Tileset/Walls/Assets_City_89.asset
+  artifactKey: Guid(67880f30d4cb7ac4aabaf42d436fd59d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Walls/Assets_City_89.asset using Guid(67880f30d4cb7ac4aabaf42d436fd59d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cfd311be0354456abd2af5a1ac02e700') in 0.004747 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Tileset/Walls/Assets_City_157.asset
+  artifactKey: Guid(e99ae0789ef54484a81a47160cee05e6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Walls/Assets_City_157.asset using Guid(e99ae0789ef54484a81a47160cee05e6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3149265b2510134b8f7ce19e35a67bd7') in 0.008583 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Tileset/Walls/Assets_City_167.asset
+  artifactKey: Guid(67f513aeaf525894593b866953bc1e55) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Walls/Assets_City_167.asset using Guid(67f513aeaf525894593b866953bc1e55) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5093e598c611f6c8eb5cdd68fb375045') in 0.005404 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Tileset/Walls/Assets_City_173.asset
+  artifactKey: Guid(1bbba6c2c082ee248a6adec69461e7c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Walls/Assets_City_173.asset using Guid(1bbba6c2c082ee248a6adec69461e7c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5f4defa5510c547bf24fe15711794cbe') in 0.005083 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Tileset/Walls/Assets_City_111.asset
+  artifactKey: Guid(dc521c2e6fce06849b4756e5dd8a0eb7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Walls/Assets_City_111.asset using Guid(dc521c2e6fce06849b4756e5dd8a0eb7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '141424296d56587f459af1577470ac20') in 0.005192 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Tileset/Walls/Assets_City_96.asset
+  artifactKey: Guid(2f23f3a2dfc463a4dac2e48995b569af) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Walls/Assets_City_96.asset using Guid(2f23f3a2dfc463a4dac2e48995b569af) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bdfbb213b86bb86ff7178bf38759068a') in 0.023723 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Tileset/Walls/Assets_City_165.asset
+  artifactKey: Guid(a082899f4491bd14dafa5c185fe71a54) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Walls/Assets_City_165.asset using Guid(a082899f4491bd14dafa5c185fe71a54) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd6129d9b05e0157562b17f60c13178c5') in 0.004989 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Tileset/Walls/Assets_City_47.asset
+  artifactKey: Guid(4277da72f69dcb847ad495ff2afdc12f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Walls/Assets_City_47.asset using Guid(4277da72f69dcb847ad495ff2afdc12f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd49e1253520de17174912ffd6eedde2e') in 0.009551 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Tileset/Walls/Assets_City_34.asset
+  artifactKey: Guid(0008368457510e946b55f6312d2b9d6a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Walls/Assets_City_34.asset using Guid(0008368457510e946b55f6312d2b9d6a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd8b520df5388c8d3015107d8f957ae2c') in 0.022878 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Tileset/Walls/Assets_City_112.asset
+  artifactKey: Guid(4fb18ad40eee21240b5754179b1bd159) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Walls/Assets_City_112.asset using Guid(4fb18ad40eee21240b5754179b1bd159) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '12e2e96f429a0da444d2ae344e5d442d') in 0.004011 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Tileset/Walls/Assets_City_143.asset
+  artifactKey: Guid(6f6547b3c228fc149b40b0527bd77eee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Walls/Assets_City_143.asset using Guid(6f6547b3c228fc149b40b0527bd77eee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ea9333a233022fa9e9c55f8cee3de78b') in 0.004220 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Tileset/Walls/Assets_City_146.asset
+  artifactKey: Guid(43befba719a462949b38d4629d2ba069) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Walls/Assets_City_146.asset using Guid(43befba719a462949b38d4629d2ba069) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a17368a27cfdd9fab4102a22880a8709') in 0.003892 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Tileset/Walls/Assets_City_101.asset
+  artifactKey: Guid(b290fc126335f964aa0e0861f12a25c6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Walls/Assets_City_101.asset using Guid(b290fc126335f964aa0e0861f12a25c6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dbcf6179bbc7bb038da7993c46eeeb51') in 0.004478 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Tileset/Walls/Assets_City_19.asset
+  artifactKey: Guid(5e1e6f9c7a4d1e14f9e0c48896b4f1d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Walls/Assets_City_19.asset using Guid(5e1e6f9c7a4d1e14f9e0c48896b4f1d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9220f2104317b92a510a628115d71e88') in 0.004260 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000048 seconds.
+  path: Assets/Tileset/Walls/Assets_City_69.asset
+  artifactKey: Guid(a4debf8250f32014486450f5083aff75) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Walls/Assets_City_69.asset using Guid(a4debf8250f32014486450f5083aff75) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '492ed12c33e13d8c3a2eecf986ec4b08') in 0.004064 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Tileset/Walls/Assets_City_150.asset
+  artifactKey: Guid(930d2665e1a21f74aa202ab17d1ef19f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Walls/Assets_City_150.asset using Guid(930d2665e1a21f74aa202ab17d1ef19f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '18f31d2daac150278ccc7856e907616f') in 0.009897 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Tileset/Walls/Assets_City_48.asset
+  artifactKey: Guid(7639b73b03476b446bb1df926d893220) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Walls/Assets_City_48.asset using Guid(7639b73b03476b446bb1df926d893220) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c84efa0150099c819f28554e26a2dc86') in 0.003780 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Tileset/Walls/Assets_City_66.asset
+  artifactKey: Guid(dc3c123f8f8ace44a9d14e96d8c6fce4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Walls/Assets_City_66.asset using Guid(dc3c123f8f8ace44a9d14e96d8c6fce4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4f371777312558634a54e6b1392d43d4') in 0.004015 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Tileset/Walls/Assets_City_120.asset
+  artifactKey: Guid(f0547c141cd8550498122e60fbbfca48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Walls/Assets_City_120.asset using Guid(f0547c141cd8550498122e60fbbfca48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '32f4a3120e64fb7d655bd5329ad5ea42') in 0.004202 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Tileset/Walls/Assets_City_127.asset
+  artifactKey: Guid(535a751bb2d42934aa69e275bb5348e6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Walls/Assets_City_127.asset using Guid(535a751bb2d42934aa69e275bb5348e6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5e8e0d1a8b268eeff73ef17f26570b7f') in 0.004054 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Tileset/Walls/Assets_City_39.asset
+  artifactKey: Guid(776ab4f7e80a10540893bb6e32d41aff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Tileset/Walls/Assets_City_39.asset using Guid(776ab4f7e80a10540893bb6e32d41aff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd56c32cd98076335f2838f0afe27a1ea') in 0.003703 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
