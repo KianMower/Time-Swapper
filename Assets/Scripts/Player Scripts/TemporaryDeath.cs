@@ -24,6 +24,7 @@ public class TemporaryDeath : MonoBehaviour
 
     public void death()
     {
+        Debug.Log("death ran");
         SceneManager.LoadScene("TemporaryMenu");
     }
 }
