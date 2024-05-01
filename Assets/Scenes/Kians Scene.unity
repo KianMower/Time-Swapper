@@ -264,6 +264,7 @@ GameObject:
   - component: {fileID: 375460844}
   - component: {fileID: 375460846}
   - component: {fileID: 375460845}
+  - component: {fileID: 375460847}
   m_Layer: 5
   m_Name: Cogs
   m_TagString: Untagged
@@ -287,7 +288,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 9.76, y: -5.07}
+  m_AnchoredPosition: {x: 9.852, y: -4.978}
   m_SizeDelta: {x: 576.1027, y: 576.1027}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &375460845
@@ -328,6 +329,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 375460843}
   m_CullTransparentMesh: 1
+--- !u!95 &375460847
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 375460843}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c99bcc7ec35d88442bbeaef47590d390, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &403871591
 GameObject:
   m_ObjectHideFlags: 0
@@ -460,7 +482,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 9.836609, y: 5.0527344}
+  m_AnchoredPosition: {x: 9.85, y: 5.136}
   m_SizeDelta: {x: 426.38, y: 426.38}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &484816668
@@ -473,7 +495,7 @@ Animator:
   m_GameObject: {fileID: 484816666}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 6deda440ebf321c4299cca757858a1c7, type: 2}
+  m_Controller: {fileID: 9100000, guid: 60a400e179e5bd14e8c9ea37d321051f, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -875,6 +897,7 @@ GameObject:
   - component: {fileID: 1665268721}
   - component: {fileID: 1665268723}
   - component: {fileID: 1665268722}
+  - component: {fileID: 1665268724}
   m_Layer: 5
   m_Name: Cogs
   m_TagString: Untagged
@@ -898,7 +921,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -11.35, y: 4.89}
+  m_AnchoredPosition: {x: -11.526, y: 5.14}
   m_SizeDelta: {x: 343.2009, y: 343.2009}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1665268722
@@ -939,6 +962,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1665268720}
   m_CullTransparentMesh: 1
+--- !u!95 &1665268724
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1665268720}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c99bcc7ec35d88442bbeaef47590d390, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1762809682
 GameObject:
   m_ObjectHideFlags: 0
