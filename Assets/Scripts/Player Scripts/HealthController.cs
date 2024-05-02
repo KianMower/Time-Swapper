@@ -55,16 +55,14 @@ public class HealthController : MonoBehaviour
 
             }
 
-            else
+            if(respawnTimeZone == "future")
             {
                 health = maxHealth;
+                timeSwitcher.inFuture = true;
                 playerCam.transform.position = respawnPos;
                 transform.position = respawnPos;
-                timeSwitcher.inFuture = true;
                 Debug.Log(timeSwitcher.inFuture);
             }
-
-
         }
     }
 }
