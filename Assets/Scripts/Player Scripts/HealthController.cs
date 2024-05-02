@@ -12,6 +12,12 @@ public class HealthController : MonoBehaviour
     public float microchipsCollected;
     [SerializeField] Scrollbar healthBar;
 
+    //Checkpoint values
+    public FuturePresentSwitcher timeSwitcher;
+    public Vector3 respawnPos;
+    public GameObject playerCam;
+    public string respawnTimeZone = "present"; 
+    
    
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -38,7 +44,26 @@ public class HealthController : MonoBehaviour
         if (health <= 0)
         {
             Debug.Log("Player died");
-            SceneManager.LoadScene("TemporaryMenu");
+
+            if(respawnTimeZone == "present")
+            {
+                health = maxHealth;
+                timeSwitcher.inFuture = false;
+                playerCam.transform.position = respawnPos;
+                transform.position = respawnPos;
+                Debug.Log(timeSwitcher.inFuture);
+
+            }
+
+            else
+            {
+                health = maxHealth;
+                playerCam.transform.position = respawnPos;
+                transform.position = respawnPos;
+                timeSwitcher.inFuture = true;
+                Debug.Log(timeSwitcher.inFuture);
+            }
+
 
         }
     }

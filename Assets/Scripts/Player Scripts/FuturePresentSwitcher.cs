@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class FuturePresentSwitcher : MonoBehaviour
 {
-    bool inFuture = false;
+    public bool inFuture = false;
     [Header("Toggling Gameobjects Method")]
     [SerializeField] GameObject present;
     [SerializeField] GameObject future;
+    
 
     //teleporting test//
     [Header("Teleporting method")]
