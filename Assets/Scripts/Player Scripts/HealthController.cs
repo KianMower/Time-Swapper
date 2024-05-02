@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class HealthController : MonoBehaviour
 {
@@ -11,12 +12,14 @@ public class HealthController : MonoBehaviour
     public float microchipsCollected;
     [SerializeField] Scrollbar healthBar;
 
-    private void OnTriggerEnter2D(Collider2D other)
+   
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (other.gameObject.CompareTag("Enemy")) 
+        if (collision.gameObject.name == "Bullet(Clone)")
         {
-            health -= 1;
-            Debug.Log("Collided with enemy");
+            Debug.Log("OW");
+            health -= 25;
         }
     }
 
@@ -35,6 +38,8 @@ public class HealthController : MonoBehaviour
         if (health <= 0)
         {
             Debug.Log("Player died");
+            SceneManager.LoadScene("TemporaryMenu");
+
         }
     }
 }
