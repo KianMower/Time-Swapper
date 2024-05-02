@@ -20,7 +20,7 @@ public class checkpoints : MonoBehaviour
             }
         }
     }
-
+    //If checkpoint triggered and not activated, activate it and update respawn pos and timezone.
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(!activated)
