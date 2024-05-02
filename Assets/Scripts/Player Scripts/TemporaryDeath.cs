@@ -27,4 +27,12 @@ public class TemporaryDeath : MonoBehaviour
         Debug.Log("death ran");
         SceneManager.LoadScene("TemporaryMenu");
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.tag == "Enemy")
+        {
+            playerHealth.health -= 1;
+        }
+    }
 }
