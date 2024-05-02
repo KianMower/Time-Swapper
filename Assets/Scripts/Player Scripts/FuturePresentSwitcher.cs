@@ -19,7 +19,7 @@ public class FuturePresentSwitcher : MonoBehaviour
     void Update()
     {
         //Teleporting player and camera method
-        if (useTeleportMethod) 
+        if (useTeleportMethod)
         {
             //Teleport to present (left click)
             if (Input.GetMouseButtonDown(0) && (inFuture))
@@ -58,3 +58,4 @@ public class FuturePresentSwitcher : MonoBehaviour
 
 
 }
+
