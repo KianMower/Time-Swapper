@@ -25,15 +25,15 @@ public class FuturePresentSwitcher : MonoBehaviour
             if (Input.GetMouseButtonDown(0) && (inFuture))
             {
                 inFuture = !inFuture;
-                transform.position = new Vector3(transform.position.x, transform.position.y - 600, transform.position.z);
-                playerCam.transform.position = new Vector3(playerCam.transform.position.x, playerCam.transform.position.y - 600, playerCam.transform.position.z);
+                transform.position = new Vector3(transform.position.x, transform.position.y - 300, transform.position.z);
+                playerCam.transform.position = new Vector3(playerCam.transform.position.x, playerCam.transform.position.y - 300, playerCam.transform.position.z);
             }
             //Teleport to future (right click)
             if (Input.GetMouseButtonDown(1) && (!inFuture))
             {
                 inFuture = !inFuture;
-                transform.position = new Vector3(playerCam.transform.position.x, playerCam.transform.position.y + 600, playerCam.transform.position.z);
-                playerCam.transform.position = new Vector3(playerCam.transform.position.x, playerCam.transform.position.y + 600, playerCam.transform.position.z);
+                transform.position = new Vector3(transform.position.x, transform.position.y + 300, transform.position.z);
+                playerCam.transform.position = new Vector3(playerCam.transform.position.x, playerCam.transform.position.y + 300, playerCam.transform.position.z);
             }
         }
         //Old (laggy) method
