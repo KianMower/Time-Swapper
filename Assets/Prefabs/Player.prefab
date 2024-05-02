@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: 311719904189707208}
   - component: {fileID: 8940430693202085461}
   - component: {fileID: 5684515205257164683}
+  - component: {fileID: 5729408499023062663}
+  - component: {fileID: 553788201305694692}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -32,7 +34,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.8699956, y: -3.4850001, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.77903, y: 0.77903, z: 0.77903}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8129004787299779987}
@@ -104,7 +106,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 3
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -192,7 +194,7 @@ MonoBehaviour:
   dashCooldown: 1.5
   wallSlidingSpeed: 4
   wallJumpDuration: 0.4
-  wallJumpingPower: {x: 8, y: 16}
+  wallJumpingPower: {x: 2, y: 8}
 --- !u!114 &8940430693202085461
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -205,8 +207,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8f1965398ad31942876ec41ca0326ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inFuture: 0
+  switchCooldown: 2
   present: {fileID: 0}
   future: {fileID: 0}
+  useTeleportMethod: 1
+  playerCam: {fileID: 0}
 --- !u!114 &5684515205257164683
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -223,6 +229,35 @@ MonoBehaviour:
   health: 10
   microchipsCollected: 0
   healthBar: {fileID: 0}
+  timeSwitcher: {fileID: 8940430693202085461}
+  respawnPos: {x: 0, y: 0, z: 0}
+  playerCam: {fileID: 0}
+  respawnTimeZone: present
+--- !u!114 &5729408499023062663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1372851280654364287}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cbfe06dcd41e7748ac901f4b8dd1a22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &553788201305694692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1372851280654364287}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a88ad83d360c14349804362860880721, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerHealth: {fileID: 5684515205257164683}
 --- !u!1 &1698019286130119799
 GameObject:
   m_ObjectHideFlags: 0

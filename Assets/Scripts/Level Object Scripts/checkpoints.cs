@@ -28,7 +28,7 @@ public class checkpoints : MonoBehaviour
             activated = true;
             player.respawnPos = transform.position;
             player.respawnTimeZone = timezone;
-            Debug.Log(player.respawnTimeZone);
+            //Debug.Log(player.respawnTimeZone);
         }
     }
 }
