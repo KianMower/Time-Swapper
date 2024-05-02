@@ -47,7 +47,8 @@ public class FuturePresentSwitcher : MonoBehaviour
             //Teleport to present (left click)
             if (Input.GetMouseButtonDown(0) && (inFuture))
             {
-               
+                future.SetActive(false);
+                present.SetActive(true);
                 presentCogs.SetActive(true);
                 futureCogs.SetActive(false);
                 inFuture = !inFuture;
@@ -55,7 +56,8 @@ public class FuturePresentSwitcher : MonoBehaviour
             //Teleport to future (right click)
             if (Input.GetMouseButtonDown(1) && (!inFuture))
             {
-                
+                future.SetActive(true);
+                present.SetActive(false);
                 presentCogs.SetActive(false);
                 futureCogs.SetActive(true);
                 inFuture = !inFuture;
