@@ -27,14 +27,16 @@ public class checkpoints : MonoBehaviour
         if(collision.tag == "Player")
         {
             Debug.Log("Checkpoint Set");
-        }
 
-        if(!activated)
-        {
             activated = true;
             player.respawnPos = transform.position;
             player.respawnTimeZone = timezone;
             Debug.Log(player.respawnTimeZone);
         }
+
+        //if(!activated)
+        //{
+            
+        //}
     }
 }
