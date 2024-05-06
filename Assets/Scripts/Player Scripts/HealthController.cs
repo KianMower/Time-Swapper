@@ -16,7 +16,8 @@ public class HealthController : MonoBehaviour
     public FuturePresentSwitcher timeSwitcher;
     public Vector3 respawnPos;
     public GameObject playerCam;
-    public string respawnTimeZone = "present"; 
+    public string respawnTimeZone = "present";
+    public ParticleSystem electricity;
     
    
 
@@ -24,6 +25,7 @@ public class HealthController : MonoBehaviour
     {
         if (collision.gameObject.name == "Bullet(Clone)")
         {
+            electricity.Play();
             Debug.Log("OW");
             health -= 25;
         }
@@ -32,6 +34,7 @@ public class HealthController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //damageVFX.SetActive(false);
         health = maxHealth;
         healthBarSize = health / maxHealth;
     }

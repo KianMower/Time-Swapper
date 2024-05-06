@@ -14,7 +14,13 @@ public class Collectible : MonoBehaviour
 
     [SerializeField] collectibleType type = new collectibleType();
     [SerializeField] private HealthController playerHealth;
+    [SerializeField] private GameObject healthVFX;
     public float healthPackHealAmount = 1;
+
+    private void Start()
+    {
+        healthVFX.SetActive(false);
+    }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -31,11 +37,15 @@ public class Collectible : MonoBehaviour
                 //If the difference between max health and health >= 0.01, heal player and destroy health pack
                 if (playerHealth.maxHealth - playerHealth.health >= healthPackHealAmount)
                 {
+                    healthVFX.SetActive(true);
+                    StartCoroutine(healthVFXReset());
                     playerHealth.health += healthPackHealAmount;
                     Destroy(gameObject); //Destroys health pack
                 }
                 else if (playerHealth.maxHealth - playerHealth.health >= 0.01f)
                 {
+                    healthVFX.SetActive(true);
+                    StartCoroutine(healthVFXReset());
                     playerHealth.health = playerHealth.maxHealth;
                     Destroy(gameObject); //Destroys health pack
                 }
@@ -46,5 +56,11 @@ public class Collectible : MonoBehaviour
                 }
             }
         }
+    }
+
+    private IEnumerator healthVFXReset()
+    {
+        yield return new WaitForSeconds(2);
+        healthVFX.SetActive(false);
     }
 }

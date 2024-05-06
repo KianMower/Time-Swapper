@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class TemporaryDeath : MonoBehaviour
 {
     [SerializeField] private HealthController playerHealth;
+    public ParticleSystem electricity;
 
     // Start is called before the first frame update
     void Start()
@@ -32,7 +33,13 @@ public class TemporaryDeath : MonoBehaviour
     {
         if(collision.tag == "Enemy")
         {
-            playerHealth.health -= 1;
+            electricity.Play();
+            playerHealth.health -= 25;
         }
+    }
+
+    private IEnumerator damageVFXReset()
+    {
+        yield return new WaitForSeconds(2);
     }
 }
