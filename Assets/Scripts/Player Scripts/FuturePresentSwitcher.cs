@@ -10,7 +10,9 @@ public class FuturePresentSwitcher : MonoBehaviour
     [SerializeField] GameObject future;
     [SerializeField] GameObject presentCogs;
     [SerializeField] GameObject futureCogs;
-    
+
+    public Animator animatorPresent;
+    public Animator animatorFuture;
 
     //teleporting test//
     [Header("Teleporting method")]
@@ -44,24 +46,36 @@ public class FuturePresentSwitcher : MonoBehaviour
         //Old (laggy) method
         else
         {
-            //Teleport to present (left click)
+            
             if (Input.GetMouseButtonDown(0) && (inFuture))
             {
-                future.SetActive(false);
-                present.SetActive(true);
-                presentCogs.SetActive(true);
-                futureCogs.SetActive(false);
+                animatorFuture.SetBool("Change In Time Future", true);
+                
                 inFuture = !inFuture;
             }
-            //Teleport to future (right click)
+            
             if (Input.GetMouseButtonDown(1) && (!inFuture))
             {
-                future.SetActive(true);
-                present.SetActive(false);
-                presentCogs.SetActive(false);
-                futureCogs.SetActive(true);
+                animatorPresent.SetBool("Change In Time Present", true);                
                 inFuture = !inFuture;
             }
+        }
+        //Teleport/ animate to future (right click)
+        if (animatorPresent.GetCurrentAnimatorStateInfo(0).IsName("Change Time to Future"))
+        {
+            Debug.Log("Change");
+            //future.SetActive(true);
+            //present.SetActive(false);
+            presentCogs.SetActive(false);
+            futureCogs.SetActive(true);
+        }
+        //Teleport/ animate to present (left click)
+        if (animatorFuture.GetCurrentAnimatorStateInfo(0).IsName("Change Time To Present"))
+        {
+            //future.SetActive(false);
+            //present.SetActive(true);
+            presentCogs.SetActive(true);
+            futureCogs.SetActive(false);
         }
     }
 

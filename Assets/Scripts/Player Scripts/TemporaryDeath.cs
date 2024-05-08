@@ -16,15 +16,15 @@ public class TemporaryDeath : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(playerHealth.health <= 0)
-        {
-            death();
-        }
+       // if(playerHealth.health <= 0)
+       // {
+       //     death();
+       // }
     }
 
-    public void death()
-    {
-        Debug.Log("death ran");
-        SceneManager.LoadScene("TemporaryMenu");
-    }
+    //public void death()
+    //{
+    //    Debug.Log("death ran");
+    //    SceneManager.LoadScene("TemporaryMenu");
+   // }
 }

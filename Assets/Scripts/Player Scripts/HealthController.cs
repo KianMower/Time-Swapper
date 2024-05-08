@@ -5,64 +5,62 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class HealthController : MonoBehaviour
-{
-    public float maxHealth;
-    public float health;
-    private float healthBarSize;
+{  
     public float microchipsCollected;
-    [SerializeField] Scrollbar healthBar;
-
+    public int healthCounter = 3;
+   
     //Checkpoint values
     public FuturePresentSwitcher timeSwitcher;
     public Vector3 respawnPos;
     public GameObject playerCam;
-    public string respawnTimeZone = "present"; 
+    [SerializeField] GameObject[] health;
+    public string respawnTimeZone = "present";
     
-   
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.name == "Bullet(Clone)")
         {
             Debug.Log("OW");
-            health -= 25;
-        }
-    }
+            healthCounter -= 1;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        health = maxHealth;
-        healthBarSize = health / maxHealth;
+            if (healthCounter == 2)
+            {
+                health[0].SetActive(false);
+                health[3].SetActive(false);
+            }
+
+            if (healthCounter == 1)
+            {
+                health[1].SetActive(false);
+                health[4].SetActive(false);
+            }
+
+            if (healthCounter == 0)
+            {
+                health[2].SetActive(false);
+                health[5].SetActive(false);
+            }
+        }
     }
 
     // Update is called once per frame
     void Update()
-    {
-        healthBarSize = health / maxHealth;
-        healthBar.size = healthBarSize;
-        if (health <= 0)
-        {
-            Debug.Log("Player died");
+    {       
+        if (respawnTimeZone == "present")
+        {           
+            timeSwitcher.inFuture = false;
+            playerCam.transform.position = respawnPos;
+            transform.position = respawnPos;
+            Debug.Log(timeSwitcher.inFuture);
 
-            if(respawnTimeZone == "present")
-            {
-                health = maxHealth;
-                timeSwitcher.inFuture = false;
-                playerCam.transform.position = respawnPos;
-                transform.position = respawnPos;
-                Debug.Log(timeSwitcher.inFuture);
-
-            }
-
-            if(respawnTimeZone == "future")
-            {
-                health = maxHealth;
-                timeSwitcher.inFuture = true;
-                playerCam.transform.position = respawnPos;
-                transform.position = respawnPos;
-                Debug.Log(timeSwitcher.inFuture);
-            }
         }
+
+        if (respawnTimeZone == "future")
+        {
+            timeSwitcher.inFuture = true;
+            playerCam.transform.position = respawnPos;
+            transform.position = respawnPos;
+            Debug.Log(timeSwitcher.inFuture);
+        }        
     }
 }
