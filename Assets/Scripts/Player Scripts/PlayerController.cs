@@ -39,7 +39,6 @@ public class PlayerController : MonoBehaviour
     public float wallSlidingSpeed = 4f;
 
     //Increasing gravity while falling so we fall faster
-    private bool isFalling = false;
     private float originalGravity;
     public float gravityLimit; //Max value gravity can be while falling
     private float lastY; //Last Y axis value to compare to to check if we are falling
