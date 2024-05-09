@@ -12,7 +12,9 @@ public class FuturePresentSwitcher : MonoBehaviour
     [SerializeField] GameObject futureCogs;
 
     public Animator animatorPresent;
+    public Animator animatorPresentTwo;
     public Animator animatorFuture;
+    public Animator animatorFutureTwo;
 
     //teleporting test//
     [Header("Teleporting method")]
@@ -50,13 +52,15 @@ public class FuturePresentSwitcher : MonoBehaviour
             if (Input.GetMouseButtonDown(0) && (inFuture))
             {
                 animatorFuture.SetBool("Change In Time Future", true);
-                
+                animatorFutureTwo.SetBool("Change In Time Future", true);
+
                 inFuture = !inFuture;
             }
             
             if (Input.GetMouseButtonDown(1) && (!inFuture))
             {
-                animatorPresent.SetBool("Change In Time Present", true);                
+                animatorPresent.SetBool("Change In Time Present", true);
+                animatorPresentTwo.SetBool("Change In Time Present", true);
                 inFuture = !inFuture;
             }
         }
