@@ -4,58 +4,44 @@ using UnityEngine;
 
 public class inWallCheck : MonoBehaviour
 {
-    Rigidbody2D rb;
-    bool stuck = false;
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] LayerMask ground;
+    private Vector3 edgeDirection;
+    //Distance to teleport the player if we are stuck
+    public float teleportDistance = 1f; 
+
+    private void Awake()
     {
-        rb = GetComponent<Rigidbody2D>();
+        
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        if(isStuck())
+       //Debug.Log(isStuck());
+       if(isStuck())
+       {
+            Debug.Log("is stuck");
+            //transform.position = resetPos();
+            resetPos();
+       }
+
+    }   
+
+    public bool isStuck()
+    {
+        //Does a raycast and if it collides hits object on ground layer, we are stuck so it returns true!
+        RaycastHit2D check = Physics2D.Raycast(transform.position, Vector2.zero, Mathf.Infinity, ground);
+        return check.collider != null;
+    }
+
+    private void resetPos()
+    {
+        int angleStep = 10;
+        for (int angle = 0; angle < 360; angle += angleStep)
         {
-            transform.position = resetPos();
+            Vector2 raycastDirection = Quaternion.Euler(0, 0, angle) * transform.right;
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, raycastDirection, 10f, ~ground);
+            Debug.Log("Angle: " + angle + ", Distance: " + hit.distance + ", Collider Name: " + (hit.collider != null ? hit.collider.gameObject.name : "None"));
         }
     }
-
-    private bool isStuck()
-    {
-        RaycastHit2D stuckCheck = Physics2D.Raycast(transform.position, Vector2.zero);
-        //We are colliding with something
-        if(stuckCheck.collider != null)
-        {
-            //Check if ray cast hits something that isn't the player
-            if (stuckCheck.collider.tag != "Player") ;
-            {
-                //Debug.Log("in wall");
-                stuck = true;
-                return true;
-            }
-        }
-        stuck = false;
-        return false;
-    }
-
-    private Vector2 resetPos()
-    {
-        //Check around the player for a new pos to move
-        for(int i = 0; i < 360; i+= 10)
-        {
-            Vector2 directionToMove = Quaternion.Euler(0, 0, i) * (Vector2.right * 5);
-            RaycastHit2D checkPos = Physics2D.Raycast(transform.position, directionToMove);
-            Vector3 direction = new Vector3(directionToMove.x, directionToMove.y, 0);
-            if(checkPos.collider == null)
-            {
-                return transform.position + direction;
-            }
-
-        }
-
-        return transform.position;
-    }
-
 
 }
