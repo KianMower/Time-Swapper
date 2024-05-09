@@ -9,8 +9,7 @@ public class FuturePresentSwitcher : MonoBehaviour
     [SerializeField] GameObject present;
     [SerializeField] GameObject future;
     [SerializeField] GameObject presentCogs;
-    [SerializeField] GameObject futureCogs;
-    [SerializeField] GameObject[] health;
+    [SerializeField] GameObject futureCogs;    
 
     public Animator animatorPresent;
     public Animator animatorPresentTwo;

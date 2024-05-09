@@ -27,18 +27,24 @@ public class HealthController : MonoBehaviour
             {
                 health[0].SetActive(false);
                 health[3].SetActive(false);
+                health[6].SetActive(false);
+                health[9].SetActive(false);
             }
 
             if (healthCounter == 1)
             {
                 health[1].SetActive(false);
                 health[4].SetActive(false);
+                health[7].SetActive(false);
+                health[10].SetActive(false);
             }
 
             if (healthCounter == 0)
             {
                 health[2].SetActive(false);
                 health[5].SetActive(false);
+                health[8].SetActive(false);
+                health[11].SetActive(false);
             }
         }
     }
@@ -49,7 +55,7 @@ public class HealthController : MonoBehaviour
         if (respawnTimeZone == "present")
         {           
             timeSwitcher.inFuture = false;
-            playerCam.transform.position = respawnPos;
+            //playerCam.transform.position = respawnPos;
             transform.position = respawnPos;
             Debug.Log(timeSwitcher.inFuture);
 
@@ -58,7 +64,7 @@ public class HealthController : MonoBehaviour
         if (respawnTimeZone == "future")
         {
             timeSwitcher.inFuture = true;
-            playerCam.transform.position = respawnPos;
+            //playerCam.transform.position = respawnPos;
             transform.position = respawnPos;
             Debug.Log(timeSwitcher.inFuture);
         }        
