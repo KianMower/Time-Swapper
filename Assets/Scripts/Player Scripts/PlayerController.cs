@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
     private float horizontalInput;
     public float speed = 8f;
     public float jumpingSpeed = 16f;
-    private bool isFacingRight = true;
+    public bool isFacingRight = true;
 
     //Double jump
     private bool doubleJump;
