@@ -46,6 +46,11 @@ public class PlayerController : MonoBehaviour
     public float wallJumpDuration = 0.4f;
     public Vector2 wallJumpingPower = new Vector2(2f, 8f);
 
+    public ParticleSystem jumpVFX;
+    public ParticleSystem dashVFX;
+    public AudioSource jumpSFX;
+    public AudioSource dashSFX;
+
     void Update()
     {
         //Prevents player inputting extra actions while dashing
@@ -56,19 +61,24 @@ public class PlayerController : MonoBehaviour
 
         horizontalInput = Input.GetAxisRaw("Horizontal");
         //Jumping
-        if(isGrounded() && !Input.GetButton("Jump"))
+        if(isGrounded() && !Input.GetButton("Jump")) //First Jump
         {
+            jumpVFX.Play();
+            jumpSFX.Play();
             doubleJump = false;
         }
 
-        if(Input.GetButtonDown("Jump") && (isGrounded() || doubleJump))
+        if(Input.GetButtonDown("Jump") && (isGrounded() || doubleJump)) //Double Jump
         {
+            jumpVFX.Play();
+            jumpSFX.Play();
+
             rb.velocity = new Vector2(rb.velocity.x, jumpingSpeed);
 
             doubleJump = !doubleJump;
         }
         
-        if (Input.GetButtonDown("Jump") && rb.velocity.y > 0.0f)
+        if (Input.GetButtonDown("Jump") && rb.velocity.y > 0.0f) //Shortened Jump
         {
             rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
         }
@@ -185,6 +195,8 @@ public class PlayerController : MonoBehaviour
 
     private IEnumerator dash()
     {
+        dashVFX.Play();
+        dashSFX.Play();
         dashAllowed = false;
         isDashing = true;
         float startingGravity = rb.gravityScale;

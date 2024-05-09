@@ -100,6 +100,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 0
   playerHealth: {fileID: 0}
+  healthVFX: {fileID: 0}
+  collectibleVFX: {fileID: 0}
   healthPackHealAmount: 1
 --- !u!58 &7633458586681671606
 CircleCollider2D:

@@ -16,14 +16,16 @@ public class HealthController : MonoBehaviour
     public FuturePresentSwitcher timeSwitcher;
     public Vector3 respawnPos;
     public GameObject playerCam;
-    public string respawnTimeZone = "present"; 
+    public string respawnTimeZone = "present";
+    public ParticleSystem electricity;
     
    
-    //If collide with bullet, take damage
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.name == "Bullet(Clone)")
         {
+            electricity.Play();
             Debug.Log("OW");
             health -= 25;
         }
@@ -32,7 +34,7 @@ public class HealthController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //Inits health and health bar
+        //damageVFX.SetActive(false);
         health = maxHealth;
         healthBarSize = health / maxHealth;
     }
@@ -40,13 +42,12 @@ public class HealthController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Update health bar size
         healthBarSize = health / maxHealth;
         healthBar.size = healthBarSize;
         if (health <= 0)
         {
             Debug.Log("Player died");
-            //Resets player to present checkpoint
+
             if(respawnTimeZone == "present")
             {
                 health = maxHealth;
@@ -56,7 +57,7 @@ public class HealthController : MonoBehaviour
                 Debug.Log(timeSwitcher.inFuture);
 
             }
-            //Resets player to future checkpoint
+
             if(respawnTimeZone == "future")
             {
                 health = maxHealth;

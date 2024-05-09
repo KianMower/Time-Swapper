@@ -7,10 +7,13 @@ public class checkpoints : MonoBehaviour
     public HealthController player;
     public string timezone;
     private bool activated = false;
+    [SerializeField]
+    private GameObject checkpointVFX;
 
     //Disable sprite renderer for children gameobjects (makes it visible in editor only)
     private void Start()
     {
+        checkpointVFX.SetActive(false);
         SpriteRenderer[] renderers = GetComponentsInChildren<SpriteRenderer>();
         for (int i = 0; i < renderers.Length; i++)
         { 
@@ -23,12 +26,28 @@ public class checkpoints : MonoBehaviour
     //If checkpoint triggered and not activated, activate it and update respawn pos and timezone.
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(!activated)
+
+        if(collision.tag == "Player")
         {
+            Debug.Log("Checkpoint Set");
+            checkpointVFX.SetActive(true);
+            StartCoroutine(checkpointVFXTime());
+
             activated = true;
             player.respawnPos = transform.position;
             player.respawnTimeZone = timezone;
             //Debug.Log(player.respawnTimeZone);
         }
+
+        //if(!activated)
+        //{
+            
+        //}
+    }
+
+    private IEnumerator checkpointVFXTime()
+    {
+        yield return new WaitForSeconds(3);
+        checkpointVFX.SetActive(false);
     }
 }
