@@ -18,6 +18,7 @@ public class HealthController : MonoBehaviour
     public GameObject playerCam;
     public string respawnTimeZone = "present";
     public ParticleSystem electricity;
+    public AudioSource damageSFX;
     
    
 
@@ -26,6 +27,7 @@ public class HealthController : MonoBehaviour
         if (collision.gameObject.name == "Bullet(Clone)")
         {
             electricity.Play();
+            damageSFX.Play();
             Debug.Log("OW");
             health -= 25;
         }

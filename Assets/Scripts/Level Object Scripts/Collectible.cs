@@ -16,6 +16,7 @@ public class Collectible : MonoBehaviour
     [SerializeField] private HealthController playerHealth;
     [SerializeField] private ParticleSystem healthVFX;
     [SerializeField] private ParticleSystem collectibleVFX;
+    [SerializeField] private AudioSource healthSFX;
     public float healthPackHealAmount = 1;
 
     private void Start()
@@ -40,6 +41,7 @@ public class Collectible : MonoBehaviour
                 if (playerHealth.maxHealth - playerHealth.health >= healthPackHealAmount)
                 {
                     healthVFX.Play();
+                    healthSFX.Play();
                     StartCoroutine(healthVFXReset());
                     playerHealth.health += healthPackHealAmount;
                     Destroy(gameObject); //Destroys health pack
