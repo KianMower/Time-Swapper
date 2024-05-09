@@ -38,6 +38,13 @@ public class PlayerController : MonoBehaviour
     private bool isWallSliding;
     public float wallSlidingSpeed = 4f;
 
+    //Increasing gravity while falling so we fall faster
+    private bool isFalling = false;
+    private float originalGravity;
+    public float gravityLimit; //Max value gravity can be while falling
+    private float lastY; //Last Y axis value to compare to to check if we are falling
+    private float gravityStep;
+
     //Wall jumping
     private bool isWallJumping;
     private float wallJumpDirection;
@@ -51,8 +58,15 @@ public class PlayerController : MonoBehaviour
     public AudioSource jumpSFX;
     public AudioSource dashSFX;
 
-    void Update()
+    private void Start()
     {
+        originalGravity = rb.gravityScale;
+        gravityStep = gravityLimit / 120;
+    }
+
+    void Update()
+    { 
+
         //Prevents player inputting extra actions while dashing
         if(isDashing)
         {
@@ -63,15 +77,15 @@ public class PlayerController : MonoBehaviour
         //Jumping
         if(isGrounded() && !Input.GetButton("Jump")) //First Jump
         {
-            jumpVFX.Play();
-            jumpSFX.Play();
+            //jumpVFX.Play();
+            //jumpSFX.Play();
             doubleJump = false;
         }
 
         if(Input.GetButtonDown("Jump") && (isGrounded() || doubleJump)) //Double Jump
         {
-            jumpVFX.Play();
-            jumpSFX.Play();
+            //jumpVFX.Play();
+            //jumpSFX.Play();
 
             rb.velocity = new Vector2(rb.velocity.x, jumpingSpeed);
 
@@ -103,6 +117,20 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        //Increase gravity on falling
+        if (transform.position.y < lastY)
+        {
+            if (rb.gravityScale < gravityLimit)
+            {
+                rb.gravityScale += gravityStep;
+            }
+        }
+        else
+        {
+            rb.gravityScale = originalGravity;
+        }
+        lastY = transform.position.y;
+
         //Prevents player inputting extra actions while dashing
         if (isDashing)
         {
@@ -195,17 +223,20 @@ public class PlayerController : MonoBehaviour
 
     private IEnumerator dash()
     {
-        dashVFX.Play();
-        dashSFX.Play();
+        
         dashAllowed = false;
         isDashing = true;
         float startingGravity = rb.gravityScale;
         rb.gravityScale = 0; //Sets gravity to 0 so the player doesnt fall during the dash
         rb.velocity = new Vector2(transform.localScale.x * dashSpeed, 0f ); //transform.localScale.x is player direction
+        dashVFX.Play();
+        //dashSFX.Play();
         yield return new WaitForSeconds(dashTime);
         rb.gravityScale = startingGravity;
         isDashing = false;
         yield return new WaitForSeconds(dashCooldown);
         dashAllowed = true;
+        
+
     }
 }
