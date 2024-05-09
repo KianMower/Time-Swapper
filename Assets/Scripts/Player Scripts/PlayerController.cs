@@ -48,6 +48,8 @@ public class PlayerController : MonoBehaviour
 
     public ParticleSystem jumpVFX;
     public ParticleSystem dashVFX;
+    public AudioSource jumpSFX;
+    public AudioSource dashSFX;
 
     void Update()
     {
@@ -62,12 +64,14 @@ public class PlayerController : MonoBehaviour
         if(isGrounded() && !Input.GetButton("Jump")) //First Jump
         {
             jumpVFX.Play();
+            jumpSFX.Play();
             doubleJump = false;
         }
 
         if(Input.GetButtonDown("Jump") && (isGrounded() || doubleJump)) //Double Jump
         {
             jumpVFX.Play();
+            jumpSFX.Play();
 
             rb.velocity = new Vector2(rb.velocity.x, jumpingSpeed);
 
@@ -192,6 +196,7 @@ public class PlayerController : MonoBehaviour
     private IEnumerator dash()
     {
         dashVFX.Play();
+        dashSFX.Play();
         dashAllowed = false;
         isDashing = true;
         float startingGravity = rb.gravityScale;
