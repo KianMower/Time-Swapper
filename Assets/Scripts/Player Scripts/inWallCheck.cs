@@ -20,13 +20,11 @@ public class inWallCheck : MonoBehaviour
        if(isStuck())
        {
             Debug.Log("is stuck");
-            //transform.position = resetPos();
-            resetPos();
        }
 
     }   
 
-    public bool isStuck()
+    public bool isStuck() //This function works :)
     {
         //Does a raycast and if it collides hits object on ground layer, we are stuck so it returns true!
         RaycastHit2D check = Physics2D.Raycast(transform.position, Vector2.zero, Mathf.Infinity, ground);
@@ -35,13 +33,7 @@ public class inWallCheck : MonoBehaviour
 
     private void resetPos()
     {
-        int angleStep = 10;
-        for (int angle = 0; angle < 360; angle += angleStep)
-        {
-            Vector2 raycastDirection = Quaternion.Euler(0, 0, angle) * transform.right;
-            RaycastHit2D hit = Physics2D.Raycast(transform.position, raycastDirection, 10f, ~ground);
-            Debug.Log("Angle: " + angle + ", Distance: " + hit.distance + ", Collider Name: " + (hit.collider != null ? hit.collider.gameObject.name : "None"));
-        }
+        
     }
 
 }
