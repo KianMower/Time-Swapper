@@ -10,6 +10,7 @@ public class FuturePresentSwitcher : MonoBehaviour
     [SerializeField] GameObject future;
     [SerializeField] GameObject presentCogs;
     [SerializeField] GameObject futureCogs;
+    [SerializeField] GameObject[] health;
 
     public Animator animatorPresent;
     public Animator animatorPresentTwo;
@@ -53,7 +54,7 @@ public class FuturePresentSwitcher : MonoBehaviour
             {
                 animatorFuture.SetBool("Change In Time Future", true);
                 animatorFutureTwo.SetBool("Change In Time Future", true);
-
+               
                 inFuture = !inFuture;
             }
             
@@ -61,6 +62,7 @@ public class FuturePresentSwitcher : MonoBehaviour
             {
                 animatorPresent.SetBool("Change In Time Present", true);
                 animatorPresentTwo.SetBool("Change In Time Present", true);
+
                 inFuture = !inFuture;
             }
         }
