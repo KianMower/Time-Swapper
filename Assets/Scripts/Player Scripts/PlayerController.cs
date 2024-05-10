@@ -110,7 +110,13 @@ public class PlayerController : MonoBehaviour
 
         //Trigger dash
         //On left shift for now, will change to double tap later :)
-        if(Input.GetKeyDown(KeyCode.LeftShift) && dashAllowed)
+        //if(Input.GetKeyDown(KeyCode.LeftShift) && dashAllowed)
+        //{
+        //    StartCoroutine(dash());
+        //}
+
+        //New check if dash is pressed (this will support controllers unlike above
+        if (Input.GetButtonDown("Dash") && dashAllowed)
         {
             StartCoroutine(dash());
         }
