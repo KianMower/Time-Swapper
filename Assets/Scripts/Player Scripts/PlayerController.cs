@@ -33,6 +33,7 @@ public class PlayerController : MonoBehaviour
     public float dashSpeed = 24f;
     public float dashTime = 0.2f;
     public float dashCooldown = 1.5f;
+    public float dashTrailTime = 1f;
 
     //Wall sliding
     private bool isWallSliding;
@@ -52,15 +53,26 @@ public class PlayerController : MonoBehaviour
     public float wallJumpDuration = 0.4f;
     public Vector2 wallJumpingPower = new Vector2(2f, 8f);
 
+    //Sound and Visual Effects
+    //READ ME: SFX have been disabled as they weren't configured in my scene and it was breaking movement
+    //so ive temporarily commented them out. 
+    [Header("Sound and Visual Effects")]
     public ParticleSystem jumpVFX;
     public ParticleSystem dashVFX;
+    TrailRenderer dashTrail;
     public AudioSource jumpSFX;
     public AudioSource dashSFX;
+    public AudioSource dashCooldownFinished;
+   
 
     private void Start()
     {
+        //Store original gravty and how much to increase it by for every frame we're in the air
         originalGravity = rb.gravityScale;
         gravityStep = gravityLimit / 120;
+        //Get the trail renderer component and disable it so trail isnt always showing
+        dashTrail = GetComponent<TrailRenderer>();
+        dashTrail.enabled = false;
     }
 
     void Update()
@@ -124,6 +136,7 @@ public class PlayerController : MonoBehaviour
                 rb.gravityScale += gravityStep;
             }
         }
+        //Reset gravity when not falling
         else
         {
             rb.gravityScale = originalGravity;
@@ -222,7 +235,6 @@ public class PlayerController : MonoBehaviour
 
     private IEnumerator dash()
     {
-        
         dashAllowed = false;
         isDashing = true;
         float startingGravity = rb.gravityScale;
@@ -230,12 +242,21 @@ public class PlayerController : MonoBehaviour
         rb.velocity = new Vector2(transform.localScale.x * dashSpeed, 0f ); //transform.localScale.x is player direction
         dashVFX.Play();
         //dashSFX.Play();
+        StartCoroutine(dashTrailFunction());
         yield return new WaitForSeconds(dashTime);
         rb.gravityScale = startingGravity;
         isDashing = false;
         yield return new WaitForSeconds(dashCooldown);
         dashAllowed = true;
-        
-
+        //dashCooldownFinished.Play();
     }
+
+    //Function to enable and disable dash trailrenderer
+    private IEnumerator dashTrailFunction()
+    {
+        dashTrail.enabled = true;
+        yield return new WaitForSeconds(dashTrailTime);
+        dashTrail.enabled = false;
+    }
+
 }
