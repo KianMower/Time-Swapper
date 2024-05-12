@@ -132,14 +132,14 @@ public class PlayerController : MonoBehaviour
 
         horizontalInput = horiz.ReadValue<float>();
         //Jumping
-        if (isGrounded() && jump.WasPerformedThisFrame()) //First Jump
+        if (isGrounded() && jump.WasPressedThisFrame()) //First Jump
         {
             //jumpVFX.Play();
             //jumpSFX.Play();
             doubleJump = false;
         }
 
-        if(jump.WasPerformedThisFrame() && (isGrounded() || doubleJump)) //Double Jump
+        if(jump.WasPressedThisFrame() && (isGrounded() || doubleJump)) //Double Jump
         {
             //jumpVFX.Play();
             //jumpSFX.Play();
@@ -149,13 +149,13 @@ public class PlayerController : MonoBehaviour
             doubleJump = !doubleJump;
         }
         
-        if (jump.WasPerformedThisFrame() && rb.velocity.y > 0.0f) //Shortened Jump
+        if (jump.WasPressedThisFrame() && rb.velocity.y > 0.0f) //Shortened Jump
         {
             rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
         }
 
         //Dash Code
-        if (dashed.WasPerformedThisFrame() && dashAllowed)
+        if (dashed.WasPressedThisFrame() && dashAllowed)
         {
             StartCoroutine(dash());
         }
