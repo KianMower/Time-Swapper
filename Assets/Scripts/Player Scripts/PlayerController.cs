@@ -6,9 +6,11 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-//Movement using old input system
+//Movement using new input system
 public class PlayerController : MonoBehaviour
 {
+    private PlayerInput playerControls;
+
     [Header("General")]
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
@@ -63,7 +65,47 @@ public class PlayerController : MonoBehaviour
     public AudioSource jumpSFX;
     public AudioSource dashSFX;
     public AudioSource dashCooldownFinished;
-   
+
+    //NEW INPUT SYSTEM (eww actually sedate me)
+    private InputAction horiz;
+    private InputAction jump;
+    private InputAction dashed;
+    private InputAction prsnt;
+    private InputAction futr;
+
+    //Time Switcher Values
+    /* Ive moved that script here as getting it to interact with the input system being created in this script was a pain
+     * Im fully aware this is a messy way of doing it but this is going to work */
+    [Header("Time Switcher")]
+    public bool inFuture = false;
+    public float switchCooldown = 2f;
+    private float timer;
+    [SerializeField] bool oneClickOption = false;
+    [SerializeField] GameObject playerCam;
+
+
+    private void Awake()
+    {
+        playerControls = new PlayerInput();
+    }
+
+    private void OnEnable()
+    {
+        //Sets each variable to a particluar action the player can complete
+        //We can use this later to check for events
+        horiz = playerControls.Player.LeftRight;
+        jump = playerControls.Player.Jump;
+        dashed = playerControls.Player.Dash;
+        prsnt = playerControls.Player.PresentSwitch;
+        futr = playerControls.Player.Future;
+        playerControls.Enable();
+    }
+
+    //Disable player input :)
+    private void OnDisable()
+    {
+        playerControls.Disable();
+    }
 
     private void Start()
     {
@@ -76,7 +118,11 @@ public class PlayerController : MonoBehaviour
     }
 
     void Update()
-    { 
+    {
+        //All time swithching code 
+        //We assume teleporting method, old method can be found in legacy/now unused script
+
+        timeSwitch();
 
         //Prevents player inputting extra actions while dashing
         if(isDashing)
@@ -84,16 +130,16 @@ public class PlayerController : MonoBehaviour
             return;
         }
 
-        horizontalInput = Input.GetAxisRaw("Horizontal");
+        horizontalInput = horiz.ReadValue<float>();
         //Jumping
-        if(isGrounded() && !Input.GetButton("Jump")) //First Jump
+        if (isGrounded() && jump.WasPerformedThisFrame()) //First Jump
         {
             //jumpVFX.Play();
             //jumpSFX.Play();
             doubleJump = false;
         }
 
-        if(Input.GetButtonDown("Jump") && (isGrounded() || doubleJump)) //Double Jump
+        if(jump.WasPerformedThisFrame() && (isGrounded() || doubleJump)) //Double Jump
         {
             //jumpVFX.Play();
             //jumpSFX.Play();
@@ -103,20 +149,13 @@ public class PlayerController : MonoBehaviour
             doubleJump = !doubleJump;
         }
         
-        if (Input.GetButtonDown("Jump") && rb.velocity.y > 0.0f) //Shortened Jump
+        if (jump.WasPerformedThisFrame() && rb.velocity.y > 0.0f) //Shortened Jump
         {
             rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
         }
 
-        //Trigger dash
-        //On left shift for now, will change to double tap later :)
-        //if(Input.GetKeyDown(KeyCode.LeftShift) && dashAllowed)
-        //{
-        //    StartCoroutine(dash());
-        //}
-
-        //New check if dash is pressed (this will support controllers unlike above
-        if (Input.GetButtonDown("Dash") && dashAllowed)
+        //Dash Code
+        if (dashed.WasPerformedThisFrame() && dashAllowed)
         {
             StartCoroutine(dash());
         }
@@ -205,7 +244,7 @@ public class PlayerController : MonoBehaviour
             wallJumpTimer -= Time.deltaTime;
         }
 
-        if (Input.GetButton("Jump") && wallJumpTimer > 0f)
+        if (jump.WasPressedThisFrame() && wallJumpTimer > 0f)
         {
             isWallJumping = true;
             rb.velocity = new Vector2(wallJumpDirection * wallJumpingPower.x, wallJumpingPower.y);
@@ -263,6 +302,58 @@ public class PlayerController : MonoBehaviour
         dashTrail.enabled = true;
         yield return new WaitForSeconds(dashTrailTime);
         dashTrail.enabled = false;
+    }
+
+
+    //This code is copied from old Future present switcher.cs
+    private void timeSwitch()
+    {
+        if (timer > 0f)
+        {
+            timer -= Time.deltaTime;
+        }
+
+        //Teleporting player and camera method
+        //Old control scheme, left click for present right click for future
+        if (!oneClickOption)
+        {
+            //Teleport to present (left click)
+            if (prsnt.WasPressedThisFrame() && (inFuture) && (timer <= 0f))
+            {
+                inFuture = !inFuture;
+                transform.position = new Vector3(transform.position.x, transform.position.y - 300, transform.position.z);
+                playerCam.transform.position = new Vector3(playerCam.transform.position.x, playerCam.transform.position.y - 300, playerCam.transform.position.z);
+                timer = switchCooldown;
+            }
+            //Teleport to future (right click)
+            if (futr.WasPressedThisFrame() && (!inFuture) && (timer <= 0f))
+            {
+                inFuture = !inFuture;
+                transform.position = new Vector3(transform.position.x, transform.position.y + 300, transform.position.z);
+                playerCam.transform.position = new Vector3(playerCam.transform.position.x, playerCam.transform.position.y + 300, playerCam.transform.position.z);
+                timer = switchCooldown;
+            }
+        }
+        //New control scheme, left click switches to the other time period
+        else
+        {
+            //Teleport to present 
+            if (prsnt.WasPressedThisFrame() && (inFuture) && (timer <= 0f))
+            {
+                inFuture = !inFuture;
+                transform.position = new Vector3(transform.position.x, transform.position.y - 300, transform.position.z);
+                playerCam.transform.position = new Vector3(playerCam.transform.position.x, playerCam.transform.position.y - 300, playerCam.transform.position.z);
+                timer = switchCooldown;
+            }
+            //Teleport to future
+            if (prsnt.WasPressedThisFrame() && (!inFuture) && (timer <= 0f))
+            {
+                inFuture = !inFuture;
+                transform.position = new Vector3(transform.position.x, transform.position.y + 300, transform.position.z);
+                playerCam.transform.position = new Vector3(playerCam.transform.position.x, playerCam.transform.position.y + 300, playerCam.transform.position.z);
+                timer = switchCooldown;
+            }
+        }
     }
 
 }
