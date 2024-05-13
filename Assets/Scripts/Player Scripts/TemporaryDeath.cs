@@ -7,6 +7,7 @@ public class TemporaryDeath : MonoBehaviour
 {
     [SerializeField] private HealthController playerHealth;
     public ParticleSystem electricity;
+    public AudioSource damageSFX;
 
     // Start is called before the first frame update
     void Start()
@@ -34,6 +35,7 @@ public class TemporaryDeath : MonoBehaviour
         if(collision.tag == "Enemy")
         {
             electricity.Play();
+            damageSFX.Play();
             playerHealth.health -= 25;
         }
     }

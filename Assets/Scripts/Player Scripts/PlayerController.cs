@@ -46,10 +46,16 @@ public class PlayerController : MonoBehaviour
     public float wallJumpDuration = 0.4f;
     public Vector2 wallJumpingPower = new Vector2(8f, 16f);
 
+    //VFX Variables
     public ParticleSystem jumpVFX;
     public ParticleSystem dashVFX;
+    public ParticleSystem landVFX;
+    public ParticleSystem wallLandVFX;
+
+    //SFX Variables
     public AudioSource jumpSFX;
     public AudioSource dashSFX;
+    public AudioSource landSFX;
 
     void Update()
     {
@@ -98,6 +104,8 @@ public class PlayerController : MonoBehaviour
         {
             flipPlayer();
         }
+
+
         
     }
 
@@ -208,5 +216,21 @@ public class PlayerController : MonoBehaviour
         isDashing = false;
         yield return new WaitForSeconds(dashCooldown);
         dashAllowed = true;
+    }
+
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "Ground")
+        {
+            jumpVFX.Clear();
+            landSFX.Play();
+            landVFX.Play();
+        }
+
+        if(collision.gameObject.tag == "Wall")
+        {
+            landSFX.Play();
+            wallLandVFX.Play();
+        }
     }
 }
