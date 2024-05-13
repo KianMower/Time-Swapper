@@ -51,11 +51,14 @@ public class PlayerController : MonoBehaviour
     public ParticleSystem dashVFX;
     public ParticleSystem landVFX;
     public ParticleSystem wallLandVFX;
+    public ParticleSystem dashRechargeVFX;
 
     //SFX Variables
     public AudioSource jumpSFX;
     public AudioSource dashSFX;
     public AudioSource landSFX;
+    public AudioSource wallJumpSFX;
+    public AudioSource dashRechargeSFX;
 
     void Update()
     {
@@ -169,12 +172,14 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetButton("Jump") && wallJumpTimer > 0f)
         {
+            wallJumpSFX.Play();
             isWallJumping = true;
             rb.velocity = new Vector2(wallJumpDirection * wallJumpingPower.x, wallJumpingPower.y);
             wallJumpTimer = 0f;
             //Flips player if facing direction and wallJumpDirection arent equal
             if (transform.localScale.x != wallJumpDirection)
             {
+                dashVFX.transform.Rotate(0, 180, 0);
                 isFacingRight = !isFacingRight;
                 Vector3 localScale = transform.localScale;
                 localScale.x *= -1;
@@ -215,6 +220,8 @@ public class PlayerController : MonoBehaviour
         rb.gravityScale = startingGravity;
         isDashing = false;
         yield return new WaitForSeconds(dashCooldown);
+        dashRechargeSFX.Play();
+        dashRechargeVFX.Play();
         dashAllowed = true;
     }
 

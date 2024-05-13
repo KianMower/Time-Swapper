@@ -10,6 +10,8 @@ public class checkpoints : MonoBehaviour
     [SerializeField]
     private GameObject checkpointVFX;
 
+    public AudioSource checkpointSFX;
+
     //Disable sprite renderer for children gameobjects (makes it visible in editor only)
     private void Start()
     {
@@ -31,6 +33,7 @@ public class checkpoints : MonoBehaviour
         {
             Debug.Log("Checkpoint Set");
             checkpointVFX.SetActive(true);
+            checkpointSFX.Play();
             StartCoroutine(checkpointVFXTime());
 
             activated = true;

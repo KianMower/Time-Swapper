@@ -14,9 +14,14 @@ public class Collectible : MonoBehaviour
 
     [SerializeField] collectibleType type = new collectibleType();
     [SerializeField] private HealthController playerHealth;
+
+    //SFX Variables
+    [SerializeField] private AudioSource healthSFX;
+    [SerializeField] private AudioSource collectibleSFX;
+
+    //VFX Variables
     [SerializeField] private ParticleSystem healthVFX;
     [SerializeField] private ParticleSystem collectibleVFX;
-    [SerializeField] private AudioSource healthSFX;
     public float healthPackHealAmount = 1;
 
     private void Start()
@@ -31,6 +36,7 @@ public class Collectible : MonoBehaviour
             if(type == collectibleType.Microchip)
             {
                 collectibleVFX.Play();
+                collectibleSFX.Play();
                 playerHealth.microchipsCollected += 1;
                 Destroy(gameObject);
             }
