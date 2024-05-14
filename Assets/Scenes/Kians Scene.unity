@@ -1705,6 +1705,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d07e67d31720dd0498b51a0a1eacc902, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bullet: {fileID: 0}
+  bulletFirePoint: {fileID: 0}
+  moveTo: {fileID: 0}
+  moveTo2: {fileID: 0}
+  player: {fileID: 0}
 --- !u!212 &729524803
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1850,6 +1855,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d07e67d31720dd0498b51a0a1eacc902, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bullet: {fileID: 0}
+  bulletFirePoint: {fileID: 0}
+  moveTo: {fileID: 0}
+  moveTo2: {fileID: 0}
+  player: {fileID: 0}
 --- !u!212 &733184129
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2706,6 +2716,12 @@ MonoBehaviour:
   health: 0
   microchipsCollected: 0
   healthBar: {fileID: 604511004}
+  timeSwitcher: {fileID: 0}
+  respawnPos: {x: 0, y: 0, z: 0}
+  playerCam: {fileID: 0}
+  respawnTimeZone: present
+  electricity: {fileID: 0}
+  damageSFX: {fileID: 0}
 --- !u!61 &1087548929
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2807,6 +2823,16 @@ MonoBehaviour:
   wallSlidingSpeed: 4
   wallJumpDuration: 0.4
   wallJumpingPower: {x: 8, y: 16}
+  jumpVFX: {fileID: 0}
+  dashVFX: {fileID: 0}
+  landVFX: {fileID: 0}
+  wallLandVFX: {fileID: 0}
+  dashRechargeVFX: {fileID: 0}
+  jumpSFX: {fileID: 0}
+  dashSFX: {fileID: 0}
+  landSFX: {fileID: 0}
+  wallJumpSFX: {fileID: 0}
+  dashRechargeSFX: {fileID: 0}
 --- !u!212 &1087548932
 SpriteRenderer:
   m_ObjectHideFlags: 0

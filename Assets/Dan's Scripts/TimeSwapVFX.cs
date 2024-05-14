@@ -18,12 +18,17 @@ public class TimeSwapVFX : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        VFXPlay();
+    }
+
+    private void VFXPlay()
+    {
         timer -= Time.deltaTime;
 
         float normalizedTime = Mathf.Clamp01(timer / TimerDuration);
         loadingWheel.value = normalizedTime;
 
-        if(timer <= 0)
+        if (timer <= 0)
         {
             timer = 0;
         }
