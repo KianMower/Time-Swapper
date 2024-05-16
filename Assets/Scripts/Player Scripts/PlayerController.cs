@@ -351,6 +351,7 @@ public class PlayerController : MonoBehaviour
             if (prsnt.WasPressedThisFrame() && (inFuture) && (timer <= 0f))
             {
                 timeSwapVFX.SetActive(true);
+                timeSwapSFX.Play();
                 StartCoroutine(resetTimeSwapVFX());
                 inFuture = !inFuture;
                 transform.position = new Vector3(transform.position.x, transform.position.y - 300, transform.position.z);
@@ -361,6 +362,7 @@ public class PlayerController : MonoBehaviour
             if (futr.WasPressedThisFrame() && (!inFuture) && (timer <= 0f))
             {
                 timeSwapVFX.SetActive(true);
+                timeSwapSFX.Play();
                 StartCoroutine(resetTimeSwapVFX());
                 inFuture = !inFuture;
                 transform.position = new Vector3(transform.position.x, transform.position.y + 300, transform.position.z);
