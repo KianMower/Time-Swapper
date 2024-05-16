@@ -70,6 +70,8 @@ public class PlayerController : MonoBehaviour
     public AudioSource dashCooldownFinished;
     public AudioSource landSFX;
     public AudioSource wallJumpSFX;
+    public AudioSource timeSwapSFX;
+    public GameObject timeSwapVFX;
 
 
     //NEW INPUT SYSTEM (eww actually sedate me)
@@ -121,6 +123,7 @@ public class PlayerController : MonoBehaviour
         //Get the trail renderer component and disable it so trail isnt always showing
         dashTrail = GetComponent<TrailRenderer>();
         dashTrail.enabled = false;
+        timeSwapVFX.SetActive(false);
     }
 
     void Update()
@@ -347,6 +350,8 @@ public class PlayerController : MonoBehaviour
             //Teleport to present (left click)
             if (prsnt.WasPressedThisFrame() && (inFuture) && (timer <= 0f))
             {
+                timeSwapVFX.SetActive(true);
+                StartCoroutine(resetTimeSwapVFX());
                 inFuture = !inFuture;
                 transform.position = new Vector3(transform.position.x, transform.position.y - 300, transform.position.z);
                 playerCam.transform.position = new Vector3(playerCam.transform.position.x, playerCam.transform.position.y - 300, playerCam.transform.position.z);
@@ -355,6 +360,8 @@ public class PlayerController : MonoBehaviour
             //Teleport to future (right click)
             if (futr.WasPressedThisFrame() && (!inFuture) && (timer <= 0f))
             {
+                timeSwapVFX.SetActive(true);
+                StartCoroutine(resetTimeSwapVFX());
                 inFuture = !inFuture;
                 transform.position = new Vector3(transform.position.x, transform.position.y + 300, transform.position.z);
                 playerCam.transform.position = new Vector3(playerCam.transform.position.x, playerCam.transform.position.y + 300, playerCam.transform.position.z);
@@ -381,5 +388,11 @@ public class PlayerController : MonoBehaviour
                 timer = switchCooldown;
             }
         }
+    }
+
+    private IEnumerator resetTimeSwapVFX()
+    {
+        yield return new WaitForSeconds(0.8f);
+        timeSwapVFX.SetActive(false);
     }
 }
