@@ -61,10 +61,16 @@ public class PlayerController : MonoBehaviour
     [Header("Sound and Visual Effects")]
     public ParticleSystem jumpVFX;
     public ParticleSystem dashVFX;
+    public ParticleSystem landGroundVFX;
+    public ParticleSystem landWallVFX;
+    public ParticleSystem dashRechargeVFX; 
     TrailRenderer dashTrail;
     public AudioSource jumpSFX;
     public AudioSource dashSFX;
     public AudioSource dashCooldownFinished;
+    public AudioSource landSFX;
+    public AudioSource wallJumpSFX;
+
 
     //NEW INPUT SYSTEM (eww actually sedate me)
     private InputAction horiz;
@@ -134,15 +140,15 @@ public class PlayerController : MonoBehaviour
         //Jumping
         if (isGrounded() && jump.WasPressedThisFrame()) //First Jump
         {
-            //jumpVFX.Play();
-            //jumpSFX.Play();
+            jumpVFX.Play();
+            jumpSFX.Play();
             doubleJump = false;
         }
 
         if(jump.WasPressedThisFrame() && (isGrounded() || doubleJump)) //Double Jump
         {
-            //jumpVFX.Play();
-            //jumpSFX.Play();
+            jumpVFX.Play();
+            jumpSFX.Play();
 
             rb.velocity = new Vector2(rb.velocity.x, jumpingSpeed);
 
@@ -246,12 +252,14 @@ public class PlayerController : MonoBehaviour
 
         if (jump.WasPressedThisFrame() && wallJumpTimer > 0f)
         {
+            wallJumpSFX.Play();
             isWallJumping = true;
             rb.velocity = new Vector2(wallJumpDirection * wallJumpingPower.x, wallJumpingPower.y);
             wallJumpTimer = 0f;
             //Flips player if facing direction and wallJumpDirection arent equal
             if (transform.localScale.x != wallJumpDirection)
             {
+                dashVFX.transform.Rotate(0, 180, 0); //Invert dash effect to face correctly
                 isFacingRight = !isFacingRight;
                 Vector3 localScale = transform.localScale;
                 localScale.x *= -1;
@@ -275,6 +283,7 @@ public class PlayerController : MonoBehaviour
             Vector3 localScale = transform.localScale;
             localScale.x *= -1;
             transform.localScale = localScale;
+            dashVFX.transform.Rotate(0, 180, 0); //Invert dash effect to face correctly
         }
     }
 
@@ -286,14 +295,15 @@ public class PlayerController : MonoBehaviour
         rb.gravityScale = 0; //Sets gravity to 0 so the player doesnt fall during the dash
         rb.velocity = new Vector2(transform.localScale.x * dashSpeed, 0f ); //transform.localScale.x is player direction
         dashVFX.Play();
-        //dashSFX.Play();
+        dashSFX.Play();
         StartCoroutine(dashTrailFunction());
         yield return new WaitForSeconds(dashTime);
         rb.gravityScale = startingGravity;
         isDashing = false;
         yield return new WaitForSeconds(dashCooldown);
         dashAllowed = true;
-        //dashCooldownFinished.Play();
+        dashCooldownFinished.Play();
+        dashRechargeVFX.Play();
     }
 
     //Function to enable and disable dash trailrenderer
@@ -304,6 +314,23 @@ public class PlayerController : MonoBehaviour
         dashTrail.enabled = false;
     }
 
+    //Playing effects for landing on wall and ground
+    //Works by checking tags and collision enter
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.CompareTag("Ground"))
+        {
+            landSFX.Play();
+            landGroundVFX.Play();
+        }
+        if(collision.gameObject.CompareTag("Wall"))
+        {
+            landSFX.Play();
+            landWallVFX.Play();
+        }
+
+
+    }
 
     //This code is copied from old Future present switcher.cs
     private void timeSwitch()

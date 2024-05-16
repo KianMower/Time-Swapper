@@ -458,6 +458,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 1
   playerHealth: {fileID: 79691991}
+  healthSFX: {fileID: 0}
+  collectibleSFX: {fileID: 0}
   healthVFX: {fileID: 965850058}
   collectibleVFX: {fileID: 0}
   healthPackHealAmount: 25
@@ -652,6 +654,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 7359399911290965147, guid: bcee05ed505631440a16854a2b9e238e, type: 3}
   m_PrefabInstance: {fileID: 1480902088}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &67600553 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 5433744501099459024, guid: b53678228987aba41967b4a9045d2a0f, type: 3}
+  m_PrefabInstance: {fileID: 3298646821931075969}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &69045244 stripped
 Transform:
@@ -70225,17 +70232,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 911803463}
     - target: {fileID: 311719904189707208, guid: 127fda4ddb9c10c46b447785083e9ee4, type: 3}
+      propertyPath: landSFX
+      value: 
+      objectReference: {fileID: 1336471073}
+    - target: {fileID: 311719904189707208, guid: 127fda4ddb9c10c46b447785083e9ee4, type: 3}
       propertyPath: playerCam
       value: 
       objectReference: {fileID: 1470565840}
     - target: {fileID: 311719904189707208, guid: 127fda4ddb9c10c46b447785083e9ee4, type: 3}
-      propertyPath: jumpingSpeed
-      value: 19
-      objectReference: {fileID: 0}
+      propertyPath: wallJumpSFX
+      value: 
+      objectReference: {fileID: 1446738984}
     - target: {fileID: 311719904189707208, guid: 127fda4ddb9c10c46b447785083e9ee4, type: 3}
-      propertyPath: isFacingRight
-      value: 1
-      objectReference: {fileID: 0}
+      propertyPath: dashCooldownFinished
+      value: 
+      objectReference: {fileID: 1636337114}
     - target: {fileID: 1372851280654364287, guid: 127fda4ddb9c10c46b447785083e9ee4, type: 3}
       propertyPath: m_Name
       value: Player (1)
@@ -70280,59 +70291,19 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4981932190979381795, guid: 127fda4ddb9c10c46b447785083e9ee4, type: 3}
-      propertyPath: m_Sprite
+    - target: {fileID: 3590869686457205986, guid: 127fda4ddb9c10c46b447785083e9ee4, type: 3}
+      propertyPath: damageSFX
       value: 
-      objectReference: {fileID: 21300000, guid: 0fd996db336544f42aa5b1fcce897b7d, type: 3}
-    - target: {fileID: 4981932190979381795, guid: 127fda4ddb9c10c46b447785083e9ee4, type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4981932190979381795, guid: 127fda4ddb9c10c46b447785083e9ee4, type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 67600553}
+    - target: {fileID: 5684515205257164683, guid: 127fda4ddb9c10c46b447785083e9ee4, type: 3}
+      propertyPath: damageSFX
+      value: 
+      objectReference: {fileID: 67600553}
     - target: {fileID: 5684515205257164683, guid: 127fda4ddb9c10c46b447785083e9ee4, type: 3}
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 854960431}
     - target: {fileID: 5684515205257164683, guid: 127fda4ddb9c10c46b447785083e9ee4, type: 3}
-      propertyPath: playerCam
-      value: 
-      objectReference: {fileID: 1470565840}
-    - target: {fileID: 6154283352640522582, guid: 127fda4ddb9c10c46b447785083e9ee4, type: 3}
-      propertyPath: m_Size.x
-      value: 1.5271103
-      objectReference: {fileID: 0}
-    - target: {fileID: 6154283352640522582, guid: 127fda4ddb9c10c46b447785083e9ee4, type: 3}
-      propertyPath: m_Size.y
-      value: 1.5850356
-      objectReference: {fileID: 0}
-    - target: {fileID: 6154283352640522582, guid: 127fda4ddb9c10c46b447785083e9ee4, type: 3}
-      propertyPath: m_Offset.x
-      value: 0.008694172
-      objectReference: {fileID: 0}
-    - target: {fileID: 6154283352640522582, guid: 127fda4ddb9c10c46b447785083e9ee4, type: 3}
-      propertyPath: m_Offset.y
-      value: -0.064766675
-      objectReference: {fileID: 0}
-    - target: {fileID: 6154283352640522582, guid: 127fda4ddb9c10c46b447785083e9ee4, type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 1.76875
-      objectReference: {fileID: 0}
-    - target: {fileID: 6154283352640522582, guid: 127fda4ddb9c10c46b447785083e9ee4, type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 1.755
-      objectReference: {fileID: 0}
-    - target: {fileID: 8940430693202085461, guid: 127fda4ddb9c10c46b447785083e9ee4, type: 3}
-      propertyPath: future
-      value: 
-      objectReference: {fileID: 1150871323}
-    - target: {fileID: 8940430693202085461, guid: 127fda4ddb9c10c46b447785083e9ee4, type: 3}
-      propertyPath: present
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 8940430693202085461, guid: 127fda4ddb9c10c46b447785083e9ee4, type: 3}
       propertyPath: playerCam
       value: 
       objectReference: {fileID: 1470565840}
@@ -75516,7 +75487,7 @@ GameObject:
   - component: {fileID: 396596253}
   m_Layer: 6
   m_Name: TutorialGround Present
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -103741,7 +103712,7 @@ GameObject:
   - component: {fileID: 951457486}
   m_Layer: 7
   m_Name: Wall Tiles Present
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -105050,6 +105021,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 1
   playerHealth: {fileID: 79691991}
+  healthSFX: {fileID: 0}
+  collectibleSFX: {fileID: 0}
   healthVFX: {fileID: 965850058}
   collectibleVFX: {fileID: 0}
   healthPackHealAmount: 25
@@ -106353,7 +106326,7 @@ GameObject:
   - component: {fileID: 1295766704}
   m_Layer: 6
   m_Name: TutorialGround Future
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -130377,6 +130350,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e35e86e474d3c8f4f825b4058c7e84b7, type: 3}
+--- !u!82 &1336471073 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 9042079011319388537, guid: b53678228987aba41967b4a9045d2a0f, type: 3}
+  m_PrefabInstance: {fileID: 3298646821931075969}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1338379822 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4314637995285645552, guid: e624f7a767917834c9fe1e9bd987de39, type: 3}
@@ -130491,7 +130469,7 @@ GameObject:
   - component: {fileID: 1419259455}
   m_Layer: 7
   m_Name: Wall Tiles Future
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -131067,6 +131045,11 @@ Transform:
 Transform:
   m_CorrespondingSourceObject: {fileID: 7359399911290965147, guid: bcee05ed505631440a16854a2b9e238e, type: 3}
   m_PrefabInstance: {fileID: 265349175}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &1446738984 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 6650217548471780112, guid: b53678228987aba41967b4a9045d2a0f, type: 3}
+  m_PrefabInstance: {fileID: 3298646821931075969}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &1465843263 stripped
 Transform:
@@ -131824,6 +131807,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 7359399911290965147, guid: bcee05ed505631440a16854a2b9e238e, type: 3}
   m_PrefabInstance: {fileID: 1627876010}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &1636337114 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 4758836367997392634, guid: b53678228987aba41967b4a9045d2a0f, type: 3}
+  m_PrefabInstance: {fileID: 3298646821931075969}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &1711279721 stripped
 Transform:
