@@ -203,7 +203,7 @@ MonoBehaviour:
   dashVFX: {fileID: 5248925743838393231}
   landGroundVFX: {fileID: 2083649608166225641}
   landWallVFX: {fileID: 4123932337850802898}
-  dashRechargeVFX: {fileID: 0}
+  dashRechargeVFX: {fileID: 6336048823370457858}
   jumpSFX: {fileID: 0}
   dashSFX: {fileID: 0}
   dashCooldownFinished: {fileID: 0}
@@ -1311,6 +1311,11 @@ PrefabInstance:
 --- !u!4 &2567069990748968489 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6345879464934096314, guid: f20b512e09370d54795e6ae5a936cf6a, type: 3}
+  m_PrefabInstance: {fileID: 8912913169651854227}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &6336048823370457858 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 3197324407864871057, guid: f20b512e09370d54795e6ae5a936cf6a, type: 3}
   m_PrefabInstance: {fileID: 8912913169651854227}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &9193236080956415447
