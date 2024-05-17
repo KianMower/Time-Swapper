@@ -38,7 +38,7 @@ public class Collectible : MonoBehaviour
                 collectibleVFX.Play();
                 collectibleSFX.Play();
                 playerHealth.microchipsCollected += 1;
-                Destroy(gameObject);
+                //Destroy(gameObject);
             }
             if (type == collectibleType.HealthPack)
             {
