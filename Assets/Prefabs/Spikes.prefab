@@ -375,4 +375,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gracePeriod: 1
   damageAmount: 20
+  knockbackStrength: 5
   healthController: {fileID: 0}
