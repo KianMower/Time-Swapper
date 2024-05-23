@@ -10,6 +10,7 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     private PlayerInput playerControls;
+    public Animator animator;
 
     [Header("General")]
     [SerializeField] private Rigidbody2D rb;
@@ -119,6 +120,8 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+
+        animator.SetBool("AniIsFalling", !(isGrounded() && rb.velocity.y <= 0));
         //All time swithching code 
         //We assume teleporting method, old method can be found in legacy/now unused script
 
@@ -131,21 +134,28 @@ public class PlayerController : MonoBehaviour
         }
 
         horizontalInput = horiz.ReadValue<float>();
+        animator.SetFloat("AniSpeed", Mathf.Abs(horizontalInput));
+
+        //This code is pointless :)
         //Jumping
-        if (isGrounded() && jump.WasPressedThisFrame()) //First Jump
-        {
-            //jumpVFX.Play();
-            //jumpSFX.Play();
-            doubleJump = false;
-        }
+        //if (isGrounded() && jump.WasPressedThisFrame()) //First Jump
+        //{
+        //    Debug.Log("grounded jump this frame");
+        //    //jumpVFX.Play();
+        //    //jumpSFX.Play();
+        //    //animator.SetBool("AniIsJumping",true);
+        //    animator.SetTrigger("CanJumpTrigger");
+        //    doubleJump = false;
+        //}
 
         if(jump.WasPressedThisFrame() && (isGrounded() || doubleJump)) //Double Jump
         {
+            Debug.Log("grounded jump this frame or double jump"); 
             //jumpVFX.Play();
             //jumpSFX.Play();
-
+            //animator.SetBool("AniIsJumping", true);
+            animator.SetTrigger("CanJumpTrigger");
             rb.velocity = new Vector2(rb.velocity.x, jumpingSpeed);
-
             doubleJump = !doubleJump;
         }
         
@@ -173,9 +183,13 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
+
+        
         //Increase gravity on falling
         if (transform.position.y < lastY)
         {
+            //Set anim bool AniIsJumping to false when we're falling
+            animator.SetBool("AniIsFalling", true);
             if (rb.gravityScale < gravityLimit)
             {
                 rb.gravityScale += gravityStep;
@@ -205,12 +219,23 @@ public class PlayerController : MonoBehaviour
     private bool isGrounded()
     {
         //Used a overlap circle on the groundCheck game object to see if we are grounded
-        return Physics2D.OverlapCircle(groundCheck.position, 0.2f, ground);
+        bool result = Physics2D.OverlapCircle(groundCheck.position, 0.2f, ground);
+        //if (result)
+        //{
+        //    animator.SetBool("AniIsFalling", false);
+        //    animator.SetBool("AniIsJumping", false);
+        //}
+        return result;
     }
 
     private bool isOnWall()
     {
-        return Physics2D.OverlapCircle(wallCheck.position, 0.2f, wall);
+        bool result = Physics2D.OverlapCircle(wallCheck.position, 0.2f, wall);
+        if (result)
+        {
+         
+        }
+        return result;
     }
 
     private void wallSlide()
@@ -247,6 +272,7 @@ public class PlayerController : MonoBehaviour
         if (jump.WasPressedThisFrame() && wallJumpTimer > 0f)
         {
             isWallJumping = true;
+        
             rb.velocity = new Vector2(wallJumpDirection * wallJumpingPower.x, wallJumpingPower.y);
             wallJumpTimer = 0f;
             //Flips player if facing direction and wallJumpDirection arent equal
