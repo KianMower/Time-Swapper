@@ -12,7 +12,7 @@ public class killzone : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            playerHealth.health = 0;
+           
         }
     }
 }

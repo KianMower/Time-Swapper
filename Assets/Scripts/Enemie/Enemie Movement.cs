@@ -34,16 +34,19 @@ public class EnemieMovement : MonoBehaviour
         {
             transform.position = Vector3.MoveTowards(transform.position, target1.position, moving);
             transform.localScale = new Vector3(1f, 1f, 1f);
+            bulletFirePoint.transform.localScale = new Vector3(1f, 1, 1);
 
-            Debug.DrawRay(transform.position, transform.TransformDirection(-Vector2.right) * 5f, Color.red);
+            Debug.DrawRay(bulletFirePoint.transform.position, bulletFirePoint.transform.TransformDirection(Vector2.left) * 5f, Color.red);
 
-            RaycastHit2D hit = Physics2D.Raycast(bulletFirePoint.transform.position, bulletFirePoint.transform.TransformDirection(-Vector2.right), 5f);
+            RaycastHit2D hit = Physics2D.Raycast(bulletFirePoint.transform.position, bulletFirePoint.transform.TransformDirection(Vector2.left), 5f);
 
             if (hit)
             {
-                speed = 0;
+                Debug.Log(hit.collider.name);
                 if (canFire && hit.collider.name == "Player")
                 {
+                    speed = 0;
+                    Debug.Log("HIT Left");
                     StartCoroutine(fire());
                 }
             }
@@ -54,24 +57,28 @@ public class EnemieMovement : MonoBehaviour
 
             if (Vector3.Distance(transform.position, target1.position) < 0.001f)
             {
-                toNextPoint = false;                
+                toNextPoint = false;
             }
         }
 
+        //Moving to the Right
         if (!toNextPoint)
         {
             transform.position = Vector3.MoveTowards(transform.position, target2.position, moving);
             transform.localScale = new Vector3(-1f, 1, 1f);
+            bulletFirePoint.transform.localScale = new Vector3(-1f, 1, 1);
 
-            Debug.DrawRay(transform.position, transform.TransformDirection(Vector2.right) * 5f, Color.red);
+            Debug.DrawRay(bulletFirePoint.transform.position, bulletFirePoint.transform.TransformDirection(Vector2.left) * 5f, Color.red);
 
-            RaycastHit2D hit = Physics2D.Raycast(-bulletFirePoint.transform.position, -bulletFirePoint.transform.TransformDirection(Vector2.right), 5f);
+            RaycastHit2D hit = Physics2D.Raycast(bulletFirePoint.transform.position, bulletFirePoint.transform.TransformDirection(Vector2.left), 5f);
 
             if (hit)
             {
-                speed = 0;
+                Debug.Log(hit.collider.name);
+
                 if (canFire && hit.collider.name == "Player")
                 {
+                    speed = 0;
                     StartCoroutine(fire());
                 }
             }
@@ -82,10 +89,10 @@ public class EnemieMovement : MonoBehaviour
 
             if (Vector3.Distance(transform.position, target2.position) < 0.001f)
             {
-                toNextPoint = true;                
+                toNextPoint = true;
             }
         }
-        
+
     }
 
     IEnumerator fire()
