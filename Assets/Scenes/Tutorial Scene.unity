@@ -769,6 +769,10 @@ PrefabInstance:
       propertyPath: dashCooldownFinished
       value: 
       objectReference: {fileID: 1636337114}
+    - target: {fileID: 582903700976928020, guid: 127fda4ddb9c10c46b447785083e9ee4, type: 3}
+      propertyPath: m_Parameters.colorGradient.m_ColorSpace
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 1372851280654364287, guid: 127fda4ddb9c10c46b447785083e9ee4, type: 3}
       propertyPath: m_Name
       value: Player (1)

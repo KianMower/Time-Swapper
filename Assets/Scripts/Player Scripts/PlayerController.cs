@@ -130,7 +130,7 @@ public class PlayerController : MonoBehaviour
     {
         //All time swithching code 
         //We assume teleporting method, old method can be found in legacy/now unused script
-
+        Debug.Log(isGrounded());
         timeSwitch();
 
         //Prevents player inputting extra actions while dashing
@@ -199,7 +199,7 @@ public class PlayerController : MonoBehaviour
 
         //Prevents player inputting extra actions while dashing
         if (isDashing)
-        {
+        { 
             return;
         }
 
