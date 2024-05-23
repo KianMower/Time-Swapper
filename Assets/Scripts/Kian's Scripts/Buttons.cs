@@ -1,16 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Rendering.PostProcessing;
 
 public class Buttons : MonoBehaviour
 {
-    public Pause pause;
-
     public GameObject mainMenu;
     public GameObject optionMenu;
-
-    public Camera gameCam;
 
     public void Play()
     {
@@ -32,19 +27,5 @@ public class Buttons : MonoBehaviour
     {
         mainMenu.SetActive(true);
         optionMenu.SetActive(false);
-    }
-
-    public void BackToMainMenu()
-    {
-
-    }
-
-    public void UnPause()
-    {
-        Time.timeScale = 1;
-        mainMenu.SetActive(false);
-        optionMenu.SetActive(false);
-        pause.gameIsPaused = false;
-        gameCam.GetComponent<PostProcessLayer>().enabled = false;
     }
 }

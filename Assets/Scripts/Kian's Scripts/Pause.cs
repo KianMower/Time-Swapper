@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using UnityEngine.Rendering.PostProcessing;
 
 public class Pause : MonoBehaviour
 {
@@ -11,9 +10,7 @@ public class Pause : MonoBehaviour
 
     public GameObject pauseMenu;
 
-    public bool gameIsPaused;
-
-    public Camera gameCam;       
+    public static bool gameIsPaused;
 
     void Update()
     {
@@ -25,20 +22,18 @@ public class Pause : MonoBehaviour
     }
 
     void PauseGame()
-    {        
+    {
         if (gameIsPaused)
         {
             Time.timeScale = 0f;
             pauseMenu.SetActive(true);
             changeTime.enabled = false;
-            gameCam.GetComponent<PostProcessLayer>().enabled = true;
         }
         else
         {
             Time.timeScale = 1;
             pauseMenu.SetActive(false);
             changeTime.enabled = true;
-            gameCam.GetComponent<PostProcessLayer>().enabled = false;
         }
     }
 
