@@ -6,9 +6,11 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-//Movement using old input system
+//Movement using new input system
 public class PlayerController : MonoBehaviour
 {
+    private PlayerInput playerControls;
+
     [Header("General")]
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
@@ -21,7 +23,7 @@ public class PlayerController : MonoBehaviour
     private float horizontalInput;
     public float speed = 8f;
     public float jumpingSpeed = 16f;
-    private bool isFacingRight = true;
+    public bool isFacingRight = true;
 
     //Double jump
     private bool doubleJump;
@@ -33,10 +35,17 @@ public class PlayerController : MonoBehaviour
     public float dashSpeed = 24f;
     public float dashTime = 0.2f;
     public float dashCooldown = 1.5f;
+    public float dashTrailTime = 1f;
 
     //Wall sliding
     private bool isWallSliding;
     public float wallSlidingSpeed = 4f;
+
+    //Increasing gravity while falling so we fall faster
+    private float originalGravity;
+    public float gravityLimit; //Max value gravity can be while falling
+    private float lastY; //Last Y axis value to compare to to check if we are falling
+    private float gravityStep;
 
     //Wall jumping
     private bool isWallJumping;
@@ -44,38 +53,118 @@ public class PlayerController : MonoBehaviour
     private float wallJumpTime = 0.2f;
     private float wallJumpTimer;
     public float wallJumpDuration = 0.4f;
-    public Vector2 wallJumpingPower = new Vector2(8f, 16f);
+    public Vector2 wallJumpingPower = new Vector2(2f, 8f);
+
+    //Sound and Visual Effects
+    //READ ME: SFX have been disabled as they weren't configured in my scene and it was breaking movement
+    //so ive temporarily commented them out. 
+    [Header("Sound and Visual Effects")]
+    public ParticleSystem jumpVFX;
+    public ParticleSystem dashVFX;
+    public ParticleSystem landGroundVFX;
+    public ParticleSystem landWallVFX;
+    public ParticleSystem dashRechargeVFX; 
+    TrailRenderer dashTrail;
+    public AudioSource jumpSFX;
+    public AudioSource dashSFX;
+    public AudioSource dashCooldownFinished;
+    public AudioSource landSFX;
+    public AudioSource wallJumpSFX;
+    public AudioSource timeSwapSFX;
+    public GameObject timeSwapVFX;
+
+
+    //NEW INPUT SYSTEM (eww actually sedate me)
+    private InputAction horiz;
+    private InputAction jump;
+    private InputAction dashed;
+    private InputAction prsnt;
+    private InputAction futr;
+
+    //Time Switcher Values
+    /* Ive moved that script here as getting it to interact with the input system being created in this script was a pain
+     * Im fully aware this is a messy way of doing it but this is going to work */
+    [Header("Time Switcher")]
+    public bool inFuture = false;
+    public float switchCooldown = 2f;
+    private float timer;
+    [SerializeField] bool oneClickOption = false;
+    [SerializeField] GameObject playerCam;
+
+
+    private void Awake()
+    {
+        playerControls = new PlayerInput();
+    }
+
+    private void OnEnable()
+    {
+        //Sets each variable to a particluar action the player can complete
+        //We can use this later to check for events
+        horiz = playerControls.Player.LeftRight;
+        jump = playerControls.Player.Jump;
+        dashed = playerControls.Player.Dash;
+        prsnt = playerControls.Player.PresentSwitch;
+        futr = playerControls.Player.Future;
+        playerControls.Enable();
+    }
+
+    //Disable player input :)
+    private void OnDisable()
+    {
+        playerControls.Disable();
+    }
+
+    private void Start()
+    {
+        //Store original gravty and how much to increase it by for every frame we're in the air
+        originalGravity = rb.gravityScale;
+        gravityStep = gravityLimit / 120;
+        //Get the trail renderer component and disable it so trail isnt always showing
+        dashTrail = GetComponent<TrailRenderer>();
+        dashTrail.enabled = false;
+        timeSwapVFX.SetActive(false);
+    }
 
     void Update()
     {
+        //All time swithching code 
+        //We assume teleporting method, old method can be found in legacy/now unused script
+        Debug.Log(isGrounded());
+        timeSwitch();
+
         //Prevents player inputting extra actions while dashing
         if(isDashing)
         {
             return;
         }
 
-        horizontalInput = Input.GetAxisRaw("Horizontal");
+        horizontalInput = horiz.ReadValue<float>();
         //Jumping
-        if(isGrounded() && !Input.GetButton("Jump"))
+        if (isGrounded() && jump.WasPressedThisFrame()) //First Jump
         {
+            jumpVFX.Play();
+            jumpSFX.Play();
             doubleJump = false;
         }
 
-        if(Input.GetButtonDown("Jump") && (isGrounded() || doubleJump))
+        if(jump.WasPressedThisFrame() && (isGrounded() || doubleJump)) //Double Jump
         {
+            jumpVFX.Play();
+            jumpSFX.Play();
+
             rb.velocity = new Vector2(rb.velocity.x, jumpingSpeed);
 
             doubleJump = !doubleJump;
         }
         
-        if (Input.GetButtonDown("Jump") && rb.velocity.y > 0.0f)
+        if (jump.WasPressedThisFrame() && rb.velocity.y > 0.0f) //Shortened Jump
         {
             rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
         }
 
-        //Trigger dash
-        //On left shift for now, will change to double tap later :)
-        if(Input.GetKeyDown(KeyCode.LeftShift) && dashAllowed)
+        //Dash Code
+        if (dashed.WasPressedThisFrame() && dashAllowed)
         {
             StartCoroutine(dash());
         }
@@ -93,9 +182,24 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        //Increase gravity on falling
+        if (transform.position.y < lastY)
+        {
+            if (rb.gravityScale < gravityLimit)
+            {
+                rb.gravityScale += gravityStep;
+            }
+        }
+        //Reset gravity when not falling
+        else
+        {
+            rb.gravityScale = originalGravity;
+        }
+        lastY = transform.position.y;
+
         //Prevents player inputting extra actions while dashing
         if (isDashing)
-        {
+        { 
             return;
         }
 
@@ -149,14 +253,16 @@ public class PlayerController : MonoBehaviour
             wallJumpTimer -= Time.deltaTime;
         }
 
-        if (Input.GetButton("Jump") && wallJumpTimer > 0f)
+        if (jump.WasPressedThisFrame() && wallJumpTimer > 0f)
         {
+            wallJumpSFX.Play();
             isWallJumping = true;
             rb.velocity = new Vector2(wallJumpDirection * wallJumpingPower.x, wallJumpingPower.y);
             wallJumpTimer = 0f;
             //Flips player if facing direction and wallJumpDirection arent equal
             if (transform.localScale.x != wallJumpDirection)
             {
+                dashVFX.transform.Rotate(0, 180, 0); //Invert dash effect to face correctly
                 isFacingRight = !isFacingRight;
                 Vector3 localScale = transform.localScale;
                 localScale.x *= -1;
@@ -180,6 +286,7 @@ public class PlayerController : MonoBehaviour
             Vector3 localScale = transform.localScale;
             localScale.x *= -1;
             transform.localScale = localScale;
+            dashVFX.transform.Rotate(0, 180, 0); //Invert dash effect to face correctly
         }
     }
 
@@ -190,10 +297,104 @@ public class PlayerController : MonoBehaviour
         float startingGravity = rb.gravityScale;
         rb.gravityScale = 0; //Sets gravity to 0 so the player doesnt fall during the dash
         rb.velocity = new Vector2(transform.localScale.x * dashSpeed, 0f ); //transform.localScale.x is player direction
+        dashVFX.Play();
+        dashSFX.Play();
+        StartCoroutine(dashTrailFunction());
         yield return new WaitForSeconds(dashTime);
         rb.gravityScale = startingGravity;
         isDashing = false;
         yield return new WaitForSeconds(dashCooldown);
         dashAllowed = true;
+        dashCooldownFinished.Play();
+        dashRechargeVFX.Play();
+    }
+
+    //Function to enable and disable dash trailrenderer
+    private IEnumerator dashTrailFunction()
+    {
+        dashTrail.enabled = true;
+        yield return new WaitForSeconds(dashTrailTime);
+        dashTrail.enabled = false;
+    }
+
+    //Playing effects for landing on wall and ground
+    //Works by checking tags and collision enter
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.CompareTag("Ground"))
+        {
+            landSFX.Play();
+            landGroundVFX.Play();
+        }
+        if(collision.gameObject.CompareTag("Wall"))
+        {
+            landSFX.Play();
+            landWallVFX.Play();
+        }
+
+
+    }
+
+    //This code is copied from old Future present switcher.cs
+    private void timeSwitch()
+    {
+        if (timer > 0f)
+        {
+            timer -= Time.deltaTime;
+        }
+
+        //Teleporting player and camera method
+        //Old control scheme, left click for present right click for future
+        if (!oneClickOption)
+        {
+            //Teleport to present (left click)
+            if (prsnt.WasPressedThisFrame() && (inFuture) && (timer <= 0f))
+            {
+                timeSwapVFX.SetActive(true);
+                timeSwapSFX.Play();
+                StartCoroutine(resetTimeSwapVFX());
+                inFuture = !inFuture;
+                transform.position = new Vector3(transform.position.x, transform.position.y - 300, transform.position.z);
+                playerCam.transform.position = new Vector3(playerCam.transform.position.x, playerCam.transform.position.y - 300, playerCam.transform.position.z);
+                timer = switchCooldown;
+            }
+            //Teleport to future (right click)
+            if (futr.WasPressedThisFrame() && (!inFuture) && (timer <= 0f))
+            {
+                timeSwapVFX.SetActive(true);
+                timeSwapSFX.Play();
+                StartCoroutine(resetTimeSwapVFX());
+                inFuture = !inFuture;
+                transform.position = new Vector3(transform.position.x, transform.position.y + 300, transform.position.z);
+                playerCam.transform.position = new Vector3(playerCam.transform.position.x, playerCam.transform.position.y + 300, playerCam.transform.position.z);
+                timer = switchCooldown;
+            }
+        }
+        //New control scheme, left click switches to the other time period
+        else
+        {
+            //Teleport to present 
+            if (prsnt.WasPressedThisFrame() && (inFuture) && (timer <= 0f))
+            {
+                inFuture = !inFuture;
+                transform.position = new Vector3(transform.position.x, transform.position.y - 300, transform.position.z);
+                playerCam.transform.position = new Vector3(playerCam.transform.position.x, playerCam.transform.position.y - 300, playerCam.transform.position.z);
+                timer = switchCooldown;
+            }
+            //Teleport to future
+            if (prsnt.WasPressedThisFrame() && (!inFuture) && (timer <= 0f))
+            {
+                inFuture = !inFuture;
+                transform.position = new Vector3(transform.position.x, transform.position.y + 300, transform.position.z);
+                playerCam.transform.position = new Vector3(playerCam.transform.position.x, playerCam.transform.position.y + 300, playerCam.transform.position.z);
+                timer = switchCooldown;
+            }
+        }
+    }
+
+    private IEnumerator resetTimeSwapVFX()
+    {
+        yield return new WaitForSeconds(0.8f);
+        timeSwapVFX.SetActive(false);
     }
 }

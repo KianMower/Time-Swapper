@@ -7,22 +7,22 @@ public class TemporarySceneNavigator : MonoBehaviour
 {
     public void BeginTutorial()
     {
-        SceneManager.LoadScene("Dan'sScene");
+        SceneManager.LoadScene("Tutorial Scene");
     }
 
     public void BeginLevel1()
     {
-        SceneManager.LoadScene("Dan's Scene Level 1");
+        SceneManager.LoadScene("Level 1 Scene");
     }
 
     public void BeginLevel2()
     {
-        SceneManager.LoadScene("Dan's Scene Level 2");
+        SceneManager.LoadScene("Level 2 Scene");
     }
 
     public void BeginLevel3()
     {
-        SceneManager.LoadScene("Dan's Scene Level 3");
+        SceneManager.LoadScene("Level 3 Scene");
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
