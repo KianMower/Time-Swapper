@@ -71,6 +71,15 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""HintsOff"",
+                    ""type"": ""Button"",
+                    ""id"": ""03437629-2dc3-4f2d-b4b3-03497c69cbb6"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Press"",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -225,6 +234,17 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Dash"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c9d56fe1-cf1c-49d1-937c-903db5b5f789"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""HintsOff"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -817,6 +837,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         m_Player_PresentSwitch = m_Player.FindAction("Present / Switch", throwIfNotFound: true);
         m_Player_Future = m_Player.FindAction("Future", throwIfNotFound: true);
         m_Player_Dash = m_Player.FindAction("Dash", throwIfNotFound: true);
+        m_Player_HintsOff = m_Player.FindAction("HintsOff", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -895,6 +916,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_PresentSwitch;
     private readonly InputAction m_Player_Future;
     private readonly InputAction m_Player_Dash;
+    private readonly InputAction m_Player_HintsOff;
     public struct PlayerActions
     {
         private @PlayerInput m_Wrapper;
@@ -904,6 +926,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         public InputAction @PresentSwitch => m_Wrapper.m_Player_PresentSwitch;
         public InputAction @Future => m_Wrapper.m_Player_Future;
         public InputAction @Dash => m_Wrapper.m_Player_Dash;
+        public InputAction @HintsOff => m_Wrapper.m_Player_HintsOff;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -928,6 +951,9 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @Dash.started += instance.OnDash;
             @Dash.performed += instance.OnDash;
             @Dash.canceled += instance.OnDash;
+            @HintsOff.started += instance.OnHintsOff;
+            @HintsOff.performed += instance.OnHintsOff;
+            @HintsOff.canceled += instance.OnHintsOff;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -947,6 +973,9 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @Dash.started -= instance.OnDash;
             @Dash.performed -= instance.OnDash;
             @Dash.canceled -= instance.OnDash;
+            @HintsOff.started -= instance.OnHintsOff;
+            @HintsOff.performed -= instance.OnHintsOff;
+            @HintsOff.canceled -= instance.OnHintsOff;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -1134,6 +1163,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         void OnPresentSwitch(InputAction.CallbackContext context);
         void OnFuture(InputAction.CallbackContext context);
         void OnDash(InputAction.CallbackContext context);
+        void OnHintsOff(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {
