@@ -767,11 +767,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2627704039010229627, guid: 127fda4ddb9c10c46b447785083e9ee4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.1
+      value: -8.53
       objectReference: {fileID: 0}
     - target: {fileID: 2627704039010229627, guid: 127fda4ddb9c10c46b447785083e9ee4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -7.91
+      value: -8.482
       objectReference: {fileID: 0}
     - target: {fileID: 2627704039010229627, guid: 127fda4ddb9c10c46b447785083e9ee4, type: 3}
       propertyPath: m_LocalPosition.z
@@ -61862,6 +61862,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1495502997}
   m_CullTransparentMesh: 1
+--- !u!82 &1507480908 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 4641877278503547879, guid: b53678228987aba41967b4a9045d2a0f, type: 3}
+  m_PrefabInstance: {fileID: 3298646821931075969}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1529687781
 GameObject:
   m_ObjectHideFlags: 0
@@ -61921,20 +61926,8 @@ PrefabInstance:
       value: Jump Pad
       objectReference: {fileID: 0}
     - target: {fileID: 6006079566462700750, guid: 22160bff5ffbe4c9aade29fada58c256, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.82322
-      objectReference: {fileID: 0}
-    - target: {fileID: 6006079566462700750, guid: 22160bff5ffbe4c9aade29fada58c256, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.82322
-      objectReference: {fileID: 0}
-    - target: {fileID: 6006079566462700750, guid: 22160bff5ffbe4c9aade29fada58c256, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.82322
-      objectReference: {fileID: 0}
-    - target: {fileID: 6006079566462700750, guid: 22160bff5ffbe4c9aade29fada58c256, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 234.28
+      value: 234.28003
       objectReference: {fileID: 0}
     - target: {fileID: 6006079566462700750, guid: 22160bff5ffbe4c9aade29fada58c256, type: 3}
       propertyPath: m_LocalPosition.y
@@ -61950,15 +61943,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6006079566462700750, guid: 22160bff5ffbe4c9aade29fada58c256, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6006079566462700750, guid: 22160bff5ffbe4c9aade29fada58c256, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6006079566462700750, guid: 22160bff5ffbe4c9aade29fada58c256, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6006079566462700750, guid: 22160bff5ffbe4c9aade29fada58c256, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -61972,6 +61965,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7749811539437765310, guid: 22160bff5ffbe4c9aade29fada58c256, type: 3}
+      propertyPath: jumpPadSFX
+      value: 
+      objectReference: {fileID: 1507480908}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
