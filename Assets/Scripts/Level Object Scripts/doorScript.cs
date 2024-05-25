@@ -26,6 +26,8 @@ public class doorScript : MonoBehaviour
     float timer = 0;
     public float openTime = 1f;
     private bool opening = false;
+
+    public AudioSource doorSFX;
     
 
     private void Start()
@@ -54,7 +56,7 @@ public class doorScript : MonoBehaviour
             opening = true;
             timeElapsed = 0;
 
-
+            doorSFX.Play();
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
@@ -66,7 +68,7 @@ public class doorScript : MonoBehaviour
 
             timeElapsed = 0;
 
-
+            doorSFX.Play();
         }
     }
 
