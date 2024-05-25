@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 6154283352640522582}
   - component: {fileID: 311719904189707208}
   - component: {fileID: 5684515205257164683}
-  - component: {fileID: 3590869686457205986}
   - component: {fileID: 7792064358622792318}
   - component: {fileID: 582903700976928020}
+  - component: {fileID: 7956516650804069480}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -237,21 +237,6 @@ MonoBehaviour:
   respawnTimeZone: present
   electricity: {fileID: 5101797612937024796}
   damageSFX: {fileID: 0}
---- !u!114 &3590869686457205986
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1372851280654364287}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a88ad83d360c14349804362860880721, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerHealth: {fileID: 5684515205257164683}
-  electricity: {fileID: 5101797612937024796}
-  damageSFX: {fileID: 0}
 --- !u!114 &7792064358622792318
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -381,6 +366,22 @@ TrailRenderer:
   m_Autodestruct: 0
   m_Emitting: 1
   m_ApplyActiveColorSpace: 1
+--- !u!114 &7956516650804069480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1372851280654364287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d987f7583e2db14f99c1d6e7d7f308b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hintsPresent: {fileID: 0}
+  warningsPresent: {fileID: 0}
+  hintsFuture: {fileID: 0}
+  warningsFuture: {fileID: 0}
 --- !u!1 &1698019286130119799
 GameObject:
   m_ObjectHideFlags: 0
@@ -437,7 +438,7 @@ Transform:
   m_GameObject: {fileID: 1917501131567826390}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.499, y: 0, z: 0}
+  m_LocalPosition: {x: 0.736, y: -0.55, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
