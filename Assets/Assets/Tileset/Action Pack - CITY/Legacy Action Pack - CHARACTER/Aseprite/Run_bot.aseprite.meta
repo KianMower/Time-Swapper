@@ -292,6 +292,7 @@ ScriptedImporter:
     cells:
     - name: Run_bot_Frame_0
       frameIndex: 0
+      additiveSortOrder: 0
       cellRect:
         x: 13
         y: 9
@@ -300,6 +301,7 @@ ScriptedImporter:
       spriteId: 718051f7ed4a68c4d86d02d823d7cea1
     - name: Run_bot_Frame_1
       frameIndex: 1
+      additiveSortOrder: 0
       cellRect:
         x: 16
         y: 8
@@ -308,6 +310,7 @@ ScriptedImporter:
       spriteId: 17261531843380141a002d1496fa91e1
     - name: Run_bot_Frame_2
       frameIndex: 2
+      additiveSortOrder: 0
       cellRect:
         x: 22
         y: 8
@@ -316,6 +319,7 @@ ScriptedImporter:
       spriteId: 0564ae7b6a26e834b951d11b25d2afb0
     - name: Run_bot_Frame_3
       frameIndex: 3
+      additiveSortOrder: 0
       cellRect:
         x: 19
         y: 8
@@ -324,6 +328,7 @@ ScriptedImporter:
       spriteId: 459a7f8e0d42d244ea53fdb91789aaa8
     - name: Run_bot_Frame_4
       frameIndex: 4
+      additiveSortOrder: 0
       cellRect:
         x: 13
         y: 11
@@ -332,6 +337,7 @@ ScriptedImporter:
       spriteId: 12d4faf52aec9754eae39a646785a281
     - name: Run_bot_Frame_5
       frameIndex: 5
+      additiveSortOrder: 0
       cellRect:
         x: 14
         y: 8
@@ -340,6 +346,7 @@ ScriptedImporter:
       spriteId: 7c9c45177eafce7488bfb8e48497265b
     - name: Run_bot_Frame_6
       frameIndex: 6
+      additiveSortOrder: 0
       cellRect:
         x: 22
         y: 8
@@ -348,6 +355,7 @@ ScriptedImporter:
       spriteId: 4a24ff5e5158ab24ea550def1438d9d9
     - name: Run_bot_Frame_7
       frameIndex: 7
+      additiveSortOrder: 0
       cellRect:
         x: 20
         y: 8

@@ -152,6 +152,7 @@ ScriptedImporter:
     cells:
     - name: Base
       frameIndex: 0
+      additiveSortOrder: 0
       cellRect:
         x: 12
         y: 0

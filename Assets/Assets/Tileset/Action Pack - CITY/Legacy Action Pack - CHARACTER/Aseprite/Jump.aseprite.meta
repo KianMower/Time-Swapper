@@ -212,6 +212,7 @@ ScriptedImporter:
     cells:
     - name: Jump_Frame_0
       frameIndex: 0
+      additiveSortOrder: 0
       cellRect:
         x: 6
         y: 6
@@ -220,6 +221,7 @@ ScriptedImporter:
       spriteId: e89892df46697f14190e7c492251b592
     - name: Jump_Frame_1
       frameIndex: 1
+      additiveSortOrder: 0
       cellRect:
         x: 6
         y: 6
@@ -228,6 +230,7 @@ ScriptedImporter:
       spriteId: 97beaad99013095418d340d1b8f41f0c
     - name: Jump_Frame_2
       frameIndex: 2
+      additiveSortOrder: 0
       cellRect:
         x: 6
         y: 4
@@ -236,6 +239,7 @@ ScriptedImporter:
       spriteId: bb9c80a2ede882f45ab59b118aaa176c
     - name: Jump_Frame_3
       frameIndex: 3
+      additiveSortOrder: 0
       cellRect:
         x: 4
         y: 6
