@@ -12,6 +12,7 @@ public class HintsToggle : MonoBehaviour
 
     private PlayerInput playerControls;
     private InputAction off;
+    private InputAction on;
 
     private void Awake()
     {
@@ -23,11 +24,21 @@ public class HintsToggle : MonoBehaviour
     {
         
     }
+    private void Update()
+    {
+        ToggleHintsAndWarnings();
+    }
 
     private void OnEnable()
     {
         off = playerControls.Player.HintsOff;
+        on = playerControls.Player.HintsOn;
         playerControls.Enable();
+    }
+
+    private void OnDisable()
+    {
+        playerControls.Disable();
     }
 
     public void ToggleHintsAndWarnings()
@@ -38,6 +49,14 @@ public class HintsToggle : MonoBehaviour
             warningsPresent.SetActive(false);
             hintsFuture.SetActive(false);
             warningsFuture.SetActive(false);
+        }
+
+        if (on.WasPressedThisFrame())
+        {
+            hintsPresent.SetActive(true);
+            warningsPresent.SetActive(true);
+            hintsFuture.SetActive(true);
+            warningsFuture.SetActive(true);
         }
     }
 }

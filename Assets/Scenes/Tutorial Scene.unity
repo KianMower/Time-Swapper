@@ -536,6 +536,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1446738984}
     - target: {fileID: 311719904189707208, guid: 127fda4ddb9c10c46b447785083e9ee4, type: 3}
+      propertyPath: presentHints
+      value: 
+      objectReference: {fileID: 643951396}
+    - target: {fileID: 311719904189707208, guid: 127fda4ddb9c10c46b447785083e9ee4, type: 3}
       propertyPath: dashCooldownFinished
       value: 
       objectReference: {fileID: 1636337114}
@@ -68636,7 +68640,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 7.7
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
