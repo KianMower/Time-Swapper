@@ -5,12 +5,11 @@ using UnityEngine;
 public class FallDetector : MonoBehaviour
 {
     private Vector3 respawnPoint;
-    //public GameObject fallDetector;
 
     // Start is called before the first frame update
     void Start()
     {
-        respawnPoint = transform.position;
+        respawnPoint = transform.position; // Sets the player respawn point to where the player starts the scene
     }
 
     // Update is called once per frame
@@ -23,11 +22,11 @@ public class FallDetector : MonoBehaviour
     {
         if(collision.tag == "FallDetector")
         {
-            transform.position = respawnPoint;
+            transform.position = respawnPoint; // Resets the player's position to where the respawn point was set
         }
         else if(collision.tag == "Checkpoint")
         {
-            respawnPoint = transform.position;
+            respawnPoint = transform.position; // Sets the respawn point to be where the player interacted with a checkpoint
         }
     }
 }

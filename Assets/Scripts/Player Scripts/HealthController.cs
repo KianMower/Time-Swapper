@@ -13,11 +13,12 @@ public class HealthController : MonoBehaviour
     [SerializeField] Scrollbar healthBar;
 
     //Checkpoint values
-    public FuturePresentSwitcher timeSwitcher;
+    public PlayerController timeSwitcher;
     public Vector3 respawnPos;
     public GameObject playerCam;
     public string respawnTimeZone = "present";
     public ParticleSystem electricity;
+    public AudioSource damageSFX;
     
    
 
@@ -26,6 +27,15 @@ public class HealthController : MonoBehaviour
         if (collision.gameObject.name == "Bullet(Clone)")
         {
             electricity.Play();
+            damageSFX.Play();
+            Debug.Log("OW");
+            health -= 25;
+        }
+
+        if(collision.tag == "Enemy")
+        {
+            electricity.Play();
+            damageSFX.Play();
             Debug.Log("OW");
             health -= 25;
         }
