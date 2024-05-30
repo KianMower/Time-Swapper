@@ -62,12 +62,18 @@ public class PlayerController : MonoBehaviour
     [Header("Sound and Visual Effects")]
     public ParticleSystem jumpVFX;
     public ParticleSystem dashVFX;
+    public ParticleSystem landGroundVFX;
+    public ParticleSystem landWallVFX;
+    public ParticleSystem dashRechargeVFX;
     TrailRenderer dashTrail;
     public AudioSource jumpSFX;
     public AudioSource dashSFX;
     public AudioSource dashCooldownFinished;
+    public AudioSource landSFX;
+    public AudioSource wallJumpSFX;
+    public AudioSource timeSwapSFX;
+    public GameObject timeSwapVFX;
 
-    //NEW INPUT SYSTEM (eww actually sedate me)
     private InputAction horiz;
     private InputAction jump;
     private InputAction dashed;
@@ -116,6 +122,7 @@ public class PlayerController : MonoBehaviour
         //Get the trail renderer component and disable it so trail isnt always showing
         dashTrail = GetComponent<TrailRenderer>();
         dashTrail.enabled = false;
+        timeSwapVFX.SetActive(false);
     }
 
     void Update()
@@ -138,22 +145,22 @@ public class PlayerController : MonoBehaviour
 
         //This code is pointless :)
         //Jumping
-        //if (isGrounded() && jump.WasPressedThisFrame()) //First Jump
-        //{
-        //    Debug.Log("grounded jump this frame");
-        //    //jumpVFX.Play();
-        //    //jumpSFX.Play();
-        //    //animator.SetBool("AniIsJumping",true);
-        //    animator.SetTrigger("CanJumpTrigger");
-        //    doubleJump = false;
-        //}
+        if (isGrounded() && jump.WasPressedThisFrame()) //First Jump
+        {
+            Debug.Log("grounded jump this frame");
+            jumpVFX.Play();
+            jumpSFX.Play();
+            animator.SetBool("AniIsJumping",true);
+            animator.SetTrigger("CanJumpTrigger");
+            doubleJump = false;
+        }
 
         if(jump.WasPressedThisFrame() && (isGrounded() || doubleJump)) //Double Jump
         {
             Debug.Log("grounded jump this frame or double jump"); 
-            //jumpVFX.Play();
-            //jumpSFX.Play();
-            //animator.SetBool("AniIsJumping", true);
+            jumpVFX.Play();
+            jumpSFX.Play();
+            animator.SetBool("AniIsJumping", true);
             animator.SetTrigger("CanJumpTrigger");
             rb.velocity = new Vector2(rb.velocity.x, jumpingSpeed);
             doubleJump = !doubleJump;
@@ -220,11 +227,11 @@ public class PlayerController : MonoBehaviour
     {
         //Used a overlap circle on the groundCheck game object to see if we are grounded
         bool result = Physics2D.OverlapCircle(groundCheck.position, 0.2f, ground);
-        //if (result)
-        //{
-        //    animator.SetBool("AniIsFalling", false);
-        //    animator.SetBool("AniIsJumping", false);
-        //}
+        if (result)
+        {
+            animator.SetBool("AniIsFalling", false);
+            animator.SetBool("AniIsJumping", false);
+        }
         return result;
     }
 
@@ -271,6 +278,7 @@ public class PlayerController : MonoBehaviour
 
         if (jump.WasPressedThisFrame() && wallJumpTimer > 0f)
         {
+            wallJumpSFX.Play();
             isWallJumping = true;
         
             rb.velocity = new Vector2(wallJumpDirection * wallJumpingPower.x, wallJumpingPower.y);
@@ -278,6 +286,7 @@ public class PlayerController : MonoBehaviour
             //Flips player if facing direction and wallJumpDirection arent equal
             if (transform.localScale.x != wallJumpDirection)
             {
+                dashVFX.transform.Rotate(0, 180, 0); //Invert dash effect to face correctly
                 isFacingRight = !isFacingRight;
                 Vector3 localScale = transform.localScale;
                 localScale.x *= -1;
@@ -301,6 +310,7 @@ public class PlayerController : MonoBehaviour
             Vector3 localScale = transform.localScale;
             localScale.x *= -1;
             transform.localScale = localScale;
+            dashVFX.transform.Rotate(0, 180, 0); //Invert dash effect to face correctly
         }
     }
 
@@ -312,14 +322,15 @@ public class PlayerController : MonoBehaviour
         rb.gravityScale = 0; //Sets gravity to 0 so the player doesnt fall during the dash
         rb.velocity = new Vector2(transform.localScale.x * dashSpeed, 0f ); //transform.localScale.x is player direction
         dashVFX.Play();
-        //dashSFX.Play();
+        dashSFX.Play();
         StartCoroutine(dashTrailFunction());
         yield return new WaitForSeconds(dashTime);
         rb.gravityScale = startingGravity;
         isDashing = false;
         yield return new WaitForSeconds(dashCooldown);
         dashAllowed = true;
-        //dashCooldownFinished.Play();
+        dashCooldownFinished.Play();
+        dashRechargeVFX.Play();
     }
 
     //Function to enable and disable dash trailrenderer
@@ -328,6 +339,20 @@ public class PlayerController : MonoBehaviour
         dashTrail.enabled = true;
         yield return new WaitForSeconds(dashTrailTime);
         dashTrail.enabled = false;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            landSFX.Play();
+            landGroundVFX.Play();
+        }
+        if (collision.gameObject.CompareTag("Wall"))
+        {
+            landSFX.Play();
+            landWallVFX.Play();
+        }
     }
 
 
@@ -346,6 +371,9 @@ public class PlayerController : MonoBehaviour
             //Teleport to present (left click)
             if (prsnt.WasPressedThisFrame() && (inFuture) && (timer <= 0f))
             {
+                timeSwapVFX.SetActive(true);
+                timeSwapSFX.Play();
+                StartCoroutine(resetTimeSwapVFX());
                 inFuture = !inFuture;
                 transform.position = new Vector3(transform.position.x, transform.position.y - 300, transform.position.z);
                 playerCam.transform.position = new Vector3(playerCam.transform.position.x, playerCam.transform.position.y - 300, playerCam.transform.position.z);
@@ -354,6 +382,9 @@ public class PlayerController : MonoBehaviour
             //Teleport to future (right click)
             if (futr.WasPressedThisFrame() && (!inFuture) && (timer <= 0f))
             {
+                timeSwapVFX.SetActive(true);
+                timeSwapSFX.Play();
+                StartCoroutine(resetTimeSwapVFX());
                 inFuture = !inFuture;
                 transform.position = new Vector3(transform.position.x, transform.position.y + 300, transform.position.z);
                 playerCam.transform.position = new Vector3(playerCam.transform.position.x, playerCam.transform.position.y + 300, playerCam.transform.position.z);
@@ -380,6 +411,11 @@ public class PlayerController : MonoBehaviour
                 timer = switchCooldown;
             }
         }
+    }
+    private IEnumerator resetTimeSwapVFX()
+    {
+        yield return new WaitForSeconds(0.8f);
+        timeSwapVFX.SetActive(false);
     }
 
 }
