@@ -9,6 +9,9 @@ TagManager:
   - FallDetector
   - Checkpoint
   - Goal
+  - Hint
+  - Ground
+  - Wall
   layers:
   - Default
   - TransparentFX

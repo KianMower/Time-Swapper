@@ -498,6 +498,7 @@ MonoBehaviour:
   wallSlidingSpeed: 4
   wallJumpDuration: 0.4
   wallJumpingPower: {x: 8, y: 16}
+  jumpVFX: {fileID: 0}
 --- !u!212 &459146548
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -628,6 +629,11 @@ MonoBehaviour:
   health: 0
   microchipsCollected: 0
   healthBar: {fileID: 571032711}
+  timeSwitcher: {fileID: 0}
+  respawnPos: {x: 0, y: 0, z: 0}
+  playerCam: {fileID: 0}
+  respawnTimeZone: present
+  electricity: {fileID: 0}
 --- !u!1 &571032709
 GameObject:
   m_ObjectHideFlags: 0
