@@ -11,6 +11,8 @@ public class Pause : MonoBehaviour
 
     public GameObject pauseMenu;
 
+    public Animator pauseSlideIn;
+
     public bool gameIsPaused;
 
     public Camera gameCam;       
@@ -19,7 +21,12 @@ public class Pause : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            gameIsPaused = !gameIsPaused;
+            pauseMenu.SetActive(true);
+            gameIsPaused = !gameIsPaused;           
+        }       
+
+        if (pauseSlideIn.GetCurrentAnimatorStateInfo(0).IsName("Pause Set"))
+        {
             PauseGame();
         }
     }
@@ -28,14 +35,13 @@ public class Pause : MonoBehaviour
     {        
         if (gameIsPaused)
         {
-            Time.timeScale = 0f;
-            pauseMenu.SetActive(true);
+            Time.timeScale = 0f;            
             changeTime.enabled = false;
             gameCam.GetComponent<PostProcessLayer>().enabled = true;
         }
         else
         {
-            Time.timeScale = 1;
+            Time.timeScale = 1;            
             pauseMenu.SetActive(false);
             changeTime.enabled = true;
             gameCam.GetComponent<PostProcessLayer>().enabled = false;
@@ -48,7 +54,7 @@ public class Pause : MonoBehaviour
     }
 
     public void replay()
-    {
+    {        
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

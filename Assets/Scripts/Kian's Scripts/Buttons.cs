@@ -6,6 +6,7 @@ using UnityEngine.Rendering.PostProcessing;
 public class Buttons : MonoBehaviour
 {
     public Pause pause;
+    public FuturePresentSwitcher futurePresentSwitcher;
 
     public GameObject mainMenu;
     public GameObject optionMenu;
@@ -45,6 +46,7 @@ public class Buttons : MonoBehaviour
         mainMenu.SetActive(false);
         optionMenu.SetActive(false);
         pause.gameIsPaused = false;
+        futurePresentSwitcher.enabled = true;
         gameCam.GetComponent<PostProcessLayer>().enabled = false;
     }
 }
