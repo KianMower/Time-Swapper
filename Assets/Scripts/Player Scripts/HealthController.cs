@@ -13,6 +13,7 @@ public class HealthController : MonoBehaviour
     //Checkpoint values
     public PlayerController timeSwitcher;
     public Vector3 respawnPos;
+   
     public GameObject playerCam;
     [SerializeField] GameObject[] health;
     public string respawnTimeZone = "present";
@@ -20,11 +21,12 @@ public class HealthController : MonoBehaviour
     private void Start()
     {
         healthCounter = maxHealth;
+        respawnPos = transform.position;   
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.name == "Bullet(Clone)")
+        if (collision.gameObject.name == "Bullet(Clone)" || collision.CompareTag("Enemy"))
         {
             Debug.Log("OW");
             healthCounter -= 1;
@@ -74,6 +76,25 @@ public class HealthController : MonoBehaviour
                 transform.position = respawnPos;
                 //Debug.Log(timeSwitcher.inFuture);
             }
+
+            healthCounter = maxHealth;
+            resetUI();
         }        
+    }
+    //resets health UI on death
+    void resetUI()
+    {
+        health[0].SetActive(true);
+        health[1].SetActive(true);
+        health[2].SetActive(true);
+        health[3].SetActive(true);
+        health[4].SetActive(true);
+        health[5].SetActive(true);
+        health[6].SetActive(true);
+        health[7].SetActive(true);
+        health[8].SetActive(true);
+        health[9].SetActive(true);
+        health[10].SetActive(true);
+        health[11].SetActive(true);
     }
 }

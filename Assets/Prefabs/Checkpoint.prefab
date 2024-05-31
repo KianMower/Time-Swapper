@@ -134,8 +134,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  timezone: present
+  timezone: future
   checkpointVFX: {fileID: 3008861529366289654}
+  checkpointSFX: {fileID: 0}
 --- !u!50 &843778900381146989
 Rigidbody2D:
   serializedVersion: 4

@@ -1759,7 +1759,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1001
   m_Sprite: {fileID: 21300000, guid: 604d3ad209234024e99f608bdb086621, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2019,7 +2019,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1001
   m_Sprite: {fileID: 21300000, guid: 712953947da332b44a74969636d18590, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2186,7 +2186,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1001
   m_Sprite: {fileID: 21300000, guid: 604d3ad209234024e99f608bdb086621, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -3078,7 +3078,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1001
   m_Sprite: {fileID: 21300000, guid: 712953947da332b44a74969636d18590, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -3153,7 +3153,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1000
   m_TargetDisplay: 0
 --- !u!114 &5114021611943514147
 MonoBehaviour:
@@ -3209,8 +3209,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pause: {fileID: 0}
   futurePresentSwitcher: {fileID: 0}
-  mainMenu: {fileID: 0}
-  optionMenu: {fileID: 0}
+  mainMenu: {fileID: 7813341447105833687}
+  optionMenu: {fileID: 2975424995072064379}
   gameCam: {fileID: 0}
 --- !u!1 &6919398210391535010
 GameObject:
@@ -4603,7 +4603,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1001
   m_Sprite: {fileID: 21300000, guid: 712953947da332b44a74969636d18590, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -4745,8 +4745,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pause: {fileID: 0}
   futurePresentSwitcher: {fileID: 0}
-  mainMenu: {fileID: 0}
-  optionMenu: {fileID: 0}
+  mainMenu: {fileID: 7813341447105833687}
+  optionMenu: {fileID: 2975424995072064379}
   gameCam: {fileID: 0}
 --- !u!1 &9016468790941790202
 GameObject:
@@ -4824,7 +4824,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1001
   m_Sprite: {fileID: 21300000, guid: 604d3ad209234024e99f608bdb086621, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

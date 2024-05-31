@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
+using UnityEngine.SceneManagement;
 
 public class Buttons : MonoBehaviour
 {
@@ -15,7 +16,8 @@ public class Buttons : MonoBehaviour
 
     public void Play()
     {
-
+        Debug.Log("play clicked");
+        SceneManager.LoadScene("Level 1 Scene");
     }
 
     public void Options()
