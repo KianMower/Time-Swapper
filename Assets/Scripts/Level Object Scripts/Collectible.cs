@@ -22,7 +22,7 @@ public class Collectible : MonoBehaviour
     //VFX Variables
     [SerializeField] private ParticleSystem healthVFX;
     [SerializeField] private ParticleSystem collectibleVFX;
-    public float healthPackHealAmount = 1;
+    public int healthPackHealAmount = 1;
 
     private void Start()
     {
@@ -44,19 +44,19 @@ public class Collectible : MonoBehaviour
             {
                 //Add health to player without exceeding max health
                 //If the difference between max health and health >= 0.01, heal player and destroy health pack
-                if (playerHealth.maxHealth - playerHealth.health >= healthPackHealAmount)
+                if (playerHealth.maxHealth - playerHealth.healthCounter >= healthPackHealAmount)
                 {
                     healthVFX.Play();
                     healthSFX.Play();
                     StartCoroutine(healthVFXReset());
-                    playerHealth.health += healthPackHealAmount;
+                    playerHealth.healthCounter += healthPackHealAmount;
                     Destroy(gameObject); //Destroys health pack
                 }
-                else if (playerHealth.maxHealth - playerHealth.health >= 0.01f)
+                else if (playerHealth.maxHealth - playerHealth.healthCounter >= 0.01f)
                 {
                     healthVFX.Play();
                     StartCoroutine(healthVFXReset());
-                    playerHealth.health = playerHealth.maxHealth;
+                    playerHealth.healthCounter = playerHealth.maxHealth;
                     Destroy(gameObject); //Destroys health pack
                 }
                 //The player has max health, so ignore the health pack

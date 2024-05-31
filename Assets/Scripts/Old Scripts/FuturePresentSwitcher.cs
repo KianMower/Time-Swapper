@@ -1,110 +1,89 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class FuturePresentSwitcher : MonoBehaviour
 {
     public bool inFuture = false;
-    public float switchCooldown = 2f;
-    private float timer;
-
-    //New input system stuff
-    public PlayerInput playerControls;
-    private InputAction prsnt;
-    private InputAction futr;
-
-    //option for left and right click/just left click
-    [SerializeField] bool oneClickOption = false;
-
     [Header("Toggling Gameobjects Method")]
     [SerializeField] GameObject present;
     [SerializeField] GameObject future;
-    
+    [SerializeField] GameObject presentCogs;
+    [SerializeField] GameObject futureCogs;    
+
+    public Animator animatorPresent;
+    public Animator animatorPresentTwo;
+    public Animator animatorFuture;
+    public Animator animatorFutureTwo;
 
     //teleporting test//
     [Header("Teleporting method")]
     public bool useTeleportMethod = false;
     [SerializeField] GameObject playerCam;
 
-    private void Start()
-    {
-        playerControls = GetComponent<PlayerInput>();
-    }
 
     // Update is called once per frame
     void Update()
     {
-        if (timer > 0f)
-        {
-            timer -= Time.deltaTime;
-        }
-
         //Teleporting player and camera method
         if (useTeleportMethod)
         {
-            //Old control scheme, left click for present right click for future
-            if (!oneClickOption)
+            //Teleport to present (left click)
+            if (Input.GetMouseButtonDown(0) && (inFuture))
             {
-                //    //Teleport to present (left click)
-                //    if (prsnt.WasPressedThisFrame() && (inFuture) && (timer <= 0f))
-                //    {
-                //        inFuture = !inFuture;
-                //        transform.position = new Vector3(transform.position.x, transform.position.y - 300, transform.position.z);
-                //        playerCam.transform.position = new Vector3(playerCam.transform.position.x, playerCam.transform.position.y - 300, playerCam.transform.position.z);
-                //        timer = switchCooldown;
-                //    }
-                //    //Teleport to future (right click)
-                //    if (futr.WasPressedThisFrame() && (!inFuture) && (timer <= 0f))
-                //    {
-                //        inFuture = !inFuture;
-                //        transform.position = new Vector3(transform.position.x, transform.position.y + 300, transform.position.z);
-                //        playerCam.transform.position = new Vector3(playerCam.transform.position.x, playerCam.transform.position.y + 300, playerCam.transform.position.z);
-                //        timer = switchCooldown;
-                //    }
-                //}
-                ////New control scheme, left click switches to the other time period
-                //else
-                //{
-                //    //Teleport to present 
-                //    if (prsnt.WasPressedThisFrame() && (inFuture) && (timer <= 0f))
-                //    {
-                //        inFuture = !inFuture;
-                //        transform.position = new Vector3(transform.position.x, transform.position.y - 300, transform.position.z);
-                //        playerCam.transform.position = new Vector3(playerCam.transform.position.x, playerCam.transform.position.y - 300, playerCam.transform.position.z);
-                //        timer = switchCooldown;
-                //    }
-                //    //Teleport to future
-                //    if (prsnt.WasPressedThisFrame() && (!inFuture) && (timer <= 0f))
-                //    {
-                //        inFuture = !inFuture;
-                //        transform.position = new Vector3(transform.position.x, transform.position.y + 300, transform.position.z);
-                //        playerCam.transform.position = new Vector3(playerCam.transform.position.x, playerCam.transform.position.y + 300, playerCam.transform.position.z);
-                //        timer = switchCooldown;
-                //    }
-                //}
-
+                inFuture = !inFuture;
+                transform.position = new Vector3(transform.position.x, transform.position.y - 300, transform.position.z);
+                playerCam.transform.position = new Vector3(playerCam.transform.position.x, playerCam.transform.position.y - 300, playerCam.transform.position.z);
+                
             }
-            //Old (laggy) method, uses legacy control scheme
-            else
+            //Teleport to future (right click)
+            if (Input.GetMouseButtonDown(1) && (!inFuture))
             {
-                ////Teleport to present (left click)
-                //if (prsnt.WasPressedThisFrame() && (inFuture))
-                //{
-                //    future.SetActive(false);
-                //    present.SetActive(true);
-                //    inFuture = !inFuture;
-                //}
-                ////Teleport to future (right click)
-                //if (futr.WasPressedThisFrame() && (!inFuture))
-                //{
-                //    future.SetActive(true);
-                //    present.SetActive(false);
-                //    inFuture = !inFuture;
-                //}
+                inFuture = !inFuture;
+                transform.position = new Vector3(transform.position.x, transform.position.y + 300, transform.position.z);
+                playerCam.transform.position = new Vector3(playerCam.transform.position.x, playerCam.transform.position.y + 300, playerCam.transform.position.z);
+               
             }
         }
+        //Old (laggy) method
+        else
+        {
+            
+            if (Input.GetMouseButtonDown(0) && (inFuture))
+            {
+                animatorFuture.SetBool("Change In Time Future", true);
+                animatorFutureTwo.SetBool("Change In Time Future", true);
+               
+                inFuture = !inFuture;
+            }
+            
+            if (Input.GetMouseButtonDown(1) && (!inFuture))
+            {
+                animatorPresent.SetBool("Change In Time Present", true);
+                animatorPresentTwo.SetBool("Change In Time Present", true);
 
+                inFuture = !inFuture;
+            }
+        }
+        //Teleport/ animate to future (right click)
+        if (animatorPresent.GetCurrentAnimatorStateInfo(0).IsName("Change Time to Future"))
+        {
+            Debug.Log("Change");
+            //future.SetActive(true);
+            //present.SetActive(false);
+            presentCogs.SetActive(false);
+            futureCogs.SetActive(true);
+        }
+        //Teleport/ animate to present (left click)
+        if (animatorFuture.GetCurrentAnimatorStateInfo(0).IsName("Change Time To Present"))
+        {
+            //future.SetActive(false);
+            //present.SetActive(true);
+            presentCogs.SetActive(true);
+            futureCogs.SetActive(false);
+        }
     }
+
+
 }
 

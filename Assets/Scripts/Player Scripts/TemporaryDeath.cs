@@ -18,7 +18,7 @@ public class TemporaryDeath : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(playerHealth.health <= 0) // Calls the death function when the health is 0 or less than 0
+        if(playerHealth.healthCounter <= 0) // Calls the death function when the health is 0 or less than 0
         {
             death(); 
         }
@@ -36,7 +36,7 @@ public class TemporaryDeath : MonoBehaviour
         {
             electricity.Play();
             damageSFX.Play();
-            playerHealth.health -= 25;
+            playerHealth.healthCounter -= 25;
         }
     }
 

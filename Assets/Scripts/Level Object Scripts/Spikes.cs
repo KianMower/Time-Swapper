@@ -6,7 +6,7 @@ public class Spikes : MonoBehaviour
 {
     private bool spikesActive = true;
     public float gracePeriod;
-    public float damageAmount;
+    public int damageAmount;
     private HealthController healthController;
 
     //If player collides with a spike and its active, run spikesTrigger
@@ -33,7 +33,7 @@ public class Spikes : MonoBehaviour
     //Damage player, wait grace period then reactivate spikes
     private IEnumerator spikesTrigger()
     {
-        healthController.health -= damageAmount;
+        healthController.healthCounter -= damageAmount;
         spikesActive = false;
         yield return new WaitForSeconds(gracePeriod);
         spikesActive = true;

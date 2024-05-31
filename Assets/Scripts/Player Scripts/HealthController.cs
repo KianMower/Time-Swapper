@@ -5,77 +5,75 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class HealthController : MonoBehaviour
-{
-    public float maxHealth;
-    public float health;
-    private float healthBarSize;
-    public float microchipsCollected;
-    [SerializeField] Scrollbar healthBar;
-
+{  
+    public int microchipsCollected;
+    public int healthCounter = 3;
+    public int maxHealth = 3;
+   
     //Checkpoint values
     public PlayerController timeSwitcher;
     public Vector3 respawnPos;
     public GameObject playerCam;
+    [SerializeField] GameObject[] health;
     public string respawnTimeZone = "present";
-    public ParticleSystem electricity;
-    public AudioSource damageSFX;
-    
-   
+
+    private void Start()
+    {
+        healthCounter = maxHealth;
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.name == "Bullet(Clone)")
         {
-            electricity.Play();
-            damageSFX.Play();
             Debug.Log("OW");
-            health -= 25;
-        }
+            healthCounter -= 1;
 
-        if(collision.tag == "Enemy")
-        {
-            electricity.Play();
-            damageSFX.Play();
-            Debug.Log("OW");
-            health -= 25;
-        }
-    }
+            if (healthCounter == 2)
+            {
+                health[0].SetActive(false);
+                health[3].SetActive(false);
+                health[6].SetActive(false);
+                health[9].SetActive(false);
+            }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        //damageVFX.SetActive(false);
-        health = maxHealth;
-        healthBarSize = health / maxHealth;
+            if (healthCounter == 1)
+            {
+                health[1].SetActive(false);
+                health[4].SetActive(false);
+                health[7].SetActive(false);
+                health[10].SetActive(false);
+            }
+
+            if (healthCounter == 0)
+            {
+                health[2].SetActive(false);
+                health[5].SetActive(false);
+                health[8].SetActive(false);
+                health[11].SetActive(false);
+            }
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        healthBarSize = health / maxHealth;
-        healthBar.size = healthBarSize;
-        if (health <= 0)
+        if(healthCounter == 0)
         {
-            Debug.Log("Player died");
-
-            if(respawnTimeZone == "present")
+            if (respawnTimeZone == "present")
             {
-                health = maxHealth;
                 timeSwitcher.inFuture = false;
-                playerCam.transform.position = respawnPos;
+                //playerCam.transform.position = respawnPos;
                 transform.position = respawnPos;
-                Debug.Log(timeSwitcher.inFuture);
-
+                //Debug.Log(timeSwitcher.inFuture)
             }
-
-            if(respawnTimeZone == "future")
+            if (respawnTimeZone == "future")
             {
-                health = maxHealth;
                 timeSwitcher.inFuture = true;
-                playerCam.transform.position = respawnPos;
+                //playerCam.transform.position = respawnPos;
                 transform.position = respawnPos;
-                Debug.Log(timeSwitcher.inFuture);
+                //Debug.Log(timeSwitcher.inFuture);
             }
-        }
+        }        
     }
 }
