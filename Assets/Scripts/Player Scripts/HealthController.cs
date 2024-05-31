@@ -31,6 +31,14 @@ public class HealthController : MonoBehaviour
             Debug.Log("OW");
             health -= 25;
         }
+
+        if(collision.tag == "Enemy")
+        {
+            electricity.Play();
+            damageSFX.Play();
+            Debug.Log("OW");
+            health -= 25;
+        }
     }
 
     // Start is called before the first frame update

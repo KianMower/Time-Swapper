@@ -35,7 +35,7 @@ public class FuturePresentSwitcher : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(timer > 0f)
+        if (timer > 0f)
         {
             timer -= Time.deltaTime;
         }
@@ -46,65 +46,65 @@ public class FuturePresentSwitcher : MonoBehaviour
             //Old control scheme, left click for present right click for future
             if (!oneClickOption)
             {
-                //Teleport to present (left click)
-                if (prsnt.WasPressedThisFrame() && (inFuture) && (timer <= 0f))
-                {
-                    inFuture = !inFuture;
-                    transform.position = new Vector3(transform.position.x, transform.position.y - 300, transform.position.z);
-                    playerCam.transform.position = new Vector3(playerCam.transform.position.x, playerCam.transform.position.y - 300, playerCam.transform.position.z);
-                    timer = switchCooldown;
-                }
-                //Teleport to future (right click)
-                if (futr.WasPressedThisFrame() && (!inFuture) && (timer <= 0f))
-                {
-                    inFuture = !inFuture;
-                    transform.position = new Vector3(transform.position.x, transform.position.y + 300, transform.position.z);
-                    playerCam.transform.position = new Vector3(playerCam.transform.position.x, playerCam.transform.position.y + 300, playerCam.transform.position.z);
-                    timer = switchCooldown;
-                }
+                //    //Teleport to present (left click)
+                //    if (prsnt.WasPressedThisFrame() && (inFuture) && (timer <= 0f))
+                //    {
+                //        inFuture = !inFuture;
+                //        transform.position = new Vector3(transform.position.x, transform.position.y - 300, transform.position.z);
+                //        playerCam.transform.position = new Vector3(playerCam.transform.position.x, playerCam.transform.position.y - 300, playerCam.transform.position.z);
+                //        timer = switchCooldown;
+                //    }
+                //    //Teleport to future (right click)
+                //    if (futr.WasPressedThisFrame() && (!inFuture) && (timer <= 0f))
+                //    {
+                //        inFuture = !inFuture;
+                //        transform.position = new Vector3(transform.position.x, transform.position.y + 300, transform.position.z);
+                //        playerCam.transform.position = new Vector3(playerCam.transform.position.x, playerCam.transform.position.y + 300, playerCam.transform.position.z);
+                //        timer = switchCooldown;
+                //    }
+                //}
+                ////New control scheme, left click switches to the other time period
+                //else
+                //{
+                //    //Teleport to present 
+                //    if (prsnt.WasPressedThisFrame() && (inFuture) && (timer <= 0f))
+                //    {
+                //        inFuture = !inFuture;
+                //        transform.position = new Vector3(transform.position.x, transform.position.y - 300, transform.position.z);
+                //        playerCam.transform.position = new Vector3(playerCam.transform.position.x, playerCam.transform.position.y - 300, playerCam.transform.position.z);
+                //        timer = switchCooldown;
+                //    }
+                //    //Teleport to future
+                //    if (prsnt.WasPressedThisFrame() && (!inFuture) && (timer <= 0f))
+                //    {
+                //        inFuture = !inFuture;
+                //        transform.position = new Vector3(transform.position.x, transform.position.y + 300, transform.position.z);
+                //        playerCam.transform.position = new Vector3(playerCam.transform.position.x, playerCam.transform.position.y + 300, playerCam.transform.position.z);
+                //        timer = switchCooldown;
+                //    }
+                //}
+
             }
-            //New control scheme, left click switches to the other time period
+            //Old (laggy) method, uses legacy control scheme
             else
             {
-                //Teleport to present 
-                if (prsnt.WasPressedThisFrame() && (inFuture) && (timer <= 0f))
-                {
-                    inFuture = !inFuture;
-                    transform.position = new Vector3(transform.position.x, transform.position.y - 300, transform.position.z);
-                    playerCam.transform.position = new Vector3(playerCam.transform.position.x, playerCam.transform.position.y - 300, playerCam.transform.position.z);
-                    timer = switchCooldown;
-                }
-                //Teleport to future
-                if (prsnt.WasPressedThisFrame() && (!inFuture) && (timer <= 0f))
-                {
-                    inFuture = !inFuture;
-                    transform.position = new Vector3(transform.position.x, transform.position.y + 300, transform.position.z);
-                    playerCam.transform.position = new Vector3(playerCam.transform.position.x, playerCam.transform.position.y + 300, playerCam.transform.position.z);
-                    timer = switchCooldown;
-                }
-            }
-            
-        }
-        //Old (laggy) method, uses legacy control scheme
-        else
-        {
-            //Teleport to present (left click)
-            if (prsnt.WasPressedThisFrame() && (inFuture))
-            {
-                future.SetActive(false);
-                present.SetActive(true);
-                inFuture = !inFuture;
-            }
-            //Teleport to future (right click)
-            if (futr.WasPressedThisFrame() && (!inFuture))
-            {
-                future.SetActive(true);
-                present.SetActive(false);
-                inFuture = !inFuture;
+                ////Teleport to present (left click)
+                //if (prsnt.WasPressedThisFrame() && (inFuture))
+                //{
+                //    future.SetActive(false);
+                //    present.SetActive(true);
+                //    inFuture = !inFuture;
+                //}
+                ////Teleport to future (right click)
+                //if (futr.WasPressedThisFrame() && (!inFuture))
+                //{
+                //    future.SetActive(true);
+                //    present.SetActive(false);
+                //    inFuture = !inFuture;
+                //}
             }
         }
+
     }
-
-
 }
 

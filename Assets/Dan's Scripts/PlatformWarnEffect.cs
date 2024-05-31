@@ -8,16 +8,16 @@ public class PlatformWarnEffect : MonoBehaviour
 
     void Start()
     {
-        warnAnim.GetComponent<Animator>();
+        warnAnim.GetComponent<Animator>(); // Sets the animator variable 
 
-        warnAnim.Play("PlatformWarnBlank");
+        warnAnim.Play("PlatformWarnBlank"); // Plays the starting animation where there is no effect
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            warnAnim.Play("PlatformWarningAnim");
+            warnAnim.Play("PlatformWarningAnim"); // Activates the flashing animation when the player enters the collider
         }
     }
 
@@ -25,7 +25,7 @@ public class PlatformWarnEffect : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            warnAnim.Play("PlatformWarnBlank");
+            warnAnim.Play("PlatformWarnBlank"); // Deactivates the flashing animation when the player leaves the collider
         }
     }
 }

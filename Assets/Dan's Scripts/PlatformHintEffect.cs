@@ -4,21 +4,21 @@ using UnityEngine;
 
 public class PlatformHintEffect : MonoBehaviour
 {
-    [SerializeField] private Animator glowAnim;
+    [SerializeField] private Animator glowAnim; // The animator for the effect
 
     // Start is called before the first frame update
     void Start()
     {
-        glowAnim.GetComponent<Animator>();
+        glowAnim.GetComponent<Animator>(); // Sets the animator variable 
 
-        glowAnim.Play("PlatformBlank");
+        glowAnim.Play("PlatformBlank"); // Plays the starting animation where there is no effect
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            glowAnim.Play("PlatformHint");
+            glowAnim.Play("PlatformHint"); // Activates the flashing animation when the player enters the collider
         }
     }
 
@@ -26,7 +26,7 @@ public class PlatformHintEffect : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            glowAnim.Play("PlatformBlank");
+            glowAnim.Play("PlatformBlank"); // Deactivates the flashing animation when the player leaves the collider
         }
     }
 }
