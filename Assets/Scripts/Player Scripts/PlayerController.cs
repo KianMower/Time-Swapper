@@ -90,6 +90,15 @@ public class PlayerController : MonoBehaviour
     [SerializeField] bool oneClickOption = false;
     [SerializeField] GameObject playerCam;
 
+    //UI animation
+    [SerializeField] GameObject presentCogs;
+    [SerializeField] GameObject futureCogs;
+
+    public Animator animatorPresent;
+    public Animator animatorPresentTwo;
+    public Animator animatorFuture;
+    public Animator animatorFutureTwo;
+
 
     private void Awake()
     {
@@ -401,6 +410,8 @@ public class PlayerController : MonoBehaviour
                 transform.position = new Vector3(transform.position.x, transform.position.y - 300, transform.position.z);
                 playerCam.transform.position = new Vector3(playerCam.transform.position.x, playerCam.transform.position.y - 300, playerCam.transform.position.z);
                 timer = switchCooldown;
+                animatorPresent.SetBool("Change In Time Present", true);
+                animatorPresentTwo.SetBool("Change In Time Present", true);
             }
             //Teleport to future
             if (prsnt.WasPressedThisFrame() && (!inFuture) && (timer <= 0f))
@@ -409,9 +420,26 @@ public class PlayerController : MonoBehaviour
                 transform.position = new Vector3(transform.position.x, transform.position.y + 300, transform.position.z);
                 playerCam.transform.position = new Vector3(playerCam.transform.position.x, playerCam.transform.position.y + 300, playerCam.transform.position.z);
                 timer = switchCooldown;
+                animatorFuture.SetBool("Change In Time Future", true);
+                animatorFutureTwo.SetBool("Change In Time Future", true);
+            }
+
+            //animate to future
+            if (animatorPresent.GetCurrentAnimatorStateInfo(0).IsName("Change Time to Future"))
+            {
+                //Debug.Log("Change");
+                presentCogs.SetActive(false);
+                futureCogs.SetActive(true);
+            }
+            //animate to present 
+            if (animatorFuture.GetCurrentAnimatorStateInfo(0).IsName("Change Time To Present"))
+            {
+                presentCogs.SetActive(true);
+                futureCogs.SetActive(false);
             }
         }
     }
+    
     private IEnumerator resetTimeSwapVFX()
     {
         yield return new WaitForSeconds(0.8f);
