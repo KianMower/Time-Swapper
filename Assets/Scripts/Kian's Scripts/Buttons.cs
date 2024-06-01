@@ -17,7 +17,7 @@ public class Buttons : MonoBehaviour
     public void Play()
     {
         Debug.Log("play clicked");
-        SceneManager.LoadScene("Level 1 Scene");
+        SceneManager.LoadScene("Tutorial Scene");
     }
 
     public void Options()

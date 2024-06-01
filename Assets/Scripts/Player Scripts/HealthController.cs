@@ -17,9 +17,11 @@ public class HealthController : MonoBehaviour
     public GameObject playerCam;
     [SerializeField] GameObject[] health;
     public string respawnTimeZone = "present";
+    livesScript lives;
 
     private void Start()
     {
+        lives = GetComponent<livesScript>();
         healthCounter = maxHealth;
         respawnPos = transform.position;   
     }
@@ -79,6 +81,7 @@ public class HealthController : MonoBehaviour
 
             healthCounter = maxHealth;
             resetUI();
+            lives.lives -= 1;
         }        
     }
     //resets health UI on death
