@@ -35,7 +35,7 @@ public class EnemyPatrol : MonoBehaviour
             timer += Time.deltaTime;
             speed = 0;
 
-            if(timer > 3.5)
+            if(timer > 3)
                     {
                         timer = 0;
                         shoot();

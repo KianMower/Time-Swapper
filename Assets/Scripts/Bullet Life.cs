@@ -7,6 +7,7 @@ public class BulletLife : MonoBehaviour
     public GameObject player;
     private Rigidbody2D rb;
     public float force;
+    private float timer;
 
     private void Start()
     {
@@ -20,5 +21,19 @@ public class BulletLife : MonoBehaviour
         transform.rotation = Quaternion.Euler(0, 0, rot);
     }
 
-  
+    private void Update()
+    {
+        timer += Time.deltaTime;
+        if(timer> 8)
+        {
+            Destroy(gameObject);
+        }
+    }
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            Destroy(gameObject);
+        }
+    }
 }
