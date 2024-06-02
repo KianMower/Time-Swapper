@@ -159,8 +159,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -13.08, y: -3.78}
-  m_SizeDelta: {x: 95.6417, y: 37.5143}
+  m_AnchoredPosition: {x: -13.053, y: -3.771}
+  m_SizeDelta: {x: 99.9827, y: 37.5143}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &17374730
 MonoBehaviour:
@@ -695,7 +695,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -12.4597, y: 2.1}
-  m_SizeDelta: {x: 110.1078, y: 47.3936}
+  m_SizeDelta: {x: 110.1078, y: 50.9381}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &766193534
 MonoBehaviour:
@@ -1003,8 +1003,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -11.2308, y: -0.736}
-  m_SizeDelta: {x: 149.93, y: 37.3236}
+  m_AnchoredPosition: {x: -11.2308, y: -0.82}
+  m_SizeDelta: {x: 149.93, y: 40.0804}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1189048443
 MonoBehaviour:
@@ -1127,7 +1127,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -1.27, y: 4.11, z: -62.284138}
-  m_LocalScale: {x: 0.40599445, y: 0.40599445, z: 0.40599445}
+  m_LocalScale: {x: 0.37370163, y: 0.37370163, z: 0.37370163}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 6319511179287971209}
@@ -1288,8 +1288,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -13.2126, y: -3.21}
-  m_SizeDelta: {x: 85.7117, y: 31.972}
+  m_AnchoredPosition: {x: -13.2126, y: -3.44}
+  m_SizeDelta: {x: 85.7117, y: 37.8795}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1826365803
 MonoBehaviour:
@@ -2043,7 +2043,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_IgnoreReversedGraphics: 1
+  m_IgnoreReversedGraphics: 0
   m_BlockingObjects: 0
   m_BlockingMask:
     serializedVersion: 2
@@ -2760,7 +2760,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3031456106521417068
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4545,7 +4545,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!95 &7947872650087921078
 Animator:
   serializedVersion: 5
