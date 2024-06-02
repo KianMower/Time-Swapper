@@ -172,4 +172,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  force: 15
+  force: 8
