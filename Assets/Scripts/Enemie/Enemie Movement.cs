@@ -32,8 +32,8 @@ public class EnemieMovement : MonoBehaviour
 
         if (toNextPoint)
         {
-            transform.position = Vector3.MoveTowards(transform.position, target1.position, moving);
-            transform.localScale = new Vector3(1f, 1f, 1f);
+            transform.position = Vector2.MoveTowards(transform.position, target1.position, moving);
+            transform.localScale = new Vector2(1f, 1f);
 
             Debug.DrawRay(transform.position, transform.TransformDirection(-Vector2.right) * 5f, Color.red);
 
@@ -80,7 +80,7 @@ public class EnemieMovement : MonoBehaviour
                 speed = 5;
             }
 
-            if (Vector3.Distance(transform.position, target2.position) < 0.001f)
+            if (Vector2.Distance(transform.position, target2.position) < 0.001f)
             {
                 toNextPoint = true;                
             }
