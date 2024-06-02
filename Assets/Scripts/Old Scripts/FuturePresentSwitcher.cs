@@ -52,7 +52,7 @@ public class FuturePresentSwitcher : MonoBehaviour
             if (Input.GetMouseButtonDown(0) && (inFuture))
             {
                 animatorFuture.SetBool("Change In Time Future", true);
-                animatorFutureTwo.SetBool("Change In Time Future", true);
+                //animatorFutureTwo.SetBool("Change In Time Future", true);
                
                 inFuture = !inFuture;
             }
