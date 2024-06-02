@@ -15,6 +15,11 @@ public class EnemyPatrol : MonoBehaviour
     public GameObject Bullet;
     public Transform bulletPos;
     public float timer;
+
+    public ParticleSystem laserVFX;
+
+    public AudioSource laserFireSFX;
+    public AudioSource laserChargeSFX;
     
     // Start is called before the first frame update
     void Start()
@@ -99,6 +104,9 @@ public class EnemyPatrol : MonoBehaviour
     void shoot()
     {
         Instantiate(Bullet, bulletPos.position, Quaternion.identity);
+        laserChargeSFX.Play();
+        laserFireSFX.Play();
+        laserVFX.Play();
     }
 }
 
