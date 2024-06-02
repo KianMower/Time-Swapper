@@ -31,37 +31,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 7507480208848776531}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &6349550806427706656
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7547815759043588593}
-  m_Layer: 0
-  m_Name: PointA
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &7547815759043588593
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6349550806427706656}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 28.467762, y: -1.3344319, z: -7.8133597}
-  m_LocalScale: {x: -6.6666665, y: 6.6666665, z: 6.6666665}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 7507480208848776531}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6518951610391632666
 GameObject:
   m_ObjectHideFlags: 0
@@ -97,8 +66,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6143536983359805886}
-  - {fileID: 7547815759043588593}
-  - {fileID: 1623670357156493391}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6564362705567387435
@@ -167,8 +134,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 404546632847069552, guid: de965a5ba38f95b4e8c18e0ccdc6a2af, type: 3}
   bulletFirePoint: {fileID: 5581673961037428223}
-  moveTo: {fileID: 8233381622132875707}
-  moveTo2: {fileID: 6349550806427706656}
+  moveTo: {fileID: 0}
+  moveTo2: {fileID: 0}
   player: {fileID: 0}
 --- !u!114 &8457407847581562359
 MonoBehaviour:
@@ -182,8 +149,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf8edc5c0402a4d43927fc21bccab445, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PointA: {fileID: 6349550806427706656}
-  PointB: {fileID: 8233381622132875707}
+  PointA: {fileID: 0}
+  PointB: {fileID: 0}
   speed: 2
   player: {fileID: 0}
   Bullet: {fileID: 404546632847069552, guid: de965a5ba38f95b4e8c18e0ccdc6a2af, type: 3}
@@ -261,34 +228,3 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!1 &8233381622132875707
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1623670357156493391}
-  m_Layer: 0
-  m_Name: PointB
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1623670357156493391
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8233381622132875707}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -33.265583, y: -1.3344319, z: -7.8133597}
-  m_LocalScale: {x: -6.6666665, y: 6.6666665, z: 6.6666665}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 7507480208848776531}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
