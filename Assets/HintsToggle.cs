@@ -11,8 +11,9 @@ public class HintsToggle : MonoBehaviour
     public GameObject warningsFuture;
 
     private PlayerInput playerControls;
-    private InputAction off;
-    private InputAction on;
+    public InputAction off;
+    public InputAction on;
+
 
     private void Awake()
     {
@@ -59,4 +60,6 @@ public class HintsToggle : MonoBehaviour
             warningsFuture.SetActive(true);
         }
     }
+
+
 }

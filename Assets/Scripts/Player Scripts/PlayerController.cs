@@ -87,7 +87,7 @@ public class PlayerController : MonoBehaviour
     public bool inFuture = false;
     public float switchCooldown = 2f;
     private float timer;
-    [SerializeField] bool oneClickOption = false;
+    [SerializeField] public bool oneClickOption = false;
     [SerializeField] GameObject playerCam;
 
     //UI animation
@@ -105,7 +105,7 @@ public class PlayerController : MonoBehaviour
         playerControls = new PlayerInput();
     }
 
-    private void OnEnable()
+    public void OnEnable()
     {
         //Sets each variable to a particluar action the player can complete
         //We can use this later to check for events
@@ -118,7 +118,7 @@ public class PlayerController : MonoBehaviour
     }
 
     //Disable player input :)
-    private void OnDisable()
+    public void OnDisable()
     {
         playerControls.Disable();
     }
@@ -387,6 +387,7 @@ public class PlayerController : MonoBehaviour
                 transform.position = new Vector3(transform.position.x, transform.position.y - 300, transform.position.z);
                 playerCam.transform.position = new Vector3(playerCam.transform.position.x, playerCam.transform.position.y - 300, playerCam.transform.position.z);
                 timer = switchCooldown;
+
             }
             //Teleport to future (right click)
             if (futr.WasPressedThisFrame() && (!inFuture) && (timer <= 0f))
@@ -444,6 +445,18 @@ public class PlayerController : MonoBehaviour
     {
         yield return new WaitForSeconds(0.8f);
         timeSwapVFX.SetActive(false);
+    }
+
+    public void oneclickoptions()
+    {
+        if(oneClickOption == false)
+        {
+            oneClickOption = true;
+        }
+        else
+        {
+            oneClickOption = false;
+        }
     }
 
 }
