@@ -19,6 +19,9 @@ public class HealthController : MonoBehaviour
     public string respawnTimeZone = "present";
     livesScript lives;
 
+    public AudioSource damageSFX;
+    public ParticleSystem damageVFX;
+
     private void Start()
     {
         lives = GetComponent<livesScript>();
@@ -30,7 +33,8 @@ public class HealthController : MonoBehaviour
     {
         if (collision.gameObject.name == "Bullet(Clone)" || collision.CompareTag("Enemy"))
         {
-            Debug.Log("OW");
+            damageSFX.Play();
+            damageVFX.Play();
             healthCounter -= 1;
 
             if (healthCounter == 2)
@@ -57,11 +61,37 @@ public class HealthController : MonoBehaviour
                 health[11].SetActive(false);
             }
         }
+
+        if(collision.tag == "Repair")
+        {
+            if (healthCounter == 2)
+            {
+                health[0].SetActive(true);
+                health[3].SetActive(true);
+                health[6].SetActive(true);
+                health[9].SetActive(true);
+            }
+
+            if (healthCounter == 1)
+            {
+                health[1].SetActive(true);
+                health[4].SetActive(true);
+                health[7].SetActive(true);
+                health[10].SetActive(true);
+            }
+        }
     }
+
+    
 
     // Update is called once per frame
     void Update()
     {
+        if(healthCounter == 3)
+        {
+            resetUI();
+        }
+
         if(healthCounter == 0)
         {
             if (respawnTimeZone == "present")
@@ -100,4 +130,5 @@ public class HealthController : MonoBehaviour
         health[10].SetActive(true);
         health[11].SetActive(true);
     }
+
 }

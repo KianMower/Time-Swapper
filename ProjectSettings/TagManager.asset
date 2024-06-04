@@ -12,6 +12,7 @@ TagManager:
   - Hint
   - Ground
   - Wall
+  - Repair
   layers:
   - Default
   - TransparentFX
