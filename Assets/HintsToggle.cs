@@ -5,12 +5,12 @@ using UnityEngine.InputSystem;
 
 public class HintsToggle : MonoBehaviour
 {
-    public GameObject hintsPresent;
+    public GameObject hintsPresent; //Hints and warning objects
     public GameObject warningsPresent;
     public GameObject hintsFuture;
     public GameObject warningsFuture;
 
-    private PlayerInput playerControls;
+    private PlayerInput playerControls; //Links actions to the input system, using the E and Q keys
     public InputAction off;
     public InputAction on;
 
@@ -27,12 +27,12 @@ public class HintsToggle : MonoBehaviour
     }
     private void Update()
     {
-        ToggleHintsAndWarnings();
+        ToggleHintsAndWarnings(); //Calls the togglig function
     }
 
     private void OnEnable()
     {
-        off = playerControls.Player.HintsOff;
+        off = playerControls.Player.HintsOff; //Matches the actions to the bindings in the input system
         on = playerControls.Player.HintsOn;
         playerControls.Enable();
     }
@@ -44,7 +44,7 @@ public class HintsToggle : MonoBehaviour
 
     public void ToggleHintsAndWarnings()
     {
-        if (off.WasPressedThisFrame())
+        if (off.WasPressedThisFrame()) //Q key disables the hints and warnings
         {
             hintsPresent.SetActive(false);
             warningsPresent.SetActive(false);
@@ -52,7 +52,7 @@ public class HintsToggle : MonoBehaviour
             warningsFuture.SetActive(false);
         }
 
-        if (on.WasPressedThisFrame())
+        if (on.WasPressedThisFrame()) //E key enables the hints and warnings
         {
             hintsPresent.SetActive(true);
             warningsPresent.SetActive(true);
